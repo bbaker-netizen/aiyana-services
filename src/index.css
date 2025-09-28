@@ -2,39 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Aiyana Services Design System - Warm, Compassionate, Professional
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Brand Colors - Warm and Professional */
+    --background: 0 0% 99%;
+    --foreground: 215 25% 27%;
+    
+    /* Primary - Warm teal/sage for trust and healing */
+    --primary: 168 45% 38%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 168 45% 88%;
+    --primary-glow: 168 45% 78%;
+    
+    /* Secondary - Warm coral for warmth and connection */
+    --secondary: 15 55% 75%;
+    --secondary-foreground: 215 25% 27%;
+    --secondary-light: 15 55% 95%;
+    
+    /* Accent - Soft lavender for compassion */
+    --accent: 250 25% 85%;
+    --accent-foreground: 215 25% 27%;
+    
+    /* Warm neutrals */
+    --muted: 20 15% 96%;
+    --muted-foreground: 215 15% 45%;
+    --warm-gray: 20 10% 50%;
+    --warm-gray-light: 20 10% 95%;
+    
+    /* Success - Gentle green for hope */
+    --success: 145 45% 55%;
+    --success-foreground: 0 0% 98%;
+    
+    /* Warning - Gentle orange for attention */
+    --warning: 35 85% 65%;
+    --warning-foreground: 215 25% 27%;
 
+    /* Card and popover backgrounds */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 215 25% 27%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* UI Elements */
+    --destructive: 0 65% 58%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 15% 90%;
+    --input: 20 15% 96%;
+    --ring: 168 45% 38%;
+    
+    /* Gradients for warmth and depth */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-warm: linear-gradient(180deg, hsl(var(--secondary-light)), hsl(var(--primary-light)));
+    --gradient-subtle: linear-gradient(135deg, hsl(var(--warm-gray-light)), hsl(var(--accent)));
+    
+    /* Shadows for depth and warmth */
+    --shadow-warm: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+    --shadow-card: 0 4px 20px -8px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -56,33 +88,43 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Dark mode with warm undertones */
+    --background: 215 25% 8%;
+    --foreground: 20 15% 95%;
+    
+    --primary: 168 45% 65%;
+    --primary-foreground: 215 25% 8%;
+    --primary-light: 168 45% 15%;
+    --primary-glow: 168 45% 25%;
+    
+    --secondary: 15 35% 25%;
+    --secondary-foreground: 20 15% 95%;
+    --secondary-light: 15 35% 12%;
+    
+    --accent: 250 25% 25%;
+    --accent-foreground: 20 15% 95%;
+    
+    --muted: 215 15% 15%;
+    --muted-foreground: 20 15% 65%;
+    --warm-gray: 20 10% 40%;
+    --warm-gray-light: 20 10% 12%;
+    
+    --success: 145 45% 55%;
+    --success-foreground: 215 25% 8%;
+    
+    --warning: 35 75% 65%;
+    --warning-foreground: 215 25% 8%;
+    
+    --card: 215 25% 10%;
+    --card-foreground: 20 15% 95%;
+    --popover: 215 25% 10%;
+    --popover-foreground: 20 15% 95%;
+    
+    --destructive: 0 65% 58%;
+    --destructive-foreground: 20 15% 95%;
+    --border: 215 15% 20%;
+    --input: 215 15% 15%;
+    --ring: 168 45% 65%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

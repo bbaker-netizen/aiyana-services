@@ -1,0 +1,157 @@
+import { Button } from "@/components/ui/button";
+import { Phone, Mail, MapPin, Clock, Heart } from "lucide-react";
+
+const Footer = () => {
+  return (
+    <footer className="bg-foreground text-background">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          {/* Company Info */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-2 mb-6">
+              <Heart className="h-8 w-8 text-primary-light" />
+              <h3 className="text-2xl font-bold">Aiyana Services</h3>
+            </div>
+            <p className="text-background/80 mb-6 leading-relaxed">
+              Providing compassionate, integrated care for families navigating ADHD, Autism, IDD, 
+              addiction, and dual diagnoses. Trusted by Edmonton families for over a decade.
+            </p>
+            
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-primary-light" />
+                <a href="tel:780-555-0123" className="hover:text-primary-light transition-colors">
+                  (780) 555-0123
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-primary-light" />
+                <a href="mailto:info@aiyanaservices.ca" className="hover:text-primary-light transition-colors">
+                  info@aiyanaservices.ca
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <MapPin className="h-5 w-5 text-primary-light" />
+                <span>Edmonton, Alberta</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Clock className="h-5 w-5 text-primary-light" />
+                <span>24/7 Emergency Support Available</span>
+              </div>
+            </div>
+          </div>
+          
+          {/* About Us */}
+          <div>
+            <h4 className="text-lg font-semibold mb-6">About Us</h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="#mission" className="text-background/80 hover:text-primary-light transition-colors">
+                  Our Mission
+                </a>
+              </li>
+              <li>
+                <a href="#team" className="text-background/80 hover:text-primary-light transition-colors">
+                  Our Team
+                </a>
+              </li>
+              <li>
+                <a href="#testimonials" className="text-background/80 hover:text-primary-light transition-colors">
+                  Testimonials
+                </a>
+              </li>
+              <li>
+                <a href="#careers" className="text-background/80 hover:text-primary-light transition-colors">
+                  Careers
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Services */}
+          <div>
+            <h4 className="text-lg font-semibold mb-6">Services</h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="#respite-care" className="text-background/80 hover:text-primary-light transition-colors">
+                  Respite Care
+                </a>
+              </li>
+              <li>
+                <a href="#adhd-assessment" className="text-background/80 hover:text-primary-light transition-colors">
+                  ADHD Assessment
+                </a>
+              </li>
+              <li>
+                <a href="#autism-evaluation" className="text-background/80 hover:text-primary-light transition-colors">
+                  Autism Evaluation
+                </a>
+              </li>
+              <li>
+                <a href="#addiction-support" className="text-background/80 hover:text-primary-light transition-colors">
+                  Addiction Support
+                </a>
+              </li>
+              <li>
+                <a href="#dual-diagnosis" className="text-background/80 hover:text-primary-light transition-colors">
+                  Dual Diagnosis Care
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        {/* CTA Section */}
+        <div className="bg-primary/10 rounded-2xl p-8 mb-12 text-center">
+          <h4 className="text-2xl font-bold mb-4">Need Immediate Support?</h4>
+          <p className="text-background/80 mb-6 max-w-2xl mx-auto">
+            Don't wait for help. Contact us today and take the first step toward comprehensive care for your family.
+          </p>
+          <Button 
+            variant="secondary" 
+            size="xl"
+            className="bg-primary-light text-foreground hover:bg-primary-glow"
+          >
+            Reserve Respite Care
+          </Button>
+        </div>
+        
+        {/* Bottom Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-background/20">
+          <div>
+            <ul className="flex flex-wrap gap-6 text-sm">
+              <li>
+                <a href="#contact" className="text-background/80 hover:text-primary-light transition-colors">
+                  Contact Us
+                </a>
+              </li>
+              <li>
+                <a href="#faqs" className="text-background/80 hover:text-primary-light transition-colors">
+                  FAQs
+                </a>
+              </li>
+              <li>
+                <a href="#privacy" className="text-background/80 hover:text-primary-light transition-colors">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="#terms" className="text-background/80 hover:text-primary-light transition-colors">
+                  Terms of Service
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div className="text-right">
+            <p className="text-background/60 text-sm">
+              © 2024 Aiyana Services Inc. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
