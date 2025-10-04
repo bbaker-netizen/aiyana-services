@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const { elementRef, isVisible } = useScrollAnimation();
@@ -201,12 +202,16 @@ const Contact = () => {
               Don't wait to get the support your family needs. Contact us today to reserve respite care or schedule an assessment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="cta" size="xl">
-                Reserve Respite Care
-              </Button>
-              <Button variant="cta-outline" size="xl">
-                Schedule Assessment
-              </Button>
+              <Link to="/services/respite-care">
+                <Button variant="cta" size="xl">
+                  Reserve Respite Care
+                </Button>
+              </Link>
+              <Link to="/services/adhd-assessment">
+                <Button variant="cta-outline" size="xl">
+                  Schedule Assessment
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

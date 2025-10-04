@@ -3,9 +3,11 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Users, Award, Heart, GraduationCap } from "lucide-react";
 import { useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 const Team = () => {
   const { elementRef: teamRef, isVisible: teamVisible } = useScrollAnimation();
@@ -183,11 +185,11 @@ const Team = () => {
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
               We're always looking for passionate professionals who share our mission. Explore career opportunities at Aiyana Services.
             </p>
-            <a href="/about/careers">
-              <button className="bg-background text-foreground hover:bg-background/90 px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
+            <Link to="/about/careers">
+              <Button variant="default" size="xl" className="bg-background text-foreground hover:bg-background/90">
                 View Career Opportunities
-              </button>
-            </a>
+              </Button>
+            </Link>
           </div>
         </section>
       </main>
