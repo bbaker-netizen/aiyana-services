@@ -47,22 +47,22 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6">About Us</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/about" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/about/mission" className="text-background/80 hover:text-primary-light transition-colors">
                   Our Mission
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/about/team" className="text-background/80 hover:text-primary-light transition-colors">
                   Our Team
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/about/testimonials" className="text-background/80 hover:text-primary-light transition-colors">
                   Testimonials
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/about/careers" className="text-background/80 hover:text-primary-light transition-colors">
                   Careers
                 </Link>
               </li>
@@ -74,27 +74,27 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6">Services</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/services" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/services/respite-care" className="text-background/80 hover:text-primary-light transition-colors">
                   Respite Care
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/services/adhd-assessment" className="text-background/80 hover:text-primary-light transition-colors">
                   ADHD Assessment
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/services/autism-evaluation" className="text-background/80 hover:text-primary-light transition-colors">
                   Autism Evaluation
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/services/addiction-support" className="text-background/80 hover:text-primary-light transition-colors">
                   Addiction Support
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/services/dual-diagnosis" className="text-background/80 hover:text-primary-light transition-colors">
                   Dual Diagnosis Care
                 </Link>
               </li>
