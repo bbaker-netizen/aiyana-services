@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "@/assets/aiyana-logo.png";
 
 const Header = () => {
   const location = useLocation();
@@ -9,10 +10,12 @@ const Header = () => {
     <header className="w-full bg-card sticky top-0 z-50 border-b border-border">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <h1 className="text-2xl font-display font-bold text-primary">
-              Aiyana Services
-            </h1>
+          <Link to="/" className="flex items-center">
+            <img 
+              src={logo} 
+              alt="Aiyana Services - Compassionate Care in Edmonton" 
+              className="h-12 w-auto object-contain"
+            />
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
