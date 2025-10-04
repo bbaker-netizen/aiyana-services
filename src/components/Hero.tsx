@@ -8,7 +8,7 @@ const Hero = () => {
   const experienceCount = useCountUp(15, 2000, '+');
   
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden">
       {/* Background with sophisticated gradient overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -22,7 +22,7 @@ const Hero = () => {
       
       {/* Decorative gradient blobs */}
       
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="container mx-auto px-4 py-12 md:py-16 relative z-10">
         <div className="max-w-5xl">
           {/* Trust badge */}
           <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full bg-card border border-primary/20">

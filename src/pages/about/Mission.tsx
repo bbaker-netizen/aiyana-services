@@ -3,9 +3,11 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Target, Heart, Users, Sparkles } from "lucide-react";
 import { useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 const Mission = () => {
   const { elementRef: valuesRef, isVisible: valuesVisible } = useScrollAnimation();
@@ -38,17 +40,38 @@ const Mission = () => {
       <main>
         {/* Hero Section */}
         <section className="py-20 bg-gradient-subtle">
-          <div className="container mx-auto px-4 text-center">
-            <div className="flex items-center justify-center gap-2 mb-6">
-              <Target className="h-8 w-8 text-primary" />
-              <span className="text-primary font-semibold text-lg">Our Purpose</span>
+          <div className="container mx-auto px-4">
+            <Breadcrumb className="mb-8">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/">Home</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/about">About</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>Mission</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <Target className="h-8 w-8 text-primary" />
+                <span className="text-primary font-semibold text-lg">Our Purpose</span>
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+                Our Mission & Values
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+                Transforming lives through integrated, compassionate care for families navigating complex developmental and mental health needs.
+              </p>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-              Our Mission & Values
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Transforming lives through integrated, compassionate care for families navigating complex developmental and mental health needs.
-            </p>
           </div>
         </section>
 

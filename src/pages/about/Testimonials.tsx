@@ -4,6 +4,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Star, MessageCircle, Heart, Quote } from "lucide-react";
 import { useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -89,17 +90,38 @@ const Testimonials = () => {
       <main>
         {/* Hero Section */}
         <section className="py-20 bg-gradient-subtle">
-          <div className="container mx-auto px-4 text-center">
-            <div className="flex items-center justify-center gap-2 mb-6">
-              <Star className="h-8 w-8 text-primary fill-primary" />
-              <span className="text-primary font-semibold text-lg">Real Stories, Real Impact</span>
+          <div className="container mx-auto px-4">
+            <Breadcrumb className="mb-8">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/">Home</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/about">About</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>Testimonials</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <Star className="h-8 w-8 text-primary fill-primary" />
+                <span className="text-primary font-semibold text-lg">Real Stories, Real Impact</span>
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+                What Families Are Saying
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+                Don't just take our word for it—hear from families who've experienced the transformative power of integrated, compassionate care.
+              </p>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-              What Families Are Saying
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Don't just take our word for it—hear from families who've experienced the transformative power of integrated, compassionate care.
-            </p>
           </div>
         </section>
 
