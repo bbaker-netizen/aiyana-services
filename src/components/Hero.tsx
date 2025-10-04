@@ -48,7 +48,7 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Button variant="cta" size="xl" className="group shadow-elegant hover:shadow-hover">
+            <Button variant="cta" size="xl" className="group shadow-card hover:shadow-warm">
               Reserve Respite Care
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>

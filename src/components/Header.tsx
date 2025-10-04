@@ -50,7 +50,7 @@ const Header = () => {
             </div>
           </nav>
           
-          <Button variant="cta" size="lg" className="hidden md:inline-flex shadow-warm hover:shadow-glow">
+          <Button variant="cta" size="lg" className="hidden md:inline-flex shadow-card hover:shadow-warm">
             Reserve Respite Care
           </Button>
         </div>
