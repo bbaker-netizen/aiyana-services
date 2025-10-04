@@ -4,10 +4,18 @@ import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Activity, Users, Brain, Heart, Shield } from "lucide-react";
+import { Activity, Users, Brain, Heart, Shield, Home, ChevronRight } from "lucide-react";
 import { useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 const DualDiagnosis = () => {
   const { elementRef: benefitsRef, isVisible: benefitsVisible } = useScrollAnimation();
@@ -39,22 +47,43 @@ const DualDiagnosis = () => {
       <main>
         {/* Hero Section */}
         <section className="py-20 bg-gradient-subtle">
-          <div className="container mx-auto px-4 text-center">
-            <div className="flex items-center justify-center gap-2 mb-6">
-              <Activity className="h-8 w-8 text-primary" />
-              <span className="text-primary font-semibold text-lg">Specialized Dual Diagnosis Care</span>
+          <div className="container mx-auto px-4">
+            <Breadcrumb className="mb-8">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/"><Home className="h-4 w-4" /></Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/services">Services</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>Dual Diagnosis Care</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <Activity className="h-8 w-8 text-primary" />
+                <span className="text-primary font-semibold text-lg">Specialized Dual Diagnosis Care</span>
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+                Dual Diagnosis Care
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+                Expert care for children and youth with multiple diagnoses—treating the whole person, not just individual symptoms.
+              </p>
+              <Link to="/contact">
+                <Button size="lg" className="text-lg px-8">
+                  Learn About Our Approach
+                </Button>
+              </Link>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-              Co-Occurring Disorder Treatment
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Expert care for children and youth with multiple diagnoses—treating the whole person, not just individual symptoms.
-            </p>
-            <Link to="/contact">
-              <Button size="lg" className="text-lg px-8">
-                Learn About Our Approach
-              </Button>
-            </Link>
           </div>
         </section>
 
