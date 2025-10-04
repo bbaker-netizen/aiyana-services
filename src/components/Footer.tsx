@@ -103,16 +103,12 @@ const Footer = () => {
         </div>
         
         {/* CTA Section */}
-        <div className="bg-card border border-border rounded-2xl p-8 mb-12 text-center">
+        <div className="bg-card border border-border rounded-2xl p-8 mb-12 text-center text-foreground">
           <h4 className="text-2xl font-bold mb-4">Need Immediate Support?</h4>
-          <p className="text-background/80 mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Don't wait for help. Contact us today and take the first step toward comprehensive care for your family.
           </p>
-          <Button 
-            variant="secondary" 
-            size="xl"
-            className="bg-primary-light text-foreground hover:bg-primary-glow"
-          >
+          <Button variant="cta" size="xl">
             Reserve Respite Care
           </Button>
         </div>

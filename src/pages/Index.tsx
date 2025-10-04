@@ -29,17 +29,15 @@ const Index = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="transition-all duration-300 group">
-                <CardContent className="p-8 text-center">
-                  <div className="inline-flex p-4 bg-primary text-primary-foreground rounded-xl mb-6 group-hover:scale-110 transition-transform">
-                    <Heart className="h-12 w-12 text-primary" />
-                  </div>
+              <Card className="transition-all duration-300 group h-full">
+                <CardContent className="p-8 text-center flex flex-col h-full">
+                  <Heart className="h-12 w-12 text-primary mb-6 mx-auto group-hover:scale-110 transition-transform" aria-hidden="true" />
                   <h3 className="text-2xl font-bold text-foreground mb-4">Our Services</h3>
                   <p className="text-muted-foreground mb-6">
                     Discover our integrated care solutions designed to support children with complex needs and their families.
                   </p>
-                  <Link to="/services">
-                    <Button variant="cta-outline" className="group/btn">
+                  <Link to="/services" className="mt-auto">
+                    <Button variant="outline" className="group/btn">
                       Learn More
                       <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                     </Button>
@@ -47,17 +45,15 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="transition-all duration-300 group">
-                <CardContent className="p-8 text-center">
-                  <div className="inline-flex p-4 bg-secondary text-secondary-foreground rounded-xl mb-6 group-hover:scale-110 transition-transform">
-                    <Users className="h-12 w-12 text-secondary" />
-                  </div>
+              <Card className="transition-all duration-300 group h-full">
+                <CardContent className="p-8 text-center flex flex-col h-full">
+                  <Users className="h-12 w-12 text-secondary mb-6 mx-auto group-hover:scale-110 transition-transform" aria-hidden="true" />
                   <h3 className="text-2xl font-bold text-foreground mb-4">About Us</h3>
                   <p className="text-muted-foreground mb-6">
                     Meet our dedicated team and learn about our mission to provide compassionate, evidence-based care.
                   </p>
-                  <Link to="/about">
-                    <Button variant="cta-outline" className="group/btn">
+                  <Link to="/about" className="mt-auto">
+                    <Button variant="outline" className="group/btn">
                       Our Story
                       <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                     </Button>
@@ -65,17 +61,15 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="transition-all duration-300 group">
-                <CardContent className="p-8 text-center">
-                  <div className="inline-flex p-4 bg-success text-success-foreground rounded-xl mb-6 group-hover:scale-110 transition-transform">
-                    <Phone className="h-12 w-12 text-success" />
-                  </div>
+              <Card className="transition-all duration-300 group h-full">
+                <CardContent className="p-8 text-center flex flex-col h-full">
+                  <Phone className="h-12 w-12 text-success mb-6 mx-auto group-hover:scale-110 transition-transform" aria-hidden="true" />
                   <h3 className="text-2xl font-bold text-foreground mb-4">Contact Us</h3>
                   <p className="text-muted-foreground mb-6">
                     Ready to get started? Reach out to our compassionate team and begin your journey to support.
                   </p>
-                  <Link to="/contact">
-                    <Button variant="cta-outline" className="group/btn">
+                  <Link to="/contact" className="mt-auto">
+                    <Button variant="outline" className="group/btn">
                       Get in Touch
                       <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                     </Button>
