@@ -3,11 +3,13 @@ import { Phone, Mail } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="w-full bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+    <header className="w-full glass-strong sticky top-0 z-50 shadow-card">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <h1 className="text-2xl font-bold text-primary">Aiyana Services</h1>
+            <h1 className="text-2xl font-display font-bold bg-gradient-hero bg-clip-text text-transparent">
+              Aiyana Services
+            </h1>
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
@@ -36,7 +38,7 @@ const Header = () => {
             </div>
           </nav>
           
-          <Button variant="cta" size="lg" className="hidden md:inline-flex">
+          <Button variant="cta" size="lg" className="hidden md:inline-flex shadow-warm hover:shadow-glow">
             Reserve Respite Care
           </Button>
         </div>

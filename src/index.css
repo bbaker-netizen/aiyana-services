@@ -12,20 +12,23 @@ All colors MUST be HSL.
     --background: 0 0% 99%;
     --foreground: 215 25% 27%;
     
-    /* Primary - Warm teal/sage for trust and healing */
-    --primary: 168 45% 38%;
+    /* Primary - Rich teal/sage for trust and healing */
+    --primary: 168 52% 42%;
     --primary-foreground: 0 0% 98%;
-    --primary-light: 168 45% 88%;
-    --primary-glow: 168 45% 78%;
+    --primary-light: 168 52% 88%;
+    --primary-glow: 168 52% 68%;
+    --primary-dark: 168 52% 32%;
     
     /* Secondary - Warm coral for warmth and connection */
-    --secondary: 15 55% 75%;
+    --secondary: 15 58% 72%;
     --secondary-foreground: 215 25% 27%;
-    --secondary-light: 15 55% 95%;
+    --secondary-light: 15 58% 92%;
+    --secondary-dark: 15 58% 58%;
     
     /* Accent - Soft lavender for compassion */
-    --accent: 250 25% 85%;
+    --accent: 250 30% 82%;
     --accent-foreground: 215 25% 27%;
+    --accent-light: 250 30% 95%;
     
     /* Warm neutrals */
     --muted: 20 15% 96%;
@@ -34,41 +37,50 @@ All colors MUST be HSL.
     --warm-gray-light: 20 10% 95%;
     
     /* Success - Gentle green for hope */
-    --success: 145 45% 55%;
+    --success: 145 50% 52%;
     --success-foreground: 0 0% 98%;
     
     /* Warning - Gentle orange for attention */
-    --warning: 35 85% 65%;
+    --warning: 35 88% 62%;
     --warning-foreground: 215 25% 27%;
 
-    /* Card and popover backgrounds */
+    /* Card and popover backgrounds with glassmorphism */
     --card: 0 0% 100%;
     --card-foreground: 215 25% 27%;
+    --card-glass: 0 0% 98%;
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 27%;
 
     /* UI Elements */
-    --destructive: 0 65% 58%;
+    --destructive: 0 68% 55%;
     --destructive-foreground: 0 0% 98%;
-    --border: 20 15% 90%;
+    --border: 20 15% 88%;
     --input: 20 15% 96%;
-    --ring: 168 45% 38%;
+    --ring: 168 52% 42%;
     
-    /* Gradients for warmth and depth */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-warm: linear-gradient(180deg, hsl(var(--secondary-light)), hsl(var(--primary-light)));
-    --gradient-subtle: linear-gradient(135deg, hsl(var(--warm-gray-light)), hsl(var(--accent)));
+    /* Sophisticated multi-stop gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)) 50%, hsl(var(--secondary)) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(var(--secondary-light)), hsl(var(--primary-light)) 60%, hsl(var(--accent-light)));
+    --gradient-subtle: linear-gradient(135deg, hsl(var(--warm-gray-light)) 0%, hsl(var(--accent-light)) 50%, hsl(var(--primary-light)) 100%);
+    --gradient-radial: radial-gradient(circle at 50% 50%, hsl(var(--primary-light)), hsl(var(--secondary-light)));
+    --gradient-border: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-glow: linear-gradient(135deg, hsl(var(--primary-glow)) 0%, hsl(var(--secondary)) 100%);
     
-    /* Shadows for depth and warmth */
-    --shadow-warm: 0 10px 30px -10px hsl(var(--primary) / 0.2);
-    --shadow-card: 0 4px 20px -8px hsl(var(--primary) / 0.15);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    /* Advanced layered shadows with color */
+    --shadow-warm: 0 4px 20px -4px hsl(var(--primary) / 0.15), 0 10px 40px -10px hsl(var(--secondary) / 0.1);
+    --shadow-card: 0 2px 10px -2px hsl(var(--primary) / 0.08), 0 4px 20px -4px hsl(var(--primary) / 0.06);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.25), 0 0 60px hsl(var(--secondary) / 0.15);
+    --shadow-elegant: 0 10px 50px -12px hsl(var(--primary) / 0.25), 0 20px 65px -10px hsl(var(--secondary) / 0.15);
+    --shadow-hover: 0 12px 45px -8px hsl(var(--primary) / 0.3), 0 24px 70px -12px hsl(var(--secondary) / 0.2);
     
-    /* Transitions */
+    /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elegant: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.25rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -144,9 +156,32 @@ All colors MUST be HSL.
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: 'cv11', 'cv02', 'cv03', 'cv04';
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-feature-settings: 'ss01';
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Glassmorphism utility */
+@layer components {
+  .glass {
+    background: hsl(var(--card-glass) / 0.8);
+    backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+  
+  .glass-strong {
+    background: hsl(var(--card) / 0.9);
+    backdrop-filter: blur(20px) saturate(200%);
+    border: 1px solid hsl(var(--border) / 0.6);
   }
 }

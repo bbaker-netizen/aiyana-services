@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        display: ['Outfit', 'Inter', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -24,15 +28,18 @@ export default {
           foreground: "hsl(var(--primary-foreground))",
           light: "hsl(var(--primary-light))",
           glow: "hsl(var(--primary-glow))",
+          dark: "hsl(var(--primary-dark))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
           light: "hsl(var(--secondary-light))",
+          dark: "hsl(var(--secondary-dark))",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          light: "hsl(var(--accent-light))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
@@ -77,15 +84,21 @@ export default {
         "gradient-hero": "var(--gradient-hero)",
         "gradient-warm": "var(--gradient-warm)",
         "gradient-subtle": "var(--gradient-subtle)",
+        "gradient-radial": "var(--gradient-radial)",
+        "gradient-border": "var(--gradient-border)",
+        "gradient-glow": "var(--gradient-glow)",
       },
       boxShadow: {
         "warm": "var(--shadow-warm)",
         "card": "var(--shadow-card)",
         "glow": "var(--shadow-glow)",
+        "elegant": "var(--shadow-elegant)",
+        "hover": "var(--shadow-hover)",
       },
       transitionTimingFunction: {
         "smooth": "var(--transition-smooth)",
         "bounce": "var(--transition-bounce)",
+        "elegant": "var(--transition-elegant)",
       },
       borderRadius: {
         lg: "var(--radius)",
