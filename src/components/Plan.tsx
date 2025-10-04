@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Calendar, Heart, ArrowRight } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const steps = [
   {
@@ -27,10 +28,12 @@ const steps = [
 ];
 
 const Plan = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
+  
   return (
-    <section className="py-20 bg-gradient-subtle">
+    <section ref={elementRef} className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="flex items-center justify-center gap-2 mb-6">
             <ArrowRight className="h-8 w-8 text-primary" />
             <span className="text-primary font-semibold text-lg">Three Simple Steps to Support Your Family</span>
@@ -49,7 +52,13 @@ const Plan = () => {
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <Card key={index} className="relative bg-card hover:shadow-warm transition-all duration-300 group overflow-hidden">
+              <Card 
+                key={index} 
+                className={`relative bg-card hover:shadow-warm transition-all duration-500 group overflow-hidden ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
                 <div className="absolute top-0 right-0 w-20 h-20 bg-primary/5 rounded-bl-full flex items-center justify-center">
                   <span className="text-2xl font-bold text-primary/40">{step.number}</span>
                 </div>
@@ -81,7 +90,7 @@ const Plan = () => {
           })}
         </div>
         
-        <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-center shadow-card">
+        <div className={`bg-card/60 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-center shadow-card transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             Ready to Get Started?
           </h3>

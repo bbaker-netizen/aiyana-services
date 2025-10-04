@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Clock, Shield, Heart, Users, ArrowRight } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const values = [
   {
@@ -26,10 +27,12 @@ const values = [
 ];
 
 const ValueProposition = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
+  
   return (
-    <section className="py-20 bg-gradient-warm">
+    <section id="services" ref={elementRef} className="py-20 bg-gradient-warm">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="flex items-center justify-center gap-2 mb-6">
             <CheckCircle className="h-8 w-8 text-success" />
             <span className="text-success font-semibold text-lg">Find Relief and Support for Your Child</span>
@@ -49,7 +52,13 @@ const ValueProposition = () => {
           {values.map((value, index) => {
             const Icon = value.icon;
             return (
-              <Card key={index} className="border-0 bg-card/60 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 hover:shadow-card">
+              <Card 
+                key={index} 
+                className={`border-0 bg-card/60 backdrop-blur-sm hover:bg-card/80 transition-all duration-500 hover:shadow-card ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
                 <CardContent className="p-8">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0 p-4 bg-primary/10 rounded-xl">
@@ -70,7 +79,7 @@ const ValueProposition = () => {
           })}
         </div>
         
-        <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-center shadow-card">
+        <div className={`bg-card/60 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-center shadow-card transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           <Shield className="h-16 w-16 text-primary mx-auto mb-6" />
           <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             Your Peace of Mind is Our Priority

@@ -2,13 +2,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, Shield, Users } from "lucide-react";
 import youthCare from "@/assets/youth-care.jpg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const ExplanatoryParagraph = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
+  
   return (
-    <section className="py-20 bg-background">
+    <section ref={elementRef} className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
+          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="flex items-center gap-2 mb-6">
               <Heart className="h-8 w-8 text-primary" />
               <span className="text-primary font-semibold text-lg">You Don't Have to Struggle Alone</span>
@@ -61,7 +64,7 @@ const ExplanatoryParagraph = () => {
             </Button>
           </div>
           
-          <div className="relative">
+          <div className={`relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <img
               src={youthCare}
               alt="Youth receiving personalized therapeutic care in a supportive environment"

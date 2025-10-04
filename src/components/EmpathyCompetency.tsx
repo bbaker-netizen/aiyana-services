@@ -2,13 +2,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, Quote, Award, Users, Heart, Shield } from "lucide-react";
 import professionalsSupport from "@/assets/professionals-support.jpg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const EmpathyCompetency = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
+  
   return (
-    <section className="py-20 bg-background">
+    <section id="about" ref={elementRef} className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          <div>
+          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="flex items-center gap-2 mb-6">
               <Heart className="h-8 w-8 text-primary" />
               <span className="text-primary font-semibold text-lg">We Understand Your Challenges</span>
@@ -47,7 +50,7 @@ const EmpathyCompetency = () => {
             </div>
           </div>
           
-          <div className="relative">
+          <div className={`relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <img
               src={professionalsSupport}
               alt="Healthcare professionals providing compassionate support to families in Edmonton"
@@ -68,7 +71,7 @@ const EmpathyCompetency = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="bg-primary/5 border-primary/20 hover:shadow-warm transition-all duration-300">
+          <Card className={`bg-primary/5 border-primary/20 hover:shadow-warm transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '200ms' }}>
             <CardContent className="p-8 text-center">
               <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-foreground mb-3">Safe & Secure Care</h3>
@@ -76,7 +79,7 @@ const EmpathyCompetency = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-secondary/10 border-secondary/30 hover:shadow-warm transition-all duration-300">
+          <Card className={`bg-secondary/10 border-secondary/30 hover:shadow-warm transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '300ms' }}>
             <CardContent className="p-8 text-center">
               <Heart className="h-12 w-12 text-secondary mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-foreground mb-3">Compassionate Approach</h3>
@@ -84,7 +87,7 @@ const EmpathyCompetency = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-success/10 border-success/30 hover:shadow-warm transition-all duration-300">
+          <Card className={`bg-success/10 border-success/30 hover:shadow-warm transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '400ms' }}>
             <CardContent className="p-8 text-center">
               <Award className="h-12 w-12 text-success mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-foreground mb-3">Evidence-Based Methods</h3>

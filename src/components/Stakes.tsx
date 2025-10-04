@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertTriangle, Clock, Heart, HeadphonesIcon, Brain, Users } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const stakes = [
   {
@@ -36,10 +37,12 @@ const stakes = [
 ];
 
 const Stakes = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
+  
   return (
-    <section className="py-20 bg-warm-gray-light/30">
+    <section ref={elementRef} className="py-20 bg-warm-gray-light/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="flex items-center justify-center gap-2 mb-6">
             <AlertTriangle className="h-8 w-8 text-warning" />
             <span className="text-warning font-semibold text-lg">Don't Let Service Gaps Hurt Your Family</span>
@@ -58,7 +61,13 @@ const Stakes = () => {
           {stakes.map((stake, index) => {
             const Icon = stake.icon;
             return (
-              <Card key={index} className="border-l-4 border-l-warning bg-card hover:shadow-card transition-all duration-300">
+              <Card 
+                key={index} 
+                className={`border-l-4 border-l-warning bg-card hover:shadow-card transition-all duration-500 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: `${index * 80}ms` }}
+              >
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 p-3 bg-warning/10 rounded-lg">

@@ -6,10 +6,13 @@ import EmpathyCompetency from "@/components/EmpathyCompetency";
 import Plan from "@/components/Plan";
 import ExplanatoryParagraph from "@/components/ExplanatoryParagraph";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ScrollProgress";
+import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <ScrollProgress />
       <Header />
       <main>
         <Hero />
@@ -20,6 +23,7 @@ const Index = () => {
         <ExplanatoryParagraph />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 };
