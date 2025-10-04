@@ -7,8 +7,15 @@ import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
+import { useEffect } from "react";
 
 const Services = () => {
+  // SEO
+  useEffect(() => {
+    document.title = "Services | Aiyana Services";
+    const meta = document.querySelector('meta[name="description"]') || (() => { const m = document.createElement('meta'); m.setAttribute('name','description'); document.head.appendChild(m); return m; })();
+    meta.setAttribute('content','Integrated respite care, ADHD and Autism assessments, and coordinated family support services in Edmonton.');
+  }, []);
   return (
     <div className="min-h-screen">
       <ScrollProgress />

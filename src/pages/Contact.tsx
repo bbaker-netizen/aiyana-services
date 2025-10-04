@@ -6,9 +6,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useEffect } from "react";
 
 const Contact = () => {
   const { elementRef, isVisible } = useScrollAnimation();
+  // SEO
+  useEffect(() => {
+    document.title = "Contact | Aiyana Services";
+    const meta = document.querySelector('meta[name="description"]') || (() => { const m = document.createElement('meta'); m.setAttribute('name','description'); document.head.appendChild(m); return m; })();
+    meta.setAttribute('content','Contact Aiyana Services in Edmonton for respite care, assessments, and integrated family support.');
+  }, []);
 
   return (
     <div className="min-h-screen">

@@ -5,8 +5,15 @@ import ExplanatoryParagraph from "@/components/ExplanatoryParagraph";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import { Users } from "lucide-react";
+import { useEffect } from "react";
 
 const About = () => {
+  // SEO
+  useEffect(() => {
+    document.title = "About | Aiyana Services";
+    const meta = document.querySelector('meta[name="description"]') || (() => { const m = document.createElement('meta'); m.setAttribute('name','description'); document.head.appendChild(m); return m; })();
+    meta.setAttribute('content','Learn about Aiyana Services\' mission, values, and dedicated team supporting families across Edmonton.');
+  }, []);
   return (
     <div className="min-h-screen">
       <ScrollProgress />
