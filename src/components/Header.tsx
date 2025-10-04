@@ -6,11 +6,11 @@ const Header = () => {
   const location = useLocation();
   
   return (
-    <header className="w-full bg-card sticky top-0 z-50 shadow-card border-b border-border">
+    <header className="w-full bg-card sticky top-0 z-50 border-b border-border">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <h1 className="text-2xl font-display font-bold bg-gradient-hero bg-clip-text text-transparent">
+            <h1 className="text-2xl font-display font-bold text-primary">
               Aiyana Services
             </h1>
           </Link>

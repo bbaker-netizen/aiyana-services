@@ -29,9 +29,9 @@ const Index = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="hover:shadow-elegant transition-all duration-300 group">
+              <Card className="transition-all duration-300 group">
                 <CardContent className="p-8 text-center">
-                  <div className="inline-flex p-4 bg-primary/10 rounded-xl mb-6 group-hover:scale-110 transition-transform">
+                  <div className="inline-flex p-4 bg-primary text-primary-foreground rounded-xl mb-6 group-hover:scale-110 transition-transform">
                     <Heart className="h-12 w-12 text-primary" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-4">Our Services</h3>
@@ -47,9 +47,9 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-elegant transition-all duration-300 group">
+              <Card className="transition-all duration-300 group">
                 <CardContent className="p-8 text-center">
-                  <div className="inline-flex p-4 bg-secondary/10 rounded-xl mb-6 group-hover:scale-110 transition-transform">
+                  <div className="inline-flex p-4 bg-secondary text-secondary-foreground rounded-xl mb-6 group-hover:scale-110 transition-transform">
                     <Users className="h-12 w-12 text-secondary" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-4">About Us</h3>
@@ -65,9 +65,9 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-elegant transition-all duration-300 group">
+              <Card className="transition-all duration-300 group">
                 <CardContent className="p-8 text-center">
-                  <div className="inline-flex p-4 bg-success/10 rounded-xl mb-6 group-hover:scale-110 transition-transform">
+                  <div className="inline-flex p-4 bg-success text-success-foreground rounded-xl mb-6 group-hover:scale-110 transition-transform">
                     <Phone className="h-12 w-12 text-success" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-4">Contact Us</h3>
