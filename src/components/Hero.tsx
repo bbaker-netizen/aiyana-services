@@ -44,12 +44,12 @@ const Hero = () => {
             integrated care for families navigating ADHD, Autism, IDD, addiction, and dual diagnoses.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Button variant="cta" size="xl" className="group">
+          <div className="flex flex-col sm:flex-row gap-4 mb-12 md:mb-16">
+            <Button variant="cta" size="xl" className="group w-full sm:w-auto">
               Reserve Respite Care
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
-            <Button variant="cta-outline" size="xl" className="group">
+            <Button variant="cta-outline" size="xl" className="group w-full sm:w-auto">
               Book Assessment
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1 opacity-0 group-hover:opacity-100" />
             </Button>
