@@ -90,7 +90,7 @@ const Plan = () => {
           })}
         </div>
         
-        <div className={`bg-card/60 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-center shadow-card transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+        <div className={`bg-card rounded-2xl p-8 md:p-12 text-center shadow-card border border-border transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             Ready to Get Started?
           </h3>

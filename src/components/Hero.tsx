@@ -28,7 +28,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-5xl">
           {/* Trust badge */}
-          <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full glass border border-primary/20 shadow-card">
+          <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full bg-card border border-primary/20 shadow-card">
             <Shield className="h-4 w-4 text-primary animate-pulse" />
             <span className="text-sm font-medium bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Edmonton's Trusted Care Provider • RCAC Licensed
@@ -60,7 +60,7 @@ const Hero = () => {
           
           {/* Animated statistics cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="glass-strong rounded-xl p-6 shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-[1.02] group">
+            <div className="bg-card rounded-xl p-6 shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-[1.02] group border border-border">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-lg bg-gradient-hero shadow-glow">
                   <Clock className="h-6 w-6 text-primary-foreground" />
@@ -74,7 +74,7 @@ const Hero = () => {
               </div>
             </div>
             
-            <div ref={familiesCount.ref} className="glass-strong rounded-xl p-6 shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-[1.02] group">
+            <div ref={familiesCount.ref} className="bg-card rounded-xl p-6 shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-[1.02] group border border-border">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-lg bg-gradient-hero shadow-glow">
                   <Heart className="h-6 w-6 text-primary-foreground" />
@@ -88,7 +88,7 @@ const Hero = () => {
               </div>
             </div>
             
-            <div ref={experienceCount.ref} className="glass-strong rounded-xl p-6 shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-[1.02] group">
+            <div ref={experienceCount.ref} className="bg-card rounded-xl p-6 shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-[1.02] group border border-border">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-lg bg-gradient-hero shadow-glow">
                   <Shield className="h-6 w-6 text-primary-foreground" />

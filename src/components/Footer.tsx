@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -46,24 +47,24 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6">About Us</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#mission" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/about" className="text-background/80 hover:text-primary-light transition-colors">
                   Our Mission
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#team" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/about" className="text-background/80 hover:text-primary-light transition-colors">
                   Our Team
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#testimonials" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/about" className="text-background/80 hover:text-primary-light transition-colors">
                   Testimonials
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#careers" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/about" className="text-background/80 hover:text-primary-light transition-colors">
                   Careers
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -73,29 +74,29 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6">Services</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#respite-care" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/services" className="text-background/80 hover:text-primary-light transition-colors">
                   Respite Care
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#adhd-assessment" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/services" className="text-background/80 hover:text-primary-light transition-colors">
                   ADHD Assessment
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#autism-evaluation" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/services" className="text-background/80 hover:text-primary-light transition-colors">
                   Autism Evaluation
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#addiction-support" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/services" className="text-background/80 hover:text-primary-light transition-colors">
                   Addiction Support
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#dual-diagnosis" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/services" className="text-background/80 hover:text-primary-light transition-colors">
                   Dual Diagnosis Care
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -121,14 +122,14 @@ const Footer = () => {
           <div>
             <ul className="flex flex-wrap gap-6 text-sm">
               <li>
-                <a href="#contact" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/contact" className="text-background/80 hover:text-primary-light transition-colors">
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#faqs" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/contact" className="text-background/80 hover:text-primary-light transition-colors">
                   FAQs
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#privacy" className="text-background/80 hover:text-primary-light transition-colors">

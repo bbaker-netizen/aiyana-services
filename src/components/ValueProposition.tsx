@@ -54,7 +54,7 @@ const ValueProposition = () => {
             return (
               <Card 
                 key={index} 
-                className={`border-0 bg-card/60 backdrop-blur-sm hover:bg-card/80 transition-all duration-500 hover:shadow-card ${
+                className={`bg-card hover:shadow-elegant transition-all duration-500 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
@@ -79,7 +79,7 @@ const ValueProposition = () => {
           })}
         </div>
         
-        <div className={`bg-card/60 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-center shadow-card transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+        <div className={`bg-card rounded-2xl p-8 md:p-12 text-center shadow-card border border-border transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           <Shield className="h-16 w-16 text-primary mx-auto mb-6" />
           <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             Your Peace of Mind is Our Priority
