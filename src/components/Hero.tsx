@@ -46,15 +46,15 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12 md:mb-16">
-            <Link to="/services/respite-care" className="w-full sm:w-auto">
+            <Link to="/contact" className="w-full sm:w-auto">
               <Button variant="cta" size="xl" className="group w-full">
-                Reserve Respite Care
+                Book Respite Care
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
-            <Link to="/contact" className="w-full sm:w-auto">
+            <Link to="/services/respite-care" className="w-full sm:w-auto">
               <Button variant="cta-outline" size="xl" className="group w-full">
-                Book Assessment
+                Learn More
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1 opacity-0 group-hover:opacity-100" />
               </Button>
             </Link>
