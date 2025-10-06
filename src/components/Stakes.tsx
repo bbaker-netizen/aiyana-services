@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertTriangle, Clock, Heart, HeadphonesIcon, Brain, Users } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 const stakes = [
   {
@@ -92,9 +93,11 @@ const Stakes = () => {
           <p className="text-lg text-foreground mb-8 font-medium">
             Your family deserves better. Take action before it's too late.
           </p>
-          <Button variant="cta" size="xl">
-            Reserve Respite Care Today
-          </Button>
+          <Link to="/services/respite-care">
+            <Button variant="cta" size="xl">
+              Reserve Respite Care Today
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

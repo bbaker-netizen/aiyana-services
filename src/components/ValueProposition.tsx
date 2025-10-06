@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Clock, Shield, Heart, Users, ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 const values = [
   {
@@ -88,9 +89,11 @@ const ValueProposition = () => {
             With Aiyana Services, you're not just getting care – you're gaining a partner 
             who understands your journey and is committed to your family's success.
           </p>
-          <Button variant="cta" size="xl">
-            Reserve Respite Care
-          </Button>
+          <Link to="/services/respite-care">
+            <Button variant="cta" size="xl">
+              Reserve Respite Care
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

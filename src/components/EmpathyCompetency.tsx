@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Star, Quote, Award, Users, Heart, Shield } from "lucide-react";
 import professionalsSupport from "@/assets/professionals-support.jpg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 const EmpathyCompetency = () => {
   const { elementRef, isVisible } = useScrollAnimation();
@@ -97,9 +98,11 @@ const EmpathyCompetency = () => {
         </div>
         
         <div className="text-center mt-16">
-          <Button variant="cta" size="xl">
-            Reserve Respite Care
-          </Button>
+          <Link to="/services/respite-care">
+            <Button variant="cta" size="xl">
+              Reserve Respite Care
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

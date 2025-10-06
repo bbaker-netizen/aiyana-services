@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Heart, Shield, Users } from "lucide-react";
 import youthCare from "@/assets/youth-care.jpg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 const ExplanatoryParagraph = () => {
   const { elementRef, isVisible } = useScrollAnimation();
@@ -59,9 +60,11 @@ const ExplanatoryParagraph = () => {
               </Card>
             </div>
             
-            <Button variant="cta" size="xl">
-              Reserve Respite Care
-            </Button>
+            <Link to="/services/respite-care">
+              <Button variant="cta" size="xl">
+                Reserve Respite Care
+              </Button>
+            </Link>
           </div>
           
           <div className={`relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>

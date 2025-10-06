@@ -108,9 +108,11 @@ const Footer = () => {
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Don't wait for help. Contact us today and take the first step toward comprehensive care for your family.
           </p>
-          <Button variant="cta" size="xl">
-            Reserve Respite Care
-          </Button>
+          <Link to="/services/respite-care">
+            <Button variant="cta" size="xl">
+              Reserve Respite Care
+            </Button>
+          </Link>
         </div>
         
         {/* Bottom Section */}
