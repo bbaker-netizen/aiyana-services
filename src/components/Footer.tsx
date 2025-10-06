@@ -125,19 +125,19 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/faq" className="text-background/80 hover:text-primary-light transition-colors">
                   FAQs
                 </Link>
               </li>
               <li>
-                <a href="#privacy" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/privacy-policy" className="text-background/80 hover:text-primary-light transition-colors">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#terms" className="text-background/80 hover:text-primary-light transition-colors">
+                <Link to="/terms-of-service" className="text-background/80 hover:text-primary-light transition-colors">
                   Terms of Service
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
