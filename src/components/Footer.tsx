@@ -144,7 +144,7 @@ const Footer = () => {
           
           <div className="text-right">
             <p className="text-background/60 text-sm">
-              © 2024 Aiyana Services Inc. All rights reserved.
+              © 2025 Aiyana Services Inc. All rights reserved.
             </p>
           </div>
         </div>
