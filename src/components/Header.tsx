@@ -13,21 +13,21 @@ const Header = () => {
   
   return (
     <header className="w-full bg-card sticky top-0 z-50 border-b border-border">
-      <div className="container mx-auto px-4 py-3 md:py-4">
+      <div className="container mx-auto px-4 py-2 md:py-3 lg:py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3" onClick={() => setMobileMenuOpen(false)}>
+          <Link to="/" className="flex items-center gap-2 md:gap-3" onClick={() => setMobileMenuOpen(false)}>
             <img 
               src={logo} 
               alt="Aiyana Services - Compassionate Care in Edmonton" 
-              className="h-20 md:h-24 lg:h-32 w-auto object-contain"
+              className="h-16 md:h-20 lg:h-28 w-auto object-contain"
             />
             <div className="flex flex-col">
-              <span className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-foreground">AIYANA</span>
-              <span className="text-xs md:text-sm text-muted-foreground tracking-wider">Services</span>
+              <span className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-display font-bold text-foreground">AIYANA</span>
+              <span className="text-[10px] md:text-xs lg:text-sm text-muted-foreground tracking-wider">Services</span>
             </div>
           </Link>
           
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center md:space-x-4 lg:space-x-6 xl:space-x-8">
             <Link 
               to="/services" 
               className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/services' ? 'text-primary' : ''}`}
@@ -46,14 +46,14 @@ const Header = () => {
             >
               Contact
             </Link>
-            <div className="flex items-center space-x-4 border-l border-border pl-6">
-              <div className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors">
-                <Phone className="h-5 w-5 text-primary" />
-                <a href="tel:780-555-0123" className="font-semibold text-primary text-base">
+            <div className="flex items-center md:space-x-2 lg:space-x-4 border-l border-border md:pl-3 lg:pl-6">
+              <div className="flex items-center space-x-2 px-2 lg:px-3 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors">
+                <Phone className="h-4 lg:h-5 w-4 lg:w-5 text-primary" />
+                <a href="tel:780-555-0123" className="font-semibold text-primary text-sm lg:text-base">
                   (780) 555-0123
                 </a>
               </div>
-              <div className="flex items-center space-x-1 text-sm text-muted-foreground">
+              <div className="hidden lg:flex items-center space-x-1 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4" />
                 <a href="mailto:info@aiyanaservices.ca" className="hover:text-primary transition-colors">
                   info@aiyanaservices.ca
