@@ -15,16 +15,12 @@ const Header = () => {
     <header className="w-full bg-card sticky top-0 z-50 border-b border-border">
       <div className="container mx-auto px-4 py-2 md:py-3 lg:py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 md:gap-3" onClick={() => setMobileMenuOpen(false)}>
+          <Link to="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
             <img 
               src={logo} 
               alt="Aiyana Services - Compassionate Care in Edmonton" 
-              className="h-14 md:h-16 lg:h-24 xl:h-28 w-auto object-contain"
+              className="h-20 md:h-24 lg:h-32 xl:h-36 w-auto object-contain"
             />
-            <div className="flex flex-col">
-              <span className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-display font-bold text-foreground">AIYANA</span>
-              <span className="text-[9px] md:text-[10px] lg:text-xs text-muted-foreground tracking-wider">Services</span>
-            </div>
           </Link>
           
           <nav className="hidden lg:flex items-center md:space-x-4 lg:space-x-6 xl:space-x-8">
