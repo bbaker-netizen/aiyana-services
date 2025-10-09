@@ -19,15 +19,15 @@ const Header = () => {
             <img 
               src={logo} 
               alt="Aiyana Services - Compassionate Care in Edmonton" 
-              className="h-16 md:h-20 lg:h-28 w-auto object-contain"
+              className="h-14 md:h-16 lg:h-24 xl:h-28 w-auto object-contain"
             />
             <div className="flex flex-col">
-              <span className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-display font-bold text-foreground">AIYANA</span>
-              <span className="text-[10px] md:text-xs lg:text-sm text-muted-foreground tracking-wider">Services</span>
+              <span className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-display font-bold text-foreground">AIYANA</span>
+              <span className="text-[9px] md:text-[10px] lg:text-xs text-muted-foreground tracking-wider">Services</span>
             </div>
           </Link>
           
-          <nav className="hidden md:flex items-center md:space-x-4 lg:space-x-6 xl:space-x-8">
+          <nav className="hidden lg:flex items-center md:space-x-4 lg:space-x-6 xl:space-x-8">
             <Link 
               to="/services" 
               className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/services' ? 'text-primary' : ''}`}
@@ -47,7 +47,7 @@ const Header = () => {
               Contact
             </Link>
             <div className="flex items-center md:space-x-2 lg:space-x-4 border-l border-border md:pl-3 lg:pl-6">
-              <div className="flex items-center space-x-2 px-2 lg:px-3 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors">
+              <div className="flex items-center space-x-2 px-0 lg:px-3 py-2 rounded-lg lg:bg-primary/10 lg:hover:bg-primary/20 transition-colors">
                 <Phone className="h-4 lg:h-5 w-4 lg:w-5 text-primary" />
                 <a href="tel:780-555-0123" className="font-semibold text-primary text-sm lg:text-base">
                   (780) 555-0123
@@ -63,7 +63,7 @@ const Header = () => {
           </nav>
           
           <div className="flex items-center gap-3">
-            <Button variant="cta" size="lg" className="hidden lg:inline-flex shadow-card hover:shadow-warm">
+            <Button variant="cta" size="lg" className="hidden xl:inline-flex shadow-card hover:shadow-warm">
               Reserve Respite Care
             </Button>
             
