@@ -15,12 +15,16 @@ const Header = () => {
     <header className="w-full bg-card sticky top-0 z-50 border-b border-border">
       <div className="container mx-auto px-4 py-3 md:py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
+          <Link to="/" className="flex items-center gap-3" onClick={() => setMobileMenuOpen(false)}>
             <img 
               src={logo} 
               alt="Aiyana Services - Compassionate Care in Edmonton" 
-              className="h-16 md:h-20 lg:h-28 w-auto object-contain"
+              className="h-20 md:h-24 lg:h-32 w-auto object-contain"
             />
+            <div className="flex flex-col">
+              <span className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-foreground">AIYANA</span>
+              <span className="text-xs md:text-sm text-muted-foreground tracking-wider">Services</span>
+            </div>
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
@@ -42,14 +46,14 @@ const Header = () => {
             >
               Contact
             </Link>
-            <div className="flex items-center space-x-4 text-sm text-muted-foreground border-l border-border pl-6">
-              <div className="flex items-center space-x-1">
-                <Phone className="h-4 w-4" />
-                <a href="tel:780-555-0123" className="hover:text-primary transition-colors">
+            <div className="flex items-center space-x-4 border-l border-border pl-6">
+              <div className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors">
+                <Phone className="h-5 w-5 text-primary" />
+                <a href="tel:780-555-0123" className="font-semibold text-primary text-base">
                   (780) 555-0123
                 </a>
               </div>
-              <div className="flex items-center space-x-1">
+              <div className="flex items-center space-x-1 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4" />
                 <a href="mailto:info@aiyanaservices.ca" className="hover:text-primary transition-colors">
                   info@aiyanaservices.ca

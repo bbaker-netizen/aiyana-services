@@ -1,70 +1,181 @@
 import { Button } from "@/components/ui/button";
 import heroFamily from "@/assets/hero-family.jpg";
-import { ArrowRight, Heart, Shield, Clock } from "lucide-react";
+import professionalsSupport from "@/assets/professionals-support.jpg";
+import youthCare from "@/assets/youth-care.jpg";
+import { ArrowRight, Heart, Shield, Clock, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCountUp } from "@/hooks/useCountUp";
 import { Link } from "react-router-dom";
+import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useEffect, useState } from "react";
+import Autoplay from "embla-carousel-autoplay";
 
 const Hero = () => {
   const familiesCount = useCountUp(500, 2500, '+');
   const experienceCount = useCountUp(15, 2000, '+');
   
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, duration: 30 },
+    [Autoplay({ delay: 6000, stopOnInteraction: false })]
+  );
+  
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+  
+  useEffect(() => {
+    if (!emblaApi) return;
+    
+    const onSelect = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    };
+    
+    emblaApi.on('select', onSelect);
+    onSelect();
+    
+    return () => {
+      emblaApi.off('select', onSelect);
+    };
+  }, [emblaApi]);
+  
+  const slides = [
+    {
+      image: heroFamily,
+      alt: "A loving family receiving support and care from professional healthcare providers",
+      headline: "A New Experience in",
+      headlineAccent: "Youth Care",
+      subtitle: "Compassionate, integrated support for families navigating complex needs"
+    },
+    {
+      image: professionalsSupport,
+      alt: "Professional healthcare providers supporting families with compassion",
+      headline: "Guiding Families Toward",
+      headlineAccent: "Recovery & Hope",
+      subtitle: "Evidence-based care tailored to your child's unique journey"
+    },
+    {
+      image: youthCare,
+      alt: "Youth receiving specialized care and support",
+      headline: "Heal With",
+      headlineAccent: "Evidence-Based Therapies",
+      subtitle: "Expert support for ADHD, Autism, addiction, and dual diagnoses"
+    }
+  ];
+  
   return (
-    <section className="relative min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden">
-      {/* Background with sophisticated gradient overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroFamily}
-          alt="A loving family receiving support and care from professional healthcare providers"
-          className="w-full h-full object-cover opacity-15 scale-105"
-          style={{ objectPosition: '50% 40%' }}
-        />
-        <div className="absolute inset-0 bg-background" />
+    <section className="relative overflow-hidden">
+      {/* Trust Banner */}
+      <div className="bg-primary/5 border-b border-primary/10 py-3">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm">
+            <div className="flex items-center gap-2">
+              <Shield className="h-4 w-4 text-primary" />
+              <span className="font-semibold text-foreground">RCAC Licensed Provider</span>
+            </div>
+            <div className="hidden sm:block h-4 w-px bg-border" />
+            <div className="flex items-center gap-2">
+              <Heart className="h-4 w-4 text-primary" />
+              <span className="font-medium text-muted-foreground">500+ Families Supported</span>
+            </div>
+            <div className="hidden sm:block h-4 w-px bg-border" />
+            <div className="flex items-center gap-2">
+              <Clock className="h-4 w-4 text-primary" />
+              <span className="font-medium text-muted-foreground">24/7 Emergency Support</span>
+            </div>
+          </div>
+        </div>
       </div>
       
-      {/* Decorative gradient blobs */}
+      {/* Carousel */}
+      <div className="relative min-h-[700px] md:min-h-[800px]" ref={emblaRef}>
+        <div className="flex">
+          {slides.map((slide, index) => (
+            <div key={index} className="flex-[0_0_100%] min-w-0 relative">
+              {/* Background Image with Overlay */}
+              <div className="absolute inset-0">
+                <img
+                  src={slide.image}
+                  alt={slide.alt}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+              </div>
+              
+              {/* Content */}
+              <div className="relative z-10 container mx-auto px-4 h-full min-h-[700px] md:min-h-[800px] flex items-center">
+                <div className="max-w-4xl animate-fade-in">
+                  <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-[1.05] tracking-tight">
+                    {slide.headline}
+                    <br />
+                    <span className="text-primary italic">
+                      {slide.headlineAccent}
+                    </span>
+                  </h1>
+                  
+                  <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
+                    {slide.subtitle}
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link to="/contact">
+                      <Button variant="cta" size="xl" className="group w-full sm:w-auto">
+                        Book Respite Care
+                        <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                      </Button>
+                    </Link>
+                    <Link to="/services">
+                      <Button variant="cta-outline" size="xl" className="group w-full sm:w-auto">
+                        Explore Services
+                        <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1 opacity-0 group-hover:opacity-100" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* Navigation Arrows */}
+        <button
+          onClick={scrollPrev}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-background/80 hover:bg-background border border-border rounded-full p-3 transition-all hover:scale-110 shadow-lg hidden md:flex items-center justify-center"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="h-6 w-6 text-foreground" />
+        </button>
+        <button
+          onClick={scrollNext}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-background/80 hover:bg-background border border-border rounded-full p-3 transition-all hover:scale-110 shadow-lg hidden md:flex items-center justify-center"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="h-6 w-6 text-foreground" />
+        </button>
+        
+        {/* Dots Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => emblaApi?.scrollTo(index)}
+              className={`h-2 rounded-full transition-all ${
+                index === selectedIndex 
+                  ? 'w-8 bg-primary' 
+                  : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
       
-      <div className="container mx-auto px-4 py-12 md:py-16 relative z-10">
-        <div className="max-w-5xl">
-          {/* Trust badge */}
-          <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full bg-card border border-primary/20">
-            <Shield className="h-4 w-4 text-primary animate-pulse" />
-            <span className="text-sm font-medium text-primary">
-              Edmonton's Trusted Care Provider • RCAC Licensed
-            </span>
-          </div>
-          
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-[1.1] tracking-tight">
-            Comprehensive Care for{" "}
-            <span className="text-primary">
-              Youth with Complex Needs
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl leading-relaxed font-light">
-            Are you struggling to find support for your child? We provide compassionate, 
-            integrated care for families navigating ADHD, Autism, IDD, addiction, and dual diagnoses.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 mb-12 md:mb-16">
-            <Link to="/contact" className="w-full sm:w-auto">
-              <Button variant="cta" size="xl" className="group w-full">
-                Book Respite Care
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </Link>
-            <Link to="/services/respite-care" className="w-full sm:w-auto">
-              <Button variant="cta-outline" size="xl" className="group w-full">
-                Learn More
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1 opacity-0 group-hover:opacity-100" />
-              </Button>
-            </Link>
-          </div>
-          
-          {/* Animated statistics cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-card rounded-xl p-6 border border-border">
+      {/* Statistics Section */}
+      <div className="bg-background py-12 border-t border-border">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-colors">
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-lg bg-primary text-primary-foreground">
+                <div className="p-3 rounded-lg bg-primary/10 text-primary">
                   <Clock className="h-6 w-6" />
                 </div>
                 <div>
@@ -74,9 +185,9 @@ const Hero = () => {
               </div>
             </div>
             
-            <div ref={familiesCount.ref} className="bg-card rounded-xl p-6 border border-border">
+            <div ref={familiesCount.ref} className="bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-colors">
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-lg bg-primary text-primary-foreground">
+                <div className="p-3 rounded-lg bg-primary/10 text-primary">
                   <Heart className="h-6 w-6" />
                 </div>
                 <div>
@@ -86,9 +197,9 @@ const Hero = () => {
               </div>
             </div>
             
-            <div ref={experienceCount.ref} className="bg-card rounded-xl p-6 border border-border">
+            <div ref={experienceCount.ref} className="bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-colors">
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-lg bg-primary text-primary-foreground">
+                <div className="p-3 rounded-lg bg-primary/10 text-primary">
                   <Shield className="h-6 w-6" />
                 </div>
                 <div>
