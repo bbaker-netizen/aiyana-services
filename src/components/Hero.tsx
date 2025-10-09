@@ -14,8 +14,8 @@ const Hero = () => {
   const experienceCount = useCountUp(15, 2000, '+');
   
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, duration: 30 },
-    [Autoplay({ delay: 6000, stopOnInteraction: false })]
+    { loop: true },
+    [Autoplay({ delay: 8000, stopOnInteraction: true })]
   );
   
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -65,7 +65,7 @@ const Hero = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Trust Banner */}
-      <div className="bg-primary/5 border-b border-primary/10 py-3">
+      <div className="bg-primary/5 border-b border-primary/10 py-2">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm">
             <div className="flex items-center gap-2">
@@ -88,7 +88,7 @@ const Hero = () => {
       
       {/* Carousel */}
       <div className="relative min-h-[700px] md:min-h-[800px]" ref={emblaRef}>
-        <div className="flex">
+        <div className="flex transition-transform duration-700 ease-in-out will-change-transform">
           {slides.map((slide, index) => (
             <div key={index} className="flex-[0_0_100%] min-w-0 relative">
               {/* Background Image with Overlay */}
