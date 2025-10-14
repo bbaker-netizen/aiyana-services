@@ -19,7 +19,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="Aiyana Services - Compassionate Care in Edmonton" 
-              className="h-20 md:h-24 lg:h-32 xl:h-36 w-auto object-contain"
+              className="h-14 md:h-16 lg:h-20 xl:h-24 w-auto object-contain"
             />
           </Link>
           
