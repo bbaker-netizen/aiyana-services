@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import heroFamily from "@/assets/hero-family.jpg";
 import professionalsSupport from "@/assets/professionals-support.jpg";
 import youthCare from "@/assets/youth-care.jpg";
-import { ArrowRight, Heart, Shield, Clock, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Shield, Clock, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCountUp } from "@/hooks/useCountUp";
 import { Link } from "react-router-dom";
 import useEmblaCarousel from "embla-carousel-react";
@@ -10,7 +10,6 @@ import { useCallback, useEffect, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
 
 const Hero = () => {
-  const familiesCount = useCountUp(500, 2500, '+');
   const experienceCount = useCountUp(15, 2000, '+');
   
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -71,11 +70,6 @@ const Hero = () => {
             <div className="flex items-center gap-2">
               <Shield className="h-4 w-4 text-primary" />
               <span className="font-semibold text-foreground">RCAC Licensed Provider</span>
-            </div>
-            <div className="hidden sm:block h-4 w-px bg-border" />
-            <div className="flex items-center gap-2">
-              <Heart className="h-4 w-4 text-primary" />
-              <span className="font-medium text-muted-foreground">500+ Families Supported</span>
             </div>
             <div className="hidden sm:block h-4 w-px bg-border" />
             <div className="flex items-center gap-2">
@@ -172,7 +166,7 @@ const Hero = () => {
       {/* Statistics Section */}
       <div className="bg-background py-12 border-t border-border">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <div className="bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-colors">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-lg bg-primary/10 text-primary">
@@ -181,18 +175,6 @@ const Hero = () => {
                 <div>
                   <div className="text-3xl font-display font-bold text-primary mb-1">24/7</div>
                   <div className="text-sm text-muted-foreground font-medium">Emergency Support Available</div>
-                </div>
-              </div>
-            </div>
-            
-            <div ref={familiesCount.ref} className="bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-colors">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                  <Heart className="h-6 w-6" />
-                </div>
-                <div>
-                  <div className="text-3xl font-display font-bold text-primary mb-1">{familiesCount.count}</div>
-                  <div className="text-sm text-muted-foreground font-medium">Families Supported</div>
                 </div>
               </div>
             </div>
