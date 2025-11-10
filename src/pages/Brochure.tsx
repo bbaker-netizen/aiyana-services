@@ -41,15 +41,21 @@ const Brochure = () => {
           
           /* Add our own margins to content */
           .brochure-container {
-            margin: 0.75in !important;
+            margin: 0.5in !important;
             padding: 0 !important;
             box-shadow: none !important;
           }
           
-          /* Ensure clean page breaks */
+          /* Page break handling */
           .brochure-section {
-            page-break-inside: avoid;
-            break-inside: avoid;
+            page-break-inside: auto;
+            break-inside: auto;
+          }
+          .brochure-section h1,
+          .brochure-section h2,
+          .brochure-section h3 {
+            page-break-after: avoid;
+            break-after: avoid;
           }
           
           .service-card {
@@ -58,6 +64,20 @@ const Brochure = () => {
             box-shadow: none !important;
             border: 1px solid #ddd !important;
           }
+          
+          /* Compact spacing for print */
+          .mb-8 { margin-bottom: 12pt !important; }
+          .mb-6 { margin-bottom: 10pt !important; }
+          .pb-6 { padding-bottom: 8pt !important; }
+          .gap-6 { gap: 10pt !important; }
+          .gap-4 { gap: 8pt !important; }
+          .p-6 { padding: 12pt !important; }
+          .p-4 { padding: 10pt !important; }
+          .h-20 { height: 56px !important; }
+          .text-4xl { font-size: 26pt !important; line-height: 1.2 !important; }
+          .text-3xl { font-size: 18pt !important; line-height: 1.3 !important; }
+          .text-2xl { font-size: 16pt !important; }
+          .text-xl { font-size: 13pt !important; }
         }
         
         @media screen {
