@@ -62,6 +62,7 @@ const Brochure = () => {
           .why-choose-section {
             page-break-before: always !important;
             break-before: page !important;
+            margin-top: 0.5in !important;
           }
           
           .service-card {
