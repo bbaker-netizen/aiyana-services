@@ -11,23 +11,39 @@ const Brochure = () => {
     <>
       <style>{`
         @media print {
-          /* Remove all web elements */
+          /* Critical: Remove browser headers/footers */
           @page {
-            margin: 0.75in;
+            margin: 0;
             size: letter;
           }
           
-          body {
+          html, body {
+            margin: 0 !important;
+            padding: 0 !important;
             print-color-adjust: exact;
             -webkit-print-color-adjust: exact;
           }
           
-          /* Hide URLs and dates that browsers add */
+          /* Hide browser-generated headers and footers */
           body::before,
           body::after,
+          header::before,
+          header::after {
+            display: none !important;
+            content: none !important;
+          }
+          
+          /* Remove link URLs from printing */
           a[href]::after {
             content: none !important;
             display: none !important;
+          }
+          
+          /* Add our own margins to content */
+          .brochure-container {
+            margin: 0.75in !important;
+            padding: 0 !important;
+            box-shadow: none !important;
           }
           
           /* Ensure clean page breaks */
@@ -39,14 +55,6 @@ const Brochure = () => {
           .service-card {
             page-break-inside: avoid;
             break-inside: avoid;
-          }
-          
-          /* Remove shadows and use solid borders for print */
-          .brochure-container {
-            box-shadow: none !important;
-          }
-          
-          .service-card {
             box-shadow: none !important;
             border: 1px solid #ddd !important;
           }
@@ -84,7 +92,13 @@ const Brochure = () => {
       `}</style>
 
       <div className="print-hint">
-        Press Ctrl/Cmd + P to Print or Save as PDF
+        <div className="font-bold mb-2">Print Instructions:</div>
+        <div className="text-sm space-y-1">
+          <div>1. Press Ctrl/Cmd + P</div>
+          <div>2. In print dialog, turn OFF "Headers and Footers"</div>
+          <div>3. Set margins to "None" or "Minimum"</div>
+          <div>4. Save as PDF or Print</div>
+        </div>
       </div>
 
       <div className="brochure-container">
