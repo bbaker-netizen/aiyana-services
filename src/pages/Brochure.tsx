@@ -333,7 +333,7 @@ const Brochure = () => {
 
         {/* Footer */}
         <footer className="brochure-section mt-8 text-center text-xs" style={{ color: 'hsl(215 15% 45%)' }}>
-          <p>© 2024 Aiyana Services. All rights reserved. | Serving families across Edmonton and surrounding areas.</p>
+          <p>© 2025 Aiyana Services. All rights reserved. | Serving families across Edmonton and surrounding areas.</p>
         </footer>
       </div>
     </>
