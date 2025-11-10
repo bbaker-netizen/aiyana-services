@@ -1,0 +1,302 @@
+import { useEffect } from "react";
+import logo from "@/assets/aiyana-logo.png";
+import { Heart, Clock, Users, Brain, Activity, Shield, Phone, Mail, MapPin } from "lucide-react";
+
+const Brochure = () => {
+  useEffect(() => {
+    document.title = "Aiyana Services - Professional Brochure";
+  }, []);
+
+  return (
+    <>
+      <style>{`
+        @media print {
+          /* Remove all web elements */
+          @page {
+            margin: 0.75in;
+            size: letter;
+          }
+          
+          body {
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+          }
+          
+          /* Hide URLs and dates that browsers add */
+          body::before,
+          body::after,
+          a[href]::after {
+            content: none !important;
+            display: none !important;
+          }
+          
+          /* Ensure clean page breaks */
+          .brochure-section {
+            page-break-inside: avoid;
+            break-inside: avoid;
+          }
+          
+          .service-card {
+            page-break-inside: avoid;
+            break-inside: avoid;
+          }
+          
+          /* Remove shadows and use solid borders for print */
+          .brochure-container {
+            box-shadow: none !important;
+          }
+          
+          .service-card {
+            box-shadow: none !important;
+            border: 1px solid #ddd !important;
+          }
+        }
+        
+        @media screen {
+          .brochure-container {
+            max-width: 8.5in;
+            min-height: 11in;
+            margin: 2rem auto;
+            background: white;
+            box-shadow: 0 0 40px rgba(0,0,0,0.1);
+            padding: 0.75in;
+          }
+          
+          .print-hint {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: hsl(168 52% 42%);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            font-weight: 600;
+            z-index: 1000;
+          }
+        }
+        
+        @media print {
+          .print-hint {
+            display: none !important;
+          }
+        }
+      `}</style>
+
+      <div className="print-hint">
+        Press Ctrl/Cmd + P to Print or Save as PDF
+      </div>
+
+      <div className="brochure-container">
+        {/* Header */}
+        <header className="brochure-section text-center mb-8 pb-6 border-b-2" style={{ borderColor: 'hsl(168 52% 42%)' }}>
+          <img 
+            src={logo} 
+            alt="Aiyana Services" 
+            className="h-20 mx-auto mb-4"
+          />
+          <h1 className="text-4xl font-bold mb-2" style={{ color: 'hsl(168 52% 42%)' }}>
+            Aiyana Services
+          </h1>
+          <p className="text-xl" style={{ color: 'hsl(215 25% 27%)' }}>
+            Compassionate, Integrated Care for Children & Families in Edmonton
+          </p>
+        </header>
+
+        {/* Mission Statement */}
+        <section className="brochure-section mb-8">
+          <div className="bg-gradient-to-r p-6 rounded-lg" style={{ 
+            background: 'linear-gradient(135deg, hsl(168 52% 95%), hsl(15 58% 95%))',
+            border: '2px solid hsl(168 52% 42%)'
+          }}>
+            <h2 className="text-2xl font-bold mb-3 flex items-center gap-2" style={{ color: 'hsl(168 52% 42%)' }}>
+              <Heart className="h-6 w-6" />
+              Our Mission
+            </h2>
+            <p className="text-base leading-relaxed" style={{ color: 'hsl(215 25% 27%)' }}>
+              At Aiyana Services, we provide comprehensive, family-centered care for children with developmental 
+              challenges, ADHD, Autism, and addiction concerns. Our integrated approach combines respite care, 
+              professional assessments, and ongoing support to help families thrive. Located in Edmonton, we serve 
+              families with compassion, evidence-based practices, and personalized care plans.
+            </p>
+          </div>
+        </section>
+
+        {/* Services Grid */}
+        <section className="brochure-section mb-8">
+          <h2 className="text-3xl font-bold mb-6 text-center" style={{ color: 'hsl(168 52% 42%)' }}>
+            Our Services
+          </h2>
+          
+          <div className="grid grid-cols-2 gap-4 mb-6">
+            {/* Respite Care */}
+            <div className="service-card p-4 rounded-lg border-2" style={{ borderColor: 'hsl(168 52% 42%)', background: 'hsl(0 0% 99%)' }}>
+              <div className="flex items-start gap-3 mb-2">
+                <Clock className="h-8 w-8 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
+                <div>
+                  <h3 className="text-lg font-bold mb-1" style={{ color: 'hsl(215 25% 27%)' }}>
+                    Respite Care
+                  </h3>
+                  <p className="text-sm leading-snug" style={{ color: 'hsl(215 15% 45%)' }}>
+                    Flexible, compassionate breaks for caregivers. Our trained professionals provide 
+                    safe, engaging care for children with complex needs, giving families time to recharge.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* ADHD Assessment */}
+            <div className="service-card p-4 rounded-lg border-2" style={{ borderColor: 'hsl(168 52% 42%)', background: 'hsl(0 0% 99%)' }}>
+              <div className="flex items-start gap-3 mb-2">
+                <Brain className="h-8 w-8 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
+                <div>
+                  <h3 className="text-lg font-bold mb-1" style={{ color: 'hsl(215 25% 27%)' }}>
+                    ADHD Assessment
+                  </h3>
+                  <p className="text-sm leading-snug" style={{ color: 'hsl(215 15% 45%)' }}>
+                    Comprehensive evaluations using evidence-based tools. We assess attention, 
+                    hyperactivity, and executive function to guide effective treatment strategies.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Autism Evaluation */}
+            <div className="service-card p-4 rounded-lg border-2" style={{ borderColor: 'hsl(168 52% 42%)', background: 'hsl(0 0% 99%)' }}>
+              <div className="flex items-start gap-3 mb-2">
+                <Users className="h-8 w-8 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
+                <div>
+                  <h3 className="text-lg font-bold mb-1" style={{ color: 'hsl(215 25% 27%)' }}>
+                    Autism Evaluation
+                  </h3>
+                  <p className="text-sm leading-snug" style={{ color: 'hsl(215 15% 45%)' }}>
+                    Thorough autism spectrum assessments using gold-standard diagnostic tools. 
+                    We provide clear reports and recommendations for support and intervention.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Addiction Support */}
+            <div className="service-card p-4 rounded-lg border-2" style={{ borderColor: 'hsl(168 52% 42%)', background: 'hsl(0 0% 99%)' }}>
+              <div className="flex items-start gap-3 mb-2">
+                <Activity className="h-8 w-8 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
+                <div>
+                  <h3 className="text-lg font-bold mb-1" style={{ color: 'hsl(215 25% 27%)' }}>
+                    Addiction Support
+                  </h3>
+                  <p className="text-sm leading-snug" style={{ color: 'hsl(215 15% 45%)' }}>
+                    Specialized care for youth struggling with substance use. Family-focused 
+                    interventions, counseling, and coordinated treatment planning.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Dual Diagnosis - Full Width */}
+          <div className="service-card p-4 rounded-lg border-2" style={{ borderColor: 'hsl(168 52% 42%)', background: 'hsl(0 0% 99%)' }}>
+            <div className="flex items-start gap-3">
+              <Shield className="h-8 w-8 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
+              <div>
+                <h3 className="text-lg font-bold mb-1" style={{ color: 'hsl(215 25% 27%)' }}>
+                  Dual Diagnosis Support
+                </h3>
+                <p className="text-sm leading-snug" style={{ color: 'hsl(215 15% 45%)' }}>
+                  Integrated care for children with both developmental challenges and mental health or addiction 
+                  concerns. Our holistic approach addresses multiple needs simultaneously for better outcomes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us */}
+        <section className="brochure-section mb-8">
+          <h2 className="text-2xl font-bold mb-4" style={{ color: 'hsl(168 52% 42%)' }}>
+            Why Choose Aiyana Services?
+          </h2>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ background: 'hsl(168 52% 42%)' }}></div>
+                <p className="text-sm" style={{ color: 'hsl(215 25% 27%)' }}>
+                  <strong>Integrated Care:</strong> All services under one roof for seamless coordination
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ background: 'hsl(168 52% 42%)' }}></div>
+                <p className="text-sm" style={{ color: 'hsl(215 25% 27%)' }}>
+                  <strong>Qualified Team:</strong> Licensed professionals with specialized training
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ background: 'hsl(168 52% 42%)' }}></div>
+                <p className="text-sm" style={{ color: 'hsl(215 25% 27%)' }}>
+                  <strong>Family-Centered:</strong> We involve families in every step of care
+                </p>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ background: 'hsl(168 52% 42%)' }}></div>
+                <p className="text-sm" style={{ color: 'hsl(215 25% 27%)' }}>
+                  <strong>Evidence-Based:</strong> Latest research guides our practices
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ background: 'hsl(168 52% 42%)' }}></div>
+                <p className="text-sm" style={{ color: 'hsl(215 25% 27%)' }}>
+                  <strong>Flexible Options:</strong> Services tailored to your family's needs
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ background: 'hsl(168 52% 42%)' }}></div>
+                <p className="text-sm" style={{ color: 'hsl(215 25% 27%)' }}>
+                  <strong>Local Expertise:</strong> Deep understanding of Edmonton resources
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Information */}
+        <section className="brochure-section mt-8 pt-6 border-t-2" style={{ borderColor: 'hsl(168 52% 42%)' }}>
+          <h2 className="text-2xl font-bold mb-4 text-center" style={{ color: 'hsl(168 52% 42%)' }}>
+            Get Started Today
+          </h2>
+          <div className="grid grid-cols-3 gap-6 text-center">
+            <div>
+              <Phone className="h-8 w-8 mx-auto mb-2" style={{ color: 'hsl(168 52% 42%)' }} />
+              <h3 className="font-bold text-sm mb-1" style={{ color: 'hsl(215 25% 27%)' }}>Phone</h3>
+              <p className="text-sm" style={{ color: 'hsl(215 15% 45%)' }}>(780) 555-0123</p>
+            </div>
+            <div>
+              <Mail className="h-8 w-8 mx-auto mb-2" style={{ color: 'hsl(168 52% 42%)' }} />
+              <h3 className="font-bold text-sm mb-1" style={{ color: 'hsl(215 25% 27%)' }}>Email</h3>
+              <p className="text-sm" style={{ color: 'hsl(215 15% 45%)' }}>info@aiyanaservices.ca</p>
+            </div>
+            <div>
+              <MapPin className="h-8 w-8 mx-auto mb-2" style={{ color: 'hsl(168 52% 42%)' }} />
+              <h3 className="font-bold text-sm mb-1" style={{ color: 'hsl(215 25% 27%)' }}>Location</h3>
+              <p className="text-sm" style={{ color: 'hsl(215 15% 45%)' }}>Edmonton, Alberta</p>
+            </div>
+          </div>
+          
+          <div className="mt-6 text-center p-4 rounded-lg" style={{ background: 'hsl(168 52% 95%)' }}>
+            <p className="text-sm font-semibold" style={{ color: 'hsl(215 25% 27%)' }}>
+              Office Hours: Monday - Friday, 8:00 AM - 6:00 PM | Saturday, 9:00 AM - 3:00 PM
+            </p>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="brochure-section mt-8 text-center text-xs" style={{ color: 'hsl(215 15% 45%)' }}>
+          <p>© 2024 Aiyana Services. All rights reserved. | Serving families across Edmonton and surrounding areas.</p>
+        </footer>
+      </div>
+    </>
+  );
+};
+
+export default Brochure;
