@@ -58,6 +58,12 @@ const Brochure = () => {
             break-after: avoid;
           }
           
+          /* Force "Why Choose" section to new page */
+          .why-choose-section {
+            page-break-before: always !important;
+            break-before: page !important;
+          }
+          
           .service-card {
             page-break-inside: avoid;
             break-inside: avoid;
@@ -246,7 +252,7 @@ const Brochure = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="brochure-section mb-8">
+        <section className="brochure-section why-choose-section mb-8">
           <h2 className="text-2xl font-bold mb-4" style={{ color: 'hsl(168 52% 42%)' }}>
             Why Choose Aiyana Services?
           </h2>
