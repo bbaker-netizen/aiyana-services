@@ -14,7 +14,7 @@ const Footer = () => {
               <h3 className="text-2xl font-bold">Aiyana Services</h3>
             </div>
             <p className="text-background/80 mb-6 leading-relaxed">
-              Providing compassionate, integrated care for families navigating ADHD, Autism, IDD, 
+              Providing compassionate, integrated care for youth, adults, and families navigating ADHD, Autism, IDD, 
               addiction, and dual diagnoses. Trusted by Edmonton families for over a decade.
             </p>
             

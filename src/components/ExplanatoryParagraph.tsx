@@ -24,15 +24,15 @@ const ExplanatoryParagraph = () => {
             
             <div className="prose prose-lg text-muted-foreground leading-relaxed mb-8">
               <p>
-                Navigating the complexities of care for your child can be overwhelming. At Aiyana Services, 
-                we recognize the challenges faced by families, from long waitlists for assessments to a lack 
+                Navigating the complexities of care for youth and adults can be overwhelming. At Aiyana Services, 
+                we recognize the challenges faced by individuals and families, from long waitlists for assessments to a lack 
                 of suitable respite options.
               </p>
               
               <p>
                 We offer immediate access to compassionate, coordinated care that includes everything from 
-                assessments to counseling. By bridging the gaps in the system, we ensure your child receives 
-                the crucial support they need, allowing you as a caregiver to focus on what truly matters—your 
+                assessments to counseling. By bridging the gaps in the system, we ensure youth and adults receive 
+                the crucial support they need, allowing caregivers to focus on what truly matters—your 
                 family's well-being.
               </p>
               
@@ -70,7 +70,7 @@ const ExplanatoryParagraph = () => {
           <div className={`relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <img
               src={youthCare}
-              alt="Youth receiving personalized therapeutic care in a supportive environment"
+              alt="Youth and adults receiving personalized therapeutic care in a supportive environment"
               className="w-full h-96 object-cover rounded-2xl shadow-warm"
             />
             

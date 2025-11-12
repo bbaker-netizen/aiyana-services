@@ -116,6 +116,12 @@ const Brochure = () => {
             display: none !important;
           }
         }
+        
+        /* Logo styling to hide white border */
+        .brochure-logo {
+          mix-blend-mode: multiply;
+          background: transparent;
+        }
       `}</style>
 
       <div className="print-hint">
@@ -134,10 +140,10 @@ const Brochure = () => {
           <img 
             src={logo} 
             alt="Aiyana Services" 
-            className="h-20 mx-auto mb-4"
+            className="h-20 mx-auto mb-4 brochure-logo"
           />
           <p className="text-xl" style={{ color: 'hsl(215 25% 27%)' }}>
-            Compassionate, Integrated Care for Children & Families in Edmonton
+            Compassionate, Integrated Care for Youth, Adults & Families in Edmonton
           </p>
         </header>
 
@@ -152,10 +158,10 @@ const Brochure = () => {
               Our Mission
             </h2>
             <p className="text-base leading-relaxed" style={{ color: 'hsl(215 25% 27%)' }}>
-              At Aiyana Services, we provide comprehensive, family-centered care for children with developmental 
+              At Aiyana Services, we provide comprehensive, person-centered care for youth and adults with developmental 
               challenges, ADHD, Autism, and addiction concerns. Our integrated approach combines respite care, 
-              professional assessments, and ongoing support to help families thrive. Located in Edmonton, we serve 
-              families with compassion, evidence-based practices, and personalized care plans.
+              professional assessments, and ongoing support to help individuals and families thrive. Located in Edmonton, we serve 
+              youth, adults, and families with compassion, evidence-based practices, and personalized care plans.
             </p>
           </div>
         </section>
@@ -177,7 +183,7 @@ const Brochure = () => {
                   </h3>
                   <p className="text-sm leading-snug" style={{ color: 'hsl(215 15% 45%)' }}>
                     Flexible, compassionate breaks for caregivers. Our trained professionals provide 
-                    safe, engaging care for children with complex needs, giving families time to recharge.
+                    safe, engaging care for youth and adults with complex needs, giving families time to recharge.
                   </p>
                 </div>
               </div>
@@ -241,7 +247,7 @@ const Brochure = () => {
                   Dual Diagnosis Support
                 </h3>
                 <p className="text-sm leading-snug" style={{ color: 'hsl(215 15% 45%)' }}>
-                  Integrated care for children with both developmental challenges and mental health or addiction 
+                  Integrated care for youth and adults with both developmental challenges and mental health or addiction 
                   concerns. Our holistic approach addresses multiple needs simultaneously for better outcomes.
                 </p>
               </div>
