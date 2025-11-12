@@ -136,9 +136,6 @@ const Brochure = () => {
             alt="Aiyana Services" 
             className="h-20 mx-auto mb-4"
           />
-          <h1 className="text-4xl font-bold mb-2" style={{ color: 'hsl(168 52% 42%)' }}>
-            Aiyana Services
-          </h1>
           <p className="text-xl" style={{ color: 'hsl(215 25% 27%)' }}>
             Compassionate, Integrated Care for Children & Families in Edmonton
           </p>
