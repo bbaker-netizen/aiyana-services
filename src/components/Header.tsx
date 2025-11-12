@@ -3,7 +3,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/co
 import { Phone, Mail, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import logo from "@/assets/aiyana-logo.png";
+import logo from "@/assets/ayana-logo.png";
 
 const Header = () => {
   const location = useLocation();

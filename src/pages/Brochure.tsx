@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import logo from "@/assets/aiyana-logo.png";
+import logo from "@/assets/ayana-logo.png";
 import { Heart, Clock, Users, Brain, Activity, Shield, Phone, Mail, MapPin } from "lucide-react";
 
 const Brochure = () => {
