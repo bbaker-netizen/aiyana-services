@@ -13,7 +13,7 @@ const BusinessCards = () => {
         @media print {
           @page {
             size: ${document.body.classList.contains('high-res-print') ? 'auto' : '3.5in 2in'};
-            margin: ${document.body.classList.contains('high-res-print') ? '0.5in' : '0'};
+            margin: ${document.body.classList.contains('high-res-print') ? '0.5in' : '0.125in'};
           }
           
           html, body {
@@ -23,22 +23,102 @@ const BusinessCards = () => {
             -webkit-print-color-adjust: exact;
           }
           
-          .print-hint, .page-title {
+          .print-hint, .page-title, button {
             display: none !important;
           }
           
           .business-card {
-            width: ${document.body.classList.contains('high-res-print') ? '700px' : '3.5in'} !important;
-            height: ${document.body.classList.contains('high-res-print') ? '400px' : '2in'} !important;
+            width: ${document.body.classList.contains('high-res-print') ? '700px' : '3.25in'} !important;
+            height: ${document.body.classList.contains('high-res-print') ? '400px' : '1.75in'} !important;
             margin: ${document.body.classList.contains('high-res-print') ? '1rem auto' : '0'} !important;
             page-break-after: always;
             box-shadow: none !important;
             border-radius: ${document.body.classList.contains('high-res-print') ? '8px' : '0'} !important;
+            padding: ${document.body.classList.contains('high-res-print') ? '' : '0.15in'} !important;
+            box-sizing: border-box !important;
           }
           
           .business-card:last-child {
             page-break-after: auto;
           }
+          
+          ${!document.body.classList.contains('high-res-print') ? `
+            .business-card img {
+              height: 0.5in !important;
+              max-height: 0.5in !important;
+            }
+            
+            .business-card h2 {
+              font-size: 11pt !important;
+              margin-bottom: 0.05in !important;
+            }
+            
+            .business-card p {
+              font-size: 7pt !important;
+              margin-bottom: 0.1in !important;
+            }
+            
+            .business-card .text-sm,
+            .business-card .text-base {
+              font-size: 7pt !important;
+            }
+            
+            .business-card .text-xs {
+              font-size: 6pt !important;
+            }
+            
+            .business-card .text-lg {
+              font-size: 9pt !important;
+            }
+            
+            .business-card .text-xl {
+              font-size: 10pt !important;
+            }
+            
+            .business-card .text-2xl {
+              font-size: 12pt !important;
+            }
+            
+            .business-card .text-3xl {
+              font-size: 14pt !important;
+            }
+            
+            .business-card .text-4xl {
+              font-size: 16pt !important;
+            }
+            
+            .business-card [class*="h-"] {
+              height: auto !important;
+            }
+            
+            .business-card [class*="w-"] {
+              width: auto !important;
+            }
+            
+            .business-card .p-8,
+            .business-card .p-10 {
+              padding: 0.12in !important;
+            }
+            
+            .business-card .gap-2,
+            .business-card .gap-3 {
+              gap: 0.05in !important;
+            }
+            
+            .business-card .space-y-2 > * + *,
+            .business-card .space-y-2\\.5 > * + *,
+            .business-card .space-y-3 > * + * {
+              margin-top: 0.05in !important;
+            }
+            
+            .business-card .mb-2,
+            .business-card .mb-3,
+            .business-card .mb-4,
+            .business-card .mb-5,
+            .business-card .mb-6 {
+              margin-bottom: 0.08in !important;
+            }
+          ` : ''}
         }
         
         @media screen {
