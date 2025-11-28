@@ -67,8 +67,8 @@ const BusinessCards = () => {
           }
           
           .business-card {
-            width: 3.5in;
-            height: 2in;
+            width: 700px;
+            height: 400px;
             margin: 2rem auto;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
             border-radius: 8px;
@@ -98,40 +98,40 @@ const BusinessCards = () => {
 
         {/* Design 1: Classic Professional */}
         <div className="business-card bg-white">
-          <div className="flex flex-col h-full p-6">
-            <div className="flex items-center justify-center mb-4">
+          <div className="flex flex-col h-full p-8">
+            <div className="flex items-center justify-center mb-6">
               <img 
                 src={logo} 
                 alt="Aiyana Services" 
-                className="h-12 w-auto mix-blend-multiply"
+                className="h-20 w-auto mix-blend-multiply"
               />
             </div>
             
             <div className="flex-1 flex flex-col justify-center items-center text-center">
-              <h2 className="text-lg font-bold mb-1" style={{ color: 'hsl(215 25% 27%)' }}>
+              <h2 className="text-2xl font-bold mb-2" style={{ color: 'hsl(215 25% 27%)' }}>
                 Aiyana Services
               </h2>
-              <p className="text-xs mb-3" style={{ color: 'hsl(215 15% 45%)' }}>
+              <p className="text-base mb-4" style={{ color: 'hsl(215 15% 45%)' }}>
                 Care That Connects, Services That Support
               </p>
             </div>
             
-            <div className="border-t-2 pt-3" style={{ borderColor: 'hsl(168 52% 42%)' }}>
-              <div className="grid grid-cols-2 gap-2 text-xs" style={{ color: 'hsl(215 15% 45%)' }}>
-                <div className="flex items-center gap-1">
-                  <Phone className="h-3 w-3" style={{ color: 'hsl(168 52% 42%)' }} />
+            <div className="border-t-2 pt-4" style={{ borderColor: 'hsl(168 52% 42%)' }}>
+              <div className="grid grid-cols-2 gap-3 text-sm" style={{ color: 'hsl(215 15% 45%)' }}>
+                <div className="flex items-center gap-2">
+                  <Phone className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
                   <span>(780) 229-4466</span>
                 </div>
-                <div className="flex items-center gap-1">
-                  <Mail className="h-3 w-3" style={{ color: 'hsl(168 52% 42%)' }} />
-                  <span>info@aiyanaservices.com</span>
+                <div className="flex items-center gap-2">
+                  <Mail className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
+                  <span className="truncate">info@aiyanaservices.com</span>
                 </div>
-                <div className="flex items-center gap-1">
-                  <Globe className="h-3 w-3" style={{ color: 'hsl(168 52% 42%)' }} />
+                <div className="flex items-center gap-2">
+                  <Globe className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
                   <span>aiyanaservices.com</span>
                 </div>
-                <div className="flex items-center gap-1">
-                  <MapPin className="h-3 w-3" style={{ color: 'hsl(168 52% 42%)' }} />
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
                   <span>Edmonton, AB</span>
                 </div>
               </div>
@@ -143,41 +143,41 @@ const BusinessCards = () => {
         <div className="business-card bg-white">
           <div className="flex h-full">
             <div 
-              className="w-16 flex-shrink-0"
+              className="w-24 flex-shrink-0"
               style={{ 
                 background: 'linear-gradient(135deg, hsl(168 52% 42%), hsl(15 58% 65%))'
               }}
             />
-            <div className="flex-1 p-5 flex flex-col justify-between">
+            <div className="flex-1 p-8 flex flex-col justify-between">
               <div>
                 <img 
                   src={logo} 
                   alt="Aiyana Services" 
-                  className="h-10 w-auto mb-3 mix-blend-multiply"
+                  className="h-16 w-auto mb-4 mix-blend-multiply"
                 />
-                <h2 className="text-base font-bold" style={{ color: 'hsl(215 25% 27%)' }}>
+                <h2 className="text-xl font-bold" style={{ color: 'hsl(215 25% 27%)' }}>
                   Aiyana Services
                 </h2>
-                <p className="text-xs" style={{ color: 'hsl(215 15% 45%)' }}>
+                <p className="text-sm" style={{ color: 'hsl(215 15% 45%)' }}>
                   Compassionate Integrated Care
                 </p>
               </div>
               
-              <div className="space-y-1 text-xs" style={{ color: 'hsl(215 15% 45%)' }}>
+              <div className="space-y-2 text-sm" style={{ color: 'hsl(215 15% 45%)' }}>
                 <div className="flex items-center gap-2">
-                  <Phone className="h-3 w-3" style={{ color: 'hsl(168 52% 42%)' }} />
+                  <Phone className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
                   <span>(780) 229-4466</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Mail className="h-3 w-3" style={{ color: 'hsl(168 52% 42%)' }} />
-                  <span>info@aiyanaservices.com</span>
+                  <Mail className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
+                  <span className="truncate">info@aiyanaservices.com</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Globe className="h-3 w-3" style={{ color: 'hsl(168 52% 42%)' }} />
+                  <Globe className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
                   <span>aiyanaservices.com</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <MapPin className="h-3 w-3" style={{ color: 'hsl(168 52% 42%)' }} />
+                  <MapPin className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
                   <span>Edmonton, Alberta</span>
                 </div>
               </div>
@@ -187,39 +187,39 @@ const BusinessCards = () => {
 
         {/* Design 3: Bold Teal */}
         <div className="business-card" style={{ background: 'hsl(168 52% 42%)' }}>
-          <div className="flex flex-col h-full p-6 text-white">
-            <div className="flex items-center justify-between mb-4">
+          <div className="flex flex-col h-full p-10 text-white">
+            <div className="flex items-center justify-between mb-6">
               <img 
                 src={logo} 
                 alt="Aiyana Services" 
-                className="h-11 w-auto brightness-0 invert"
+                className="h-20 w-auto brightness-0 invert"
               />
             </div>
             
             <div className="flex-1 flex flex-col justify-center">
-              <h2 className="text-xl font-bold mb-1">
+              <h2 className="text-3xl font-bold mb-2">
                 Aiyana Services
               </h2>
-              <p className="text-xs opacity-90 mb-4">
+              <p className="text-base opacity-90 mb-6">
                 Care That Connects, Services That Support
               </p>
             </div>
             
-            <div className="space-y-1.5 text-xs">
-              <div className="flex items-center gap-2">
-                <Phone className="h-3.5 w-3.5" />
+            <div className="space-y-2.5 text-sm">
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 flex-shrink-0" />
                 <span>(780) 229-4466</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="h-3.5 w-3.5" />
-                <span>info@aiyanaservices.com</span>
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 flex-shrink-0" />
+                <span className="truncate">info@aiyanaservices.com</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Globe className="h-3.5 w-3.5" />
+              <div className="flex items-center gap-3">
+                <Globe className="h-5 w-5 flex-shrink-0" />
                 <span>aiyanaservices.com</span>
               </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-3.5 w-3.5" />
+              <div className="flex items-center gap-3">
+                <MapPin className="h-5 w-5 flex-shrink-0" />
                 <span>Edmonton, Alberta</span>
               </div>
             </div>
@@ -230,19 +230,19 @@ const BusinessCards = () => {
         <div className="business-card" style={{ 
           background: 'linear-gradient(135deg, hsl(168 52% 95%), hsl(15 58% 95%))'
         }}>
-          <div className="flex flex-col items-center justify-center h-full p-6 text-center">
+          <div className="flex flex-col items-center justify-center h-full p-10 text-center">
             <img 
               src={logo} 
               alt="Aiyana Services" 
-              className="h-16 w-auto mb-4 mix-blend-multiply"
+              className="h-28 w-auto mb-6 mix-blend-multiply"
             />
-            <h2 className="text-2xl font-bold mb-2" style={{ color: 'hsl(168 52% 42%)' }}>
+            <h2 className="text-4xl font-bold mb-3" style={{ color: 'hsl(168 52% 42%)' }}>
               Aiyana Services
             </h2>
-            <p className="text-sm font-medium" style={{ color: 'hsl(215 25% 27%)' }}>
+            <p className="text-lg font-medium" style={{ color: 'hsl(215 25% 27%)' }}>
               Care That Connects
             </p>
-            <p className="text-sm font-medium" style={{ color: 'hsl(215 25% 27%)' }}>
+            <p className="text-lg font-medium" style={{ color: 'hsl(215 25% 27%)' }}>
               Services That Support
             </p>
           </div>
@@ -250,35 +250,35 @@ const BusinessCards = () => {
 
         {/* Design 4: Two-Sided (Back) */}
         <div className="business-card bg-white">
-          <div className="flex flex-col h-full p-6">
-            <h3 className="text-sm font-bold mb-3 text-center" style={{ color: 'hsl(168 52% 42%)' }}>
+          <div className="flex flex-col h-full p-10">
+            <h3 className="text-xl font-bold mb-5 text-center" style={{ color: 'hsl(168 52% 42%)' }}>
               Contact Information
             </h3>
             
-            <div className="space-y-2 text-xs mb-4" style={{ color: 'hsl(215 15% 45%)' }}>
-              <div className="flex items-center gap-2">
-                <Phone className="h-3.5 w-3.5" style={{ color: 'hsl(168 52% 42%)' }} />
+            <div className="space-y-3 text-sm mb-6" style={{ color: 'hsl(215 15% 45%)' }}>
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
                 <span>(780) 229-4466</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="h-3.5 w-3.5" style={{ color: 'hsl(168 52% 42%)' }} />
-                <span>info@aiyanaservices.com</span>
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
+                <span className="truncate">info@aiyanaservices.com</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Globe className="h-3.5 w-3.5" style={{ color: 'hsl(168 52% 42%)' }} />
+              <div className="flex items-center gap-3">
+                <Globe className="h-5 w-5 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
                 <span>aiyanaservices.com</span>
               </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-3.5 w-3.5" style={{ color: 'hsl(168 52% 42%)' }} />
+              <div className="flex items-center gap-3">
+                <MapPin className="h-5 w-5 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
                 <span>Edmonton, Alberta</span>
               </div>
             </div>
             
             <div className="flex-1 flex flex-col justify-center">
-              <p className="text-xs font-semibold mb-2" style={{ color: 'hsl(215 25% 27%)' }}>
+              <p className="text-base font-semibold mb-3" style={{ color: 'hsl(215 25% 27%)' }}>
                 Our Services:
               </p>
-              <ul className="text-xs space-y-1" style={{ color: 'hsl(215 15% 45%)' }}>
+              <ul className="text-sm space-y-2" style={{ color: 'hsl(215 15% 45%)' }}>
                 <li>• Respite Care</li>
                 <li>• ADHD & Autism Assessments</li>
                 <li>• Addiction Support</li>
