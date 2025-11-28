@@ -45,14 +45,14 @@ const Header = () => {
             <div className="flex items-center md:space-x-2 lg:space-x-4 border-l border-border md:pl-3 lg:pl-6">
               <div className="flex items-center space-x-2 px-0 lg:px-3 py-2 rounded-lg lg:bg-primary/10 lg:hover:bg-primary/20 transition-colors">
                 <Phone className="h-4 lg:h-5 w-4 lg:w-5 text-primary" />
-                <a href="tel:780-555-0123" className="font-semibold text-primary text-sm lg:text-base">
-                  (780) 555-0123
+                <a href="tel:780-229-4466" className="font-semibold text-primary text-sm lg:text-base">
+                  (780) 229-4466
                 </a>
               </div>
               <div className="hidden lg:flex items-center space-x-1 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:info@aiyanaservices.ca" className="hover:text-primary transition-colors">
-                  info@aiyanaservices.ca
+                <a href="mailto:info@aiyanaservices.com" className="hover:text-primary transition-colors">
+                  info@aiyanaservices.com
                 </a>
               </div>
             </div>
@@ -101,14 +101,14 @@ const Header = () => {
                   <div className="border-t border-border pt-6 space-y-4">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Phone className="h-4 w-4 flex-shrink-0" />
-                      <a href="tel:780-555-0123" className="hover:text-primary transition-colors">
-                        (780) 555-0123
+                      <a href="tel:780-229-4466" className="hover:text-primary transition-colors">
+                        (780) 229-4466
                       </a>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Mail className="h-4 w-4 flex-shrink-0" />
-                      <a href="mailto:info@aiyanaservices.ca" className="hover:text-primary transition-colors break-all">
-                        info@aiyanaservices.ca
+                      <a href="mailto:info@aiyanaservices.com" className="hover:text-primary transition-colors break-all">
+                        info@aiyanaservices.com
                       </a>
                     </div>
                   </div>

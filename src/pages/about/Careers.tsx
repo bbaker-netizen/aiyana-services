@@ -220,7 +220,7 @@ const Careers = () => {
                 </div>
                 <div className="text-center pt-4">
                   <p className="text-muted-foreground mb-4">
-                    Ready to apply? Send your resume to <strong className="text-foreground">careers@aiyanaservices.ca</strong>
+                    Ready to apply? Send your resume to <strong className="text-foreground">careers@aiyanaservices.com</strong>
                   </p>
                   <Link to="/contact">
                     <Button size="lg" className="text-lg px-8">

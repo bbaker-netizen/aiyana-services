@@ -313,12 +313,12 @@ const Brochure = () => {
             <div>
               <Phone className="h-8 w-8 mx-auto mb-2" style={{ color: 'hsl(168 52% 42%)' }} />
               <h3 className="font-bold text-sm mb-1" style={{ color: 'hsl(215 25% 27%)' }}>Phone</h3>
-              <p className="text-sm" style={{ color: 'hsl(215 15% 45%)' }}>(780) 555-0123</p>
+              <p className="text-sm" style={{ color: 'hsl(215 15% 45%)' }}>(780) 229-4466</p>
             </div>
             <div>
               <Mail className="h-8 w-8 mx-auto mb-2" style={{ color: 'hsl(168 52% 42%)' }} />
               <h3 className="font-bold text-sm mb-1" style={{ color: 'hsl(215 25% 27%)' }}>Email</h3>
-              <p className="text-sm" style={{ color: 'hsl(215 15% 45%)' }}>info@aiyanaservices.ca</p>
+              <p className="text-sm" style={{ color: 'hsl(215 15% 45%)' }}>info@aiyanaservices.com</p>
             </div>
             <div>
               <MapPin className="h-8 w-8 mx-auto mb-2" style={{ color: 'hsl(168 52% 42%)' }} />

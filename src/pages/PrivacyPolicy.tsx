@@ -223,8 +223,8 @@ const PrivacyPolicy = () => {
                   <p><strong>Aiyana Services Inc.</strong></p>
                   <p>Privacy Officer</p>
                   <p>Edmonton, Alberta</p>
-                  <p>Phone: (780) 555-0123</p>
-                  <p>Email: privacy@aiyanaservices.ca</p>
+                  <p>Phone: (780) 229-4466</p>
+                  <p>Email: privacy@aiyanaservices.com</p>
                 </div>
                 <p className="text-muted-foreground leading-relaxed mt-6">
                   If you are not satisfied with our response to your privacy concern, you may contact the Office of the 

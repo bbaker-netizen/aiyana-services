@@ -323,8 +323,8 @@ const TermsOfService = () => {
                 <div className="space-y-2 text-muted-foreground">
                   <p><strong>Aiyana Services Inc.</strong></p>
                   <p>Edmonton, Alberta</p>
-                  <p>Phone: (780) 555-0123</p>
-                  <p>Email: info@aiyanaservices.ca</p>
+                  <p>Phone: (780) 229-4466</p>
+                  <p>Email: info@aiyanaservices.com</p>
                 </div>
               </div>
 
