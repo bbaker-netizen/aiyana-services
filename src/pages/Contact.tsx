@@ -56,8 +56,8 @@ const Contact = () => {
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground mb-2">Phone</h3>
-                          <a href="tel:780-555-0123" className="text-muted-foreground hover:text-primary transition-colors">
-                            (780) 555-0123
+                          <a href="tel:780-229-4466" className="text-muted-foreground hover:text-primary transition-colors">
+                            (780) 229-4466
                           </a>
                         </div>
                       </div>
@@ -72,8 +72,8 @@ const Contact = () => {
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground mb-2">Email</h3>
-                          <a href="mailto:info@aiyanaservices.ca" className="text-muted-foreground hover:text-primary transition-colors">
-                            info@aiyanaservices.ca
+                          <a href="mailto:info@aiyanaservices.com" className="text-muted-foreground hover:text-primary transition-colors">
+                            info@aiyanaservices.com
                           </a>
                         </div>
                       </div>
@@ -89,8 +89,7 @@ const Contact = () => {
                         <div>
                           <h3 className="font-semibold text-foreground mb-2">Location</h3>
                           <p className="text-muted-foreground">
-                            123 Care Street<br />
-                            Edmonton, AB T5K 2M7
+                            Edmonton, Alberta
                           </p>
                         </div>
                       </div>
@@ -162,7 +161,7 @@ const Contact = () => {
                           id="phone"
                           name="phone"
                           className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all"
-                          placeholder="(780) 555-0123"
+                          placeholder="(780) 229-4466"
                         />
                       </div>
 

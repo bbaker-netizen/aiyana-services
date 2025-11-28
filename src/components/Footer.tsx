@@ -21,14 +21,14 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary-light" />
-                <a href="tel:780-555-0123" className="hover:text-primary-light transition-colors">
-                  (780) 555-0123
+                <a href="tel:780-229-4466" className="hover:text-primary-light transition-colors">
+                  (780) 229-4466
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary-light" />
-                <a href="mailto:info@aiyanaservices.ca" className="hover:text-primary-light transition-colors">
-                  info@aiyanaservices.ca
+                <a href="mailto:info@aiyanaservices.com" className="hover:text-primary-light transition-colors">
+                  info@aiyanaservices.com
                 </a>
               </div>
               <div className="flex items-center gap-3">

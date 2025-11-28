@@ -74,7 +74,7 @@ const FAQ = () => {
                     How do I get started?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
-                    Simply contact us by phone at (780) 555-0123 or email info@aiyanaservices.ca. We'll schedule an 
+                    Simply contact us by phone at (780) 229-4466 or email info@aiyanaservices.com. We'll schedule an 
                     initial consultation to understand your needs and develop a personalized care plan for your family.
                   </AccordionContent>
                 </AccordionItem>
