@@ -1,11 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import logo from "@/assets/ayana-logo.png";
-import { Phone, Mail, MapPin, Globe } from "lucide-react";
+import { Phone, Mail, MapPin, Globe, Check } from "lucide-react";
 
 const BusinessCards = () => {
+  const [selectedCards, setSelectedCards] = useState<number[]>([1, 2, 3, 4]);
+
   useEffect(() => {
     document.title = "Business Cards | Aiyana Services";
   }, []);
+
+  const toggleCard = (cardId: number) => {
+    setSelectedCards(prev => 
+      prev.includes(cardId) 
+        ? prev.filter(id => id !== cardId)
+        : [...prev, cardId]
+    );
+  };
+
+  const selectAll = () => setSelectedCards([1, 2, 3, 4]);
+  const deselectAll = () => setSelectedCards([]);
 
   return (
     <>
@@ -23,7 +36,11 @@ const BusinessCards = () => {
             -webkit-print-color-adjust: exact;
           }
           
-          .print-hint, .page-title, button {
+          .print-hint, .page-title, button, .card-selector {
+            display: none !important;
+          }
+          
+          .business-card.not-selected {
             display: none !important;
           }
           
@@ -148,24 +165,66 @@ const BusinessCards = () => {
       `}</style>
 
       <div className="fixed top-5 right-5 flex flex-col gap-2 z-[1000]">
+        <div className="bg-white rounded-lg shadow-lg p-4 border-2 border-gray-200">
+          <div className="font-bold text-sm mb-2 text-gray-700">
+            Selected: {selectedCards.length} of 4
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={selectAll}
+              className="px-3 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 rounded font-medium transition-colors"
+            >
+              Select All
+            </button>
+            <button
+              onClick={deselectAll}
+              className="px-3 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 rounded font-medium transition-colors"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+
         <button 
           onClick={() => {
+            if (selectedCards.length === 0) {
+              alert('Please select at least one card design to print');
+              return;
+            }
             document.body.classList.add('high-res-print');
             window.print();
             setTimeout(() => document.body.classList.remove('high-res-print'), 100);
           }}
-          className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-3 rounded-lg shadow-lg font-semibold transition-colors"
+          disabled={selectedCards.length === 0}
+          className="bg-teal-600 hover:bg-teal-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-3 rounded-lg shadow-lg font-semibold transition-colors"
         >
           <div className="font-bold mb-0.5">📄 Save High-Res PDF</div>
-          <div className="text-xs">Screen resolution (700x400px)</div>
+          <div className="text-xs">
+            {selectedCards.length > 0 
+              ? `${selectedCards.length} design${selectedCards.length > 1 ? 's' : ''} selected`
+              : 'No designs selected'
+            }
+          </div>
         </button>
         
         <button 
-          onClick={() => window.print()}
-          className="bg-slate-600 hover:bg-slate-700 text-white px-4 py-3 rounded-lg shadow-lg font-semibold transition-colors"
+          onClick={() => {
+            if (selectedCards.length === 0) {
+              alert('Please select at least one card design to print');
+              return;
+            }
+            window.print();
+          }}
+          disabled={selectedCards.length === 0}
+          className="bg-slate-600 hover:bg-slate-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-3 rounded-lg shadow-lg font-semibold transition-colors"
         >
           <div className="font-bold mb-0.5">🖨️ Print Standard Size</div>
-          <div className="text-xs">Actual size (3.5" × 2")</div>
+          <div className="text-xs">
+            {selectedCards.length > 0 
+              ? `${selectedCards.length} design${selectedCards.length > 1 ? 's' : ''} selected`
+              : 'No designs selected'
+            }
+          </div>
         </button>
       </div>
 
@@ -178,7 +237,18 @@ const BusinessCards = () => {
         </p>
 
         {/* Design 1: Classic Professional */}
-        <div className="business-card bg-white">
+        <div className="relative">
+          <button
+            onClick={() => toggleCard(1)}
+            className={`card-selector absolute top-4 left-4 z-10 w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all ${
+              selectedCards.includes(1)
+                ? 'bg-teal-600 border-teal-600'
+                : 'bg-white border-gray-300 hover:border-teal-400'
+            }`}
+          >
+            {selectedCards.includes(1) && <Check className="w-5 h-5 text-white" />}
+          </button>
+          <div className={`business-card bg-white ${!selectedCards.includes(1) ? 'not-selected opacity-50' : ''}`}>
           <div className="flex flex-col h-full p-8">
             <div className="flex items-center justify-center mb-6">
               <img 
@@ -219,9 +289,21 @@ const BusinessCards = () => {
             </div>
           </div>
         </div>
+        </div>
 
         {/* Design 2: Modern Gradient */}
-        <div className="business-card bg-white">
+        <div className="relative">
+          <button
+            onClick={() => toggleCard(2)}
+            className={`card-selector absolute top-4 left-4 z-10 w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all ${
+              selectedCards.includes(2)
+                ? 'bg-teal-600 border-teal-600'
+                : 'bg-white border-gray-300 hover:border-teal-400'
+            }`}
+          >
+            {selectedCards.includes(2) && <Check className="w-5 h-5 text-white" />}
+          </button>
+          <div className={`business-card bg-white ${!selectedCards.includes(2) ? 'not-selected opacity-50' : ''}`}>
           <div className="flex h-full">
             <div 
               className="w-24 flex-shrink-0"
@@ -265,9 +347,21 @@ const BusinessCards = () => {
             </div>
           </div>
         </div>
+        </div>
 
         {/* Design 3: Bold Teal */}
-        <div className="business-card" style={{ background: 'hsl(168 52% 42%)' }}>
+        <div className="relative">
+          <button
+            onClick={() => toggleCard(3)}
+            className={`card-selector absolute top-4 left-4 z-10 w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all ${
+              selectedCards.includes(3)
+                ? 'bg-white border-white'
+                : 'bg-teal-700 border-white hover:bg-teal-600'
+            }`}
+          >
+            {selectedCards.includes(3) && <Check className="w-5 h-5 text-teal-600" />}
+          </button>
+          <div className={`business-card ${!selectedCards.includes(3) ? 'not-selected opacity-50' : ''}`} style={{ background: 'hsl(168 52% 42%)' }}>
           <div className="flex flex-col h-full p-10 text-white">
             <div className="flex items-center justify-between mb-6">
               <img 
@@ -306,9 +400,21 @@ const BusinessCards = () => {
             </div>
           </div>
         </div>
+        </div>
 
         {/* Design 4: Two-Sided (Front) */}
-        <div className="business-card" style={{ 
+        <div className="relative">
+          <button
+            onClick={() => toggleCard(4)}
+            className={`card-selector absolute top-4 left-4 z-10 w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all ${
+              selectedCards.includes(4)
+                ? 'bg-teal-600 border-teal-600'
+                : 'bg-white border-gray-300 hover:border-teal-400'
+            }`}
+          >
+            {selectedCards.includes(4) && <Check className="w-5 h-5 text-white" />}
+          </button>
+          <div className={`business-card ${!selectedCards.includes(4) ? 'not-selected opacity-50' : ''}`} style={{
           background: 'linear-gradient(135deg, hsl(168 52% 95%), hsl(15 58% 95%))'
         }}>
           <div className="flex flex-col items-center justify-center h-full p-10 text-center">
@@ -328,9 +434,10 @@ const BusinessCards = () => {
             </p>
           </div>
         </div>
+        </div>
 
         {/* Design 4: Two-Sided (Back) */}
-        <div className="business-card bg-white">
+        <div className={`business-card bg-white ${!selectedCards.includes(4) ? 'not-selected opacity-50' : ''}`}>
           <div className="flex flex-col h-full p-10">
             <h3 className="text-xl font-bold mb-5 text-center" style={{ color: 'hsl(168 52% 42%)' }}>
               Contact Information
