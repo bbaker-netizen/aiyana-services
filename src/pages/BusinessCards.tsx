@@ -1,9 +1,25 @@
 import { useEffect, useState } from "react";
 import logo from "@/assets/ayana-logo.png";
-import { Phone, Mail, MapPin, Globe, Check } from "lucide-react";
+import { Phone, Mail, MapPin, Globe, Check, User } from "lucide-react";
+import { z } from "zod";
+
+const personalizationSchema = z.object({
+  name: z.string().max(50, "Name must be less than 50 characters"),
+  title: z.string().max(50, "Title must be less than 50 characters"),
+  extension: z.string().max(10, "Extension must be less than 10 characters").regex(/^[0-9]*$/, "Extension must contain only numbers")
+});
+
+type PersonalizationData = z.infer<typeof personalizationSchema>;
 
 const BusinessCards = () => {
   const [selectedCards, setSelectedCards] = useState<number[]>([1, 2, 3, 4]);
+  const [personalization, setPersonalization] = useState<PersonalizationData>({
+    name: "",
+    title: "",
+    extension: ""
+  });
+  const [errors, setErrors] = useState<Partial<PersonalizationData>>({});
+  const [showPersonalization, setShowPersonalization] = useState(false);
 
   useEffect(() => {
     document.title = "Business Cards | Aiyana Services";
@@ -19,6 +35,39 @@ const BusinessCards = () => {
 
   const selectAll = () => setSelectedCards([1, 2, 3, 4]);
   const deselectAll = () => setSelectedCards([]);
+
+  const handlePersonalizationChange = (field: keyof PersonalizationData, value: string) => {
+    const newData = { ...personalization, [field]: value };
+    setPersonalization(newData);
+    
+    // Validate single field
+    try {
+      const fieldSchema = field === 'name' 
+        ? z.string().max(50, "Name must be less than 50 characters")
+        : field === 'title'
+        ? z.string().max(50, "Title must be less than 50 characters")
+        : z.string().max(10, "Extension must be less than 10 characters").regex(/^[0-9]*$/, "Extension must contain only numbers");
+      
+      fieldSchema.parse(value);
+      setErrors(prev => ({ ...prev, [field]: undefined }));
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        setErrors(prev => ({ ...prev, [field]: error.errors[0].message }));
+      }
+    }
+  };
+
+  const clearPersonalization = () => {
+    setPersonalization({ name: "", title: "", extension: "" });
+    setErrors({});
+  };
+
+  const getPhoneDisplay = () => {
+    if (personalization.extension) {
+      return `(780) 229-4466 ext. ${personalization.extension}`;
+    }
+    return "(780) 229-4466";
+  };
 
   return (
     <>
@@ -164,7 +213,80 @@ const BusinessCards = () => {
         }
       `}</style>
 
-      <div className="fixed top-5 right-5 flex flex-col gap-2 z-[1000]">
+      <div className="fixed top-5 right-5 flex flex-col gap-2 z-[1000] max-w-xs">
+        {/* Personalization Panel */}
+        <div className="bg-white rounded-lg shadow-lg border-2 border-gray-200 overflow-hidden">
+          <button
+            onClick={() => setShowPersonalization(!showPersonalization)}
+            className="w-full p-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
+          >
+            <div className="flex items-center gap-2">
+              <User className="w-5 h-5 text-teal-600" />
+              <span className="font-bold text-sm text-gray-700">Personalize Cards</span>
+            </div>
+            <span className="text-gray-500">{showPersonalization ? '▼' : '▶'}</span>
+          </button>
+          
+          {showPersonalization && (
+            <div className="p-4 pt-0 space-y-3 border-t">
+              <div>
+                <label className="block text-xs font-medium text-gray-700 mb-1">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  value={personalization.name}
+                  onChange={(e) => handlePersonalizationChange('name', e.target.value)}
+                  placeholder="John Smith"
+                  maxLength={50}
+                  className="w-full px-3 py-2 text-sm border rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                />
+                {errors.name && <p className="text-xs text-red-600 mt-1">{errors.name}</p>}
+              </div>
+              
+              <div>
+                <label className="block text-xs font-medium text-gray-700 mb-1">
+                  Title/Position
+                </label>
+                <input
+                  type="text"
+                  value={personalization.title}
+                  onChange={(e) => handlePersonalizationChange('title', e.target.value)}
+                  placeholder="Care Coordinator"
+                  maxLength={50}
+                  className="w-full px-3 py-2 text-sm border rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                />
+                {errors.title && <p className="text-xs text-red-600 mt-1">{errors.title}</p>}
+              </div>
+              
+              <div>
+                <label className="block text-xs font-medium text-gray-700 mb-1">
+                  Extension (optional)
+                </label>
+                <input
+                  type="text"
+                  value={personalization.extension}
+                  onChange={(e) => handlePersonalizationChange('extension', e.target.value)}
+                  placeholder="1234"
+                  maxLength={10}
+                  className="w-full px-3 py-2 text-sm border rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                />
+                {errors.extension && <p className="text-xs text-red-600 mt-1">{errors.extension}</p>}
+              </div>
+              
+              {(personalization.name || personalization.title || personalization.extension) && (
+                <button
+                  onClick={clearPersonalization}
+                  className="w-full px-3 py-2 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 rounded font-medium transition-colors"
+                >
+                  Clear All
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Selection Panel */}
         <div className="bg-white rounded-lg shadow-lg p-4 border-2 border-gray-200">
           <div className="font-bold text-sm mb-2 text-gray-700">
             Selected: {selectedCards.length} of 4
@@ -259,6 +381,16 @@ const BusinessCards = () => {
             </div>
             
             <div className="flex-1 flex flex-col justify-center items-center text-center">
+              {personalization.name && (
+                <h3 className="text-xl font-bold mb-1" style={{ color: 'hsl(168 52% 42%)' }}>
+                  {personalization.name}
+                </h3>
+              )}
+              {personalization.title && (
+                <p className="text-sm font-medium mb-3" style={{ color: 'hsl(215 15% 45%)' }}>
+                  {personalization.title}
+                </p>
+              )}
               <h2 className="text-2xl font-bold mb-2" style={{ color: 'hsl(215 25% 27%)' }}>
                 Aiyana Services
               </h2>
@@ -271,7 +403,7 @@ const BusinessCards = () => {
               <div className="grid grid-cols-2 gap-3 text-sm" style={{ color: 'hsl(215 15% 45%)' }}>
                 <div className="flex items-center gap-2">
                   <Phone className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
-                  <span>(780) 229-4466</span>
+                  <span className="text-xs">{getPhoneDisplay()}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
@@ -318,6 +450,16 @@ const BusinessCards = () => {
                   alt="Aiyana Services" 
                   className="h-16 w-auto mb-4 mix-blend-multiply"
                 />
+                {personalization.name && (
+                  <h3 className="text-lg font-bold mb-1" style={{ color: 'hsl(168 52% 42%)' }}>
+                    {personalization.name}
+                  </h3>
+                )}
+                {personalization.title && (
+                  <p className="text-xs font-medium mb-2" style={{ color: 'hsl(215 15% 45%)' }}>
+                    {personalization.title}
+                  </p>
+                )}
                 <h2 className="text-xl font-bold" style={{ color: 'hsl(215 25% 27%)' }}>
                   Aiyana Services
                 </h2>
@@ -329,7 +471,7 @@ const BusinessCards = () => {
               <div className="space-y-2 text-sm" style={{ color: 'hsl(215 15% 45%)' }}>
                 <div className="flex items-center gap-2">
                   <Phone className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
-                  <span>(780) 229-4466</span>
+                  <span className="text-xs">{getPhoneDisplay()}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
@@ -372,6 +514,16 @@ const BusinessCards = () => {
             </div>
             
             <div className="flex-1 flex flex-col justify-center">
+              {personalization.name && (
+                <h3 className="text-2xl font-bold mb-1">
+                  {personalization.name}
+                </h3>
+              )}
+              {personalization.title && (
+                <p className="text-sm opacity-90 mb-3">
+                  {personalization.title}
+                </p>
+              )}
               <h2 className="text-3xl font-bold mb-2">
                 Aiyana Services
               </h2>
@@ -383,7 +535,7 @@ const BusinessCards = () => {
             <div className="space-y-2.5 text-sm">
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 flex-shrink-0" />
-                <span>(780) 229-4466</span>
+                <span>{getPhoneDisplay()}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 flex-shrink-0" />
@@ -423,6 +575,16 @@ const BusinessCards = () => {
               alt="Aiyana Services" 
               className="h-28 w-auto mb-6 mix-blend-multiply"
             />
+            {personalization.name && (
+              <h3 className="text-2xl font-bold mb-2" style={{ color: 'hsl(168 52% 42%)' }}>
+                {personalization.name}
+              </h3>
+            )}
+            {personalization.title && (
+              <p className="text-base font-medium mb-4" style={{ color: 'hsl(215 25% 27%)' }}>
+                {personalization.title}
+              </p>
+            )}
             <h2 className="text-4xl font-bold mb-3" style={{ color: 'hsl(168 52% 42%)' }}>
               Aiyana Services
             </h2>
@@ -444,9 +606,21 @@ const BusinessCards = () => {
             </h3>
             
             <div className="space-y-3 text-sm mb-6" style={{ color: 'hsl(215 15% 45%)' }}>
+              {personalization.name && (
+                <div className="text-center mb-3">
+                  <p className="font-bold text-base" style={{ color: 'hsl(168 52% 42%)' }}>
+                    {personalization.name}
+                  </p>
+                  {personalization.title && (
+                    <p className="text-xs" style={{ color: 'hsl(215 15% 45%)' }}>
+                      {personalization.title}
+                    </p>
+                  )}
+                </div>
+              )}
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
-                <span>(780) 229-4466</span>
+                <span className="text-xs">{getPhoneDisplay()}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
