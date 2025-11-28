@@ -488,28 +488,28 @@ const BusinessCards = () => {
               <div className={`business-card bg-white ${!selectedCards.includes(2) ? 'not-selected opacity-50' : ''}`}>
                 <div className="flex h-full">
                   <div 
-                    className="w-20 flex-shrink-0"
+                    className="w-16 flex-shrink-0"
                     style={{ 
                       background: 'linear-gradient(135deg, hsl(168 52% 42%), hsl(15 58% 65%))'
                     }}
                   />
-                  <div className="flex-1 p-6 flex flex-col justify-center">
+                  <div className="flex-1 p-8 flex flex-col justify-center">
                     <img 
                       src={logo} 
                       alt="Aiyana Services" 
-                      className="h-14 w-auto mb-3 mix-blend-multiply"
+                      className="h-16 w-auto mb-4 mix-blend-multiply"
                     />
                     {personalization.name && (
-                      <h3 className="text-base font-bold mb-1" style={{ color: 'hsl(168 52% 42%)' }}>
+                      <h3 className="text-lg font-bold mb-1" style={{ color: 'hsl(168 52% 42%)' }}>
                         {personalization.name}
                       </h3>
                     )}
                     {personalization.title && (
-                      <p className="text-xs font-medium mb-2" style={{ color: 'hsl(215 15% 45%)' }}>
+                      <p className="text-sm font-medium mb-2" style={{ color: 'hsl(215 15% 45%)' }}>
                         {personalization.title}
                       </p>
                     )}
-                    <h2 className="text-lg font-bold mb-1" style={{ color: 'hsl(215 25% 27%)' }}>
+                    <h2 className="text-xl font-bold mb-1" style={{ color: 'hsl(215 25% 27%)' }}>
                       Aiyana Services
                     </h2>
                     <p className="text-sm" style={{ color: 'hsl(215 15% 45%)' }}>
