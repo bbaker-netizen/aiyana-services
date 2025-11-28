@@ -85,27 +85,49 @@ const BusinessCards = () => {
             -webkit-print-color-adjust: exact;
           }
           
-          .print-hint, .page-title, button, .card-selector {
+          /* Hide all UI controls and labels */
+          .fixed, button, .card-selector, 
+          .page-title, [class*="page-title"],
+          .border-b-2, h1, p.text-center {
             display: none !important;
           }
           
-          .page-title {
-            display: none !important;
+          /* Show only the cards container */
+          .cards-container {
+            display: block !important;
+            max-width: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: transparent !important;
           }
           
+          /* Hide grid layout for print */
+          .grid {
+            display: block !important;
+          }
+          
+          /* Hide design section wrappers */
+          .mb-16 {
+            margin: 0 !important;
+          }
+          
+          /* Hide non-selected cards */
           .business-card.not-selected {
             display: none !important;
           }
           
+          /* Style visible business cards */
           .business-card {
+            display: flex !important;
             width: ${document.body.classList.contains('high-res-print') ? '700px' : '3.25in'} !important;
             height: ${document.body.classList.contains('high-res-print') ? '400px' : '1.75in'} !important;
-            margin: ${document.body.classList.contains('high-res-print') ? '1rem auto' : '0'} !important;
+            margin: ${document.body.classList.contains('high-res-print') ? '1rem auto' : '0.25in auto'} !important;
             page-break-after: always;
+            page-break-inside: avoid;
             box-shadow: none !important;
             border-radius: ${document.body.classList.contains('high-res-print') ? '8px' : '0'} !important;
-            padding: ${document.body.classList.contains('high-res-print') ? '' : '0.15in'} !important;
             box-sizing: border-box !important;
+            position: relative;
           }
           
           .business-card:last-child {
