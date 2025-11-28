@@ -217,18 +217,18 @@ const BusinessCards = () => {
         }
       `}</style>
 
-      <div className="fixed top-5 right-5 flex flex-col gap-2 z-[1000] max-w-xs">
+      <div className="fixed top-5 right-5 flex flex-col gap-3 z-[1000] w-72">
         {/* Personalization Panel */}
         <div className="bg-white rounded-lg shadow-lg border-2 border-gray-200 overflow-hidden">
           <button
             onClick={() => setShowPersonalization(!showPersonalization)}
             className="w-full p-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <User className="w-5 h-5 text-teal-600" />
-              <span className="font-bold text-sm text-gray-700">Personalize Cards</span>
+              <span className="font-semibold text-sm text-gray-700">Personalize Cards</span>
             </div>
-            <span className="text-gray-500">{showPersonalization ? '▼' : '▶'}</span>
+            <span className="text-gray-400 text-lg">{showPersonalization ? '▼' : '▶'}</span>
           </button>
           
           {showPersonalization && (
@@ -292,19 +292,19 @@ const BusinessCards = () => {
 
         {/* Selection Panel */}
         <div className="bg-white rounded-lg shadow-lg p-4 border-2 border-gray-200">
-          <div className="font-bold text-sm mb-2 text-gray-700">
+          <div className="font-semibold text-sm mb-3 text-gray-700">
             Selected: {selectedCards.length} design{selectedCards.length !== 1 ? 's' : ''}
           </div>
           <div className="flex gap-2">
             <button
               onClick={selectAll}
-              className="px-3 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 rounded font-medium transition-colors"
+              className="flex-1 px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md font-medium transition-colors"
             >
               Select All
             </button>
             <button
               onClick={deselectAll}
-              className="px-3 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 rounded font-medium transition-colors"
+              className="flex-1 px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md font-medium transition-colors"
             >
               Clear
             </button>
@@ -322,10 +322,10 @@ const BusinessCards = () => {
             setTimeout(() => document.body.classList.remove('high-res-print'), 100);
           }}
           disabled={selectedCards.length === 0}
-          className="bg-teal-600 hover:bg-teal-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-3 rounded-lg shadow-lg font-semibold transition-colors"
+          className="w-full bg-teal-600 hover:bg-teal-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-3.5 rounded-lg shadow-lg font-semibold transition-colors"
         >
-          <div className="font-bold mb-0.5">📄 Save High-Res PDF</div>
-          <div className="text-xs">
+          <div className="font-bold text-sm mb-1">📄 Save High-Res PDF</div>
+          <div className="text-xs opacity-90">
             {selectedCards.length > 0 
               ? `${selectedCards.length} design${selectedCards.length > 1 ? 's' : ''} selected`
               : 'No designs selected'
@@ -342,10 +342,10 @@ const BusinessCards = () => {
             window.print();
           }}
           disabled={selectedCards.length === 0}
-          className="bg-slate-600 hover:bg-slate-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-3 rounded-lg shadow-lg font-semibold transition-colors"
+          className="w-full bg-slate-600 hover:bg-slate-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-3.5 rounded-lg shadow-lg font-semibold transition-colors"
         >
-          <div className="font-bold mb-0.5">🖨️ Print Standard Size</div>
-          <div className="text-xs">
+          <div className="font-bold text-sm mb-1">🖨️ Print Standard Size</div>
+          <div className="text-xs opacity-90">
             {selectedCards.length > 0 
               ? `${selectedCards.length} design${selectedCards.length > 1 ? 's' : ''} selected`
               : 'No designs selected'
@@ -488,19 +488,19 @@ const BusinessCards = () => {
               <div className={`business-card bg-white ${!selectedCards.includes(2) ? 'not-selected opacity-50' : ''}`}>
                 <div className="flex h-full">
                   <div 
-                    className="w-24 flex-shrink-0"
+                    className="w-20 flex-shrink-0"
                     style={{ 
                       background: 'linear-gradient(135deg, hsl(168 52% 42%), hsl(15 58% 65%))'
                     }}
                   />
-                  <div className="flex-1 p-8 flex flex-col justify-center">
+                  <div className="flex-1 p-6 flex flex-col justify-center">
                     <img 
                       src={logo} 
                       alt="Aiyana Services" 
-                      className="h-16 w-auto mb-4 mix-blend-multiply"
+                      className="h-14 w-auto mb-3 mix-blend-multiply"
                     />
                     {personalization.name && (
-                      <h3 className="text-lg font-bold mb-1" style={{ color: 'hsl(168 52% 42%)' }}>
+                      <h3 className="text-base font-bold mb-1" style={{ color: 'hsl(168 52% 42%)' }}>
                         {personalization.name}
                       </h3>
                     )}
@@ -509,7 +509,7 @@ const BusinessCards = () => {
                         {personalization.title}
                       </p>
                     )}
-                    <h2 className="text-xl font-bold" style={{ color: 'hsl(215 25% 27%)' }}>
+                    <h2 className="text-lg font-bold mb-1" style={{ color: 'hsl(215 25% 27%)' }}>
                       Aiyana Services
                     </h2>
                     <p className="text-sm" style={{ color: 'hsl(215 15% 45%)' }}>
@@ -527,10 +527,10 @@ const BusinessCards = () => {
               </div>
               <div className={`business-card bg-white ${!selectedCards.includes(2) ? 'not-selected opacity-50' : ''}`}>
                 <div className="flex h-full">
-                  <div className="flex-1 p-8 flex flex-col justify-between">
+                  <div className="flex-1 p-6 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-base font-bold mb-4" style={{ color: 'hsl(168 52% 42%)' }}>
-                        Contact
+                      <h3 className="text-sm font-bold mb-3" style={{ color: 'hsl(168 52% 42%)' }}>
+                        Contact Information
                       </h3>
                       <div className="space-y-2 text-sm" style={{ color: 'hsl(215 15% 45%)' }}>
                         <div className="flex items-center gap-2">
@@ -553,7 +553,7 @@ const BusinessCards = () => {
                     </div>
                     <div>
                       <p className="text-sm font-semibold mb-2" style={{ color: 'hsl(215 25% 27%)' }}>
-                        Services:
+                        Our Services:
                       </p>
                       <ul className="text-xs space-y-1" style={{ color: 'hsl(215 15% 45%)' }}>
                         <li>• Respite Care</li>
@@ -564,7 +564,7 @@ const BusinessCards = () => {
                     </div>
                   </div>
                   <div 
-                    className="w-16 flex-shrink-0"
+                    className="w-12 flex-shrink-0"
                     style={{ 
                       background: 'linear-gradient(135deg, hsl(168 52% 42%), hsl(15 58% 65%))'
                     }}
