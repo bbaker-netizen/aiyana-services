@@ -12,8 +12,8 @@ const BusinessCards = () => {
       <style>{`
         @media print {
           @page {
-            size: 3.5in 2in;
-            margin: 0;
+            size: ${document.body.classList.contains('high-res-print') ? 'auto' : '3.5in 2in'};
+            margin: ${document.body.classList.contains('high-res-print') ? '0.5in' : '0'};
           }
           
           html, body {
@@ -28,11 +28,12 @@ const BusinessCards = () => {
           }
           
           .business-card {
-            width: 3.5in !important;
-            height: 2in !important;
-            margin: 0 !important;
+            width: ${document.body.classList.contains('high-res-print') ? '700px' : '3.5in'} !important;
+            height: ${document.body.classList.contains('high-res-print') ? '400px' : '2in'} !important;
+            margin: ${document.body.classList.contains('high-res-print') ? '1rem auto' : '0'} !important;
             page-break-after: always;
             box-shadow: none !important;
+            border-radius: ${document.body.classList.contains('high-res-print') ? '8px' : '0'} !important;
           }
           
           .business-card:last-child {
@@ -48,23 +49,6 @@ const BusinessCards = () => {
             background: hsl(var(--background));
           }
           
-          .print-hint {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: hsl(168 52% 42%);
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            font-weight: 600;
-            z-index: 1000;
-            cursor: pointer;
-          }
-          
-          .print-hint:hover {
-            background: hsl(168 52% 35%);
-          }
           
           .business-card {
             width: 700px;
@@ -83,9 +67,26 @@ const BusinessCards = () => {
         }
       `}</style>
 
-      <div className="print-hint" onClick={() => window.print()}>
-        <div className="font-bold mb-1">🖨️ Print Business Cards</div>
-        <div className="text-sm">Click to print all designs</div>
+      <div className="fixed top-5 right-5 flex flex-col gap-2 z-[1000]">
+        <button 
+          onClick={() => {
+            document.body.classList.add('high-res-print');
+            window.print();
+            setTimeout(() => document.body.classList.remove('high-res-print'), 100);
+          }}
+          className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-3 rounded-lg shadow-lg font-semibold transition-colors"
+        >
+          <div className="font-bold mb-0.5">📄 Save High-Res PDF</div>
+          <div className="text-xs">Screen resolution (700x400px)</div>
+        </button>
+        
+        <button 
+          onClick={() => window.print()}
+          className="bg-slate-600 hover:bg-slate-700 text-white px-4 py-3 rounded-lg shadow-lg font-semibold transition-colors"
+        >
+          <div className="font-bold mb-0.5">🖨️ Print Standard Size</div>
+          <div className="text-xs">Actual size (3.5" × 2")</div>
+        </button>
       </div>
 
       <div className="cards-container">
