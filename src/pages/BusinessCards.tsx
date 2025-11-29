@@ -247,22 +247,22 @@ const BusinessCards = () => {
         }
       `}</style>
 
-      <div className="fixed top-5 right-5 flex flex-col gap-3 z-[1000] w-72">
+      <div className="fixed top-5 right-5 flex flex-col gap-2 z-[1000] w-56">
         {/* Personalization Panel */}
-        <div className="bg-white rounded-lg shadow-lg border-2 border-gray-200 overflow-hidden">
+        <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
           <button
             onClick={() => setShowPersonalization(!showPersonalization)}
-            className="w-full p-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
+            className="w-full p-2.5 flex items-center justify-between hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-center gap-3">
-              <User className="w-5 h-5 text-teal-600" />
-              <span className="font-semibold text-sm text-gray-700">Personalize Cards</span>
+            <div className="flex items-center gap-2">
+              <User className="w-4 h-4 text-teal-600" />
+              <span className="font-semibold text-xs text-gray-700">Personalize</span>
             </div>
-            <span className="text-gray-400 text-lg">{showPersonalization ? '▼' : '▶'}</span>
+            <span className="text-gray-400 text-sm">{showPersonalization ? '▼' : '▶'}</span>
           </button>
           
           {showPersonalization && (
-            <div className="p-4 pt-0 space-y-3 border-t">
+            <div className="p-3 pt-0 space-y-2 border-t">
               <div>
                 <label className="block text-xs font-medium text-gray-700 mb-1">
                   Name
@@ -273,14 +273,14 @@ const BusinessCards = () => {
                   onChange={(e) => handlePersonalizationChange('name', e.target.value)}
                   placeholder="John Smith"
                   maxLength={50}
-                  className="w-full px-3 py-2 text-sm border rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-2 py-1.5 text-xs border rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 />
                 {errors.name && <p className="text-xs text-red-600 mt-1">{errors.name}</p>}
               </div>
               
               <div>
                 <label className="block text-xs font-medium text-gray-700 mb-1">
-                  Title/Position
+                  Title
                 </label>
                 <input
                   type="text"
@@ -288,14 +288,14 @@ const BusinessCards = () => {
                   onChange={(e) => handlePersonalizationChange('title', e.target.value)}
                   placeholder="Care Coordinator"
                   maxLength={50}
-                  className="w-full px-3 py-2 text-sm border rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-2 py-1.5 text-xs border rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 />
                 {errors.title && <p className="text-xs text-red-600 mt-1">{errors.title}</p>}
               </div>
               
               <div>
                 <label className="block text-xs font-medium text-gray-700 mb-1">
-                  Extension (optional)
+                  Extension
                 </label>
                 <input
                   type="text"
@@ -303,7 +303,7 @@ const BusinessCards = () => {
                   onChange={(e) => handlePersonalizationChange('extension', e.target.value)}
                   placeholder="1234"
                   maxLength={10}
-                  className="w-full px-3 py-2 text-sm border rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-2 py-1.5 text-xs border rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 />
                 {errors.extension && <p className="text-xs text-red-600 mt-1">{errors.extension}</p>}
               </div>
@@ -311,7 +311,7 @@ const BusinessCards = () => {
               {(personalization.name || personalization.title || personalization.extension) && (
                 <button
                   onClick={clearPersonalization}
-                  className="w-full px-3 py-2 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 rounded font-medium transition-colors"
+                  className="w-full px-2 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 rounded font-medium transition-colors"
                 >
                   Clear All
                 </button>
@@ -321,20 +321,20 @@ const BusinessCards = () => {
         </div>
 
         {/* Selection Panel */}
-        <div className="bg-white rounded-lg shadow-lg p-4 border-2 border-gray-200">
-          <div className="font-semibold text-sm mb-3 text-gray-700">
-            Selected: {selectedCards.length} design{selectedCards.length !== 1 ? 's' : ''}
+        <div className="bg-white rounded-lg shadow-lg p-3 border border-gray-200">
+          <div className="font-semibold text-xs mb-2 text-gray-700">
+            {selectedCards.length} design{selectedCards.length !== 1 ? 's' : ''}
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-1.5">
             <button
               onClick={selectAll}
-              className="flex-1 px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md font-medium transition-colors"
+              className="flex-1 px-2 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 rounded font-medium transition-colors"
             >
-              Select All
+              All
             </button>
             <button
               onClick={deselectAll}
-              className="flex-1 px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md font-medium transition-colors"
+              className="flex-1 px-2 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 rounded font-medium transition-colors"
             >
               Clear
             </button>
@@ -352,13 +352,13 @@ const BusinessCards = () => {
             setTimeout(() => document.body.classList.remove('high-res-print'), 100);
           }}
           disabled={selectedCards.length === 0}
-          className="w-full bg-teal-600 hover:bg-teal-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-3.5 rounded-lg shadow-lg font-semibold transition-colors"
+          className="w-full bg-teal-600 hover:bg-teal-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-3 py-2 rounded-lg shadow-lg font-semibold transition-colors"
         >
-          <div className="font-bold text-sm mb-1">📄 Save High-Res PDF</div>
-          <div className="text-xs opacity-90">
+          <div className="font-bold text-xs">📄 High-Res PDF</div>
+          <div className="text-[10px] opacity-90 mt-0.5">
             {selectedCards.length > 0 
-              ? `${selectedCards.length} design${selectedCards.length > 1 ? 's' : ''} selected`
-              : 'No designs selected'
+              ? `${selectedCards.length} selected`
+              : 'No designs'
             }
           </div>
         </button>
@@ -372,13 +372,13 @@ const BusinessCards = () => {
             window.print();
           }}
           disabled={selectedCards.length === 0}
-          className="w-full bg-slate-600 hover:bg-slate-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-3.5 rounded-lg shadow-lg font-semibold transition-colors"
+          className="w-full bg-slate-600 hover:bg-slate-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-3 py-2 rounded-lg shadow-lg font-semibold transition-colors"
         >
-          <div className="font-bold text-sm mb-1">🖨️ Print Standard Size</div>
-          <div className="text-xs opacity-90">
+          <div className="font-bold text-xs">🖨️ Standard</div>
+          <div className="text-[10px] opacity-90 mt-0.5">
             {selectedCards.length > 0 
-              ? `${selectedCards.length} design${selectedCards.length > 1 ? 's' : ''} selected`
-              : 'No designs selected'
+              ? `${selectedCards.length} selected`
+              : 'No designs'
             }
           </div>
         </button>
