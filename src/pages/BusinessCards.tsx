@@ -527,8 +527,8 @@ const BusinessCards = () => {
                     <img 
                       src={logo} 
                       alt="Aiyana Services" 
-                      className="h-16 w-auto mb-4 mix-blend-multiply object-contain"
-                      style={{ maxWidth: '200px' }}
+                      className="h-24 w-auto mb-4 mix-blend-multiply object-contain"
+                      style={{ maxWidth: '350px' }}
                     />
                     {personalization.name && (
                       <h3 className="text-lg font-bold mb-1" style={{ color: 'hsl(168 52% 42%)' }}>
