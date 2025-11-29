@@ -755,10 +755,7 @@ const BusinessCards = () => {
                     Aiyana Services
                   </h2>
                   <p className="text-lg font-medium" style={{ color: 'hsl(215 25% 27%)' }}>
-                    Care That Connects
-                  </p>
-                  <p className="text-lg font-medium" style={{ color: 'hsl(215 25% 27%)' }}>
-                    Services That Support
+                    Care That Connects, Services That Support
                   </p>
                 </div>
               </div>
