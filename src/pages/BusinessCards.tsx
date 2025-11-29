@@ -122,16 +122,24 @@ const BusinessCards = () => {
             width: ${document.body.classList.contains('high-res-print') ? '700px' : '3.25in'} !important;
             height: ${document.body.classList.contains('high-res-print') ? '400px' : '1.75in'} !important;
             margin: ${document.body.classList.contains('high-res-print') ? '1rem auto' : '0.25in auto'} !important;
-            page-break-after: always;
-            page-break-inside: avoid;
+            page-break-after: always !important;
+            page-break-before: auto !important;
+            page-break-inside: avoid !important;
             box-shadow: none !important;
             border-radius: ${document.body.classList.contains('high-res-print') ? '8px' : '0'} !important;
             box-sizing: border-box !important;
             position: relative;
+            break-inside: avoid !important;
           }
           
           .business-card:last-child {
-            page-break-after: auto;
+            page-break-after: auto !important;
+          }
+          
+          /* Ensure card content doesn't break */
+          .business-card > * {
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
           }
           
           ${!document.body.classList.contains('high-res-print') ? `
