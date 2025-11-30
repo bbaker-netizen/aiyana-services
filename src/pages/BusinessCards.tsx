@@ -439,9 +439,19 @@ const BusinessCards = () => {
                     <h2 className="text-2xl font-bold mb-2" style={{ color: 'hsl(215 25% 27%)' }}>
                       Aiyana Services
                     </h2>
-                    <p className="text-base" style={{ color: 'hsl(215 15% 45%)' }}>
+                    <p className="text-base mb-4" style={{ color: 'hsl(215 15% 45%)' }}>
                       Care That Connects, Services That Support
                     </p>
+                    <div className="flex flex-col gap-2 mt-4">
+                      <div className="flex items-center justify-center text-xs" style={{ color: 'hsl(215 25% 27%)' }}>
+                        <Phone className="w-3 h-3 mr-2" />
+                        <span>(780) 695-2477{personalization.extension ? ` ext. ${personalization.extension}` : ''}</span>
+                      </div>
+                      <div className="flex items-center justify-center text-xs" style={{ color: 'hsl(215 25% 27%)' }}>
+                        <Mail className="w-3 h-3 mr-2" />
+                        <span>info@aiyanaservices.com</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -454,28 +464,15 @@ const BusinessCards = () => {
               </div>
               <div className={`business-card bg-white ${!selectedCards.includes(1) ? 'not-selected opacity-50' : ''}`}>
                 <div className="flex flex-col h-full p-8 justify-center">
-                  <h3 className="text-lg font-bold mb-4 text-center" style={{ color: 'hsl(168 52% 42%)' }}>
-                    Contact Information
-                  </h3>
-                  <div className="grid grid-cols-2 gap-4 text-sm" style={{ color: 'hsl(215 15% 45%)' }}>
-                    <div className="flex items-center gap-2">
-                      <Phone className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
-                      <span className="text-xs">{getPhoneDisplay()}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Mail className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
-                      <span className="text-xs truncate">info@aiyanaservices.com</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Globe className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
-                      <span className="text-xs">aiyanaservices.com</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
-                      <span className="text-xs">Edmonton, AB</span>
-                    </div>
+                  <div className="flex items-center text-xs mb-2">
+                    <Globe className="w-3 h-3 mr-2" />
+                    <span>aiyanaservices.com</span>
                   </div>
-                  <div className="mt-6 pt-4 border-t" style={{ borderColor: 'hsl(168 52% 42%)' }}>
+                  <div className="flex items-center text-xs mb-4">
+                    <MapPin className="w-3 h-3 mr-2" />
+                    <span>Edmonton, AB</span>
+                  </div>
+                  <div className="mt-2 pt-4 border-t" style={{ borderColor: 'hsl(168 52% 42%)' }}>
                     <p className="text-sm font-semibold mb-2" style={{ color: 'hsl(215 25% 27%)' }}>
                       Our Services:
                     </p>
@@ -543,9 +540,19 @@ const BusinessCards = () => {
                     <h2 className="text-xl font-bold mb-1" style={{ color: 'hsl(215 25% 27%)' }}>
                       Aiyana Services
                     </h2>
-                    <p className="text-sm" style={{ color: 'hsl(215 15% 45%)' }}>
+                    <p className="text-sm mb-4" style={{ color: 'hsl(215 15% 45%)' }}>
                       Compassionate Integrated Care
                     </p>
+                    <div className="flex flex-col gap-2 mt-2">
+                      <div className="flex items-center text-xs" style={{ color: 'hsl(168 52% 42%)' }}>
+                        <Phone className="w-3 h-3 mr-2" />
+                        <span>(780) 695-2477{personalization.extension ? ` ext. ${personalization.extension}` : ''}</span>
+                      </div>
+                      <div className="flex items-center text-xs" style={{ color: 'hsl(168 52% 42%)' }}>
+                        <Mail className="w-3 h-3 mr-2" />
+                        <span>info@aiyanaservices.com</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -560,18 +567,7 @@ const BusinessCards = () => {
                 <div className="flex h-full">
                   <div className="flex-1 p-6 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-sm font-bold mb-3" style={{ color: 'hsl(168 52% 42%)' }}>
-                        Contact Information
-                      </h3>
                       <div className="space-y-2 text-sm" style={{ color: 'hsl(215 15% 45%)' }}>
-                        <div className="flex items-center gap-2">
-                          <Phone className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
-                          <span className="text-xs">{getPhoneDisplay()}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Mail className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
-                          <span className="text-xs truncate">info@aiyanaservices.com</span>
-                        </div>
                         <div className="flex items-center gap-2">
                           <Globe className="h-4 w-4 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
                           <span className="text-xs">aiyanaservices.com</span>
@@ -653,9 +649,19 @@ const BusinessCards = () => {
                     <h2 className="text-3xl font-bold mb-2">
                       Aiyana Services
                     </h2>
-                    <p className="text-base opacity-90">
+                    <p className="text-base opacity-90 mb-4">
                       Care That Connects, Services That Support
                     </p>
+                    <div className="flex flex-col gap-2 mt-2">
+                      <div className="flex items-center justify-center text-xs text-white">
+                        <Phone className="w-3 h-3 mr-2" />
+                        <span>(780) 695-2477{personalization.extension ? ` ext. ${personalization.extension}` : ''}</span>
+                      </div>
+                      <div className="flex items-center justify-center text-xs text-white">
+                        <Mail className="w-3 h-3 mr-2" />
+                        <span>info@aiyanaservices.com</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -668,21 +674,7 @@ const BusinessCards = () => {
               </div>
               <div className={`business-card bg-white ${!selectedCards.includes(3) ? 'not-selected opacity-50' : ''}`}>
                 <div className="flex flex-col h-full p-8">
-                  <div className="border-b-2 pb-4 mb-4" style={{ borderColor: 'hsl(168 52% 42%)' }}>
-                    <h3 className="text-lg font-bold text-center" style={{ color: 'hsl(168 52% 42%)' }}>
-                      Contact Information
-                    </h3>
-                  </div>
-                  
-                  <div className="space-y-3 text-sm mb-6" style={{ color: 'hsl(215 15% 45%)' }}>
-                    <div className="flex items-center gap-3">
-                      <Phone className="h-5 w-5 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
-                      <span>{getPhoneDisplay()}</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Mail className="h-5 w-5 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
-                      <span className="truncate">info@aiyanaservices.com</span>
-                    </div>
+                  <div className="space-y-3 text-sm mb-4" style={{ color: 'hsl(215 15% 45%)' }}>
                     <div className="flex items-center gap-3">
                       <Globe className="h-5 w-5 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
                       <span>aiyanaservices.com</span>
@@ -755,9 +747,19 @@ const BusinessCards = () => {
                   <h2 className="text-4xl font-bold mb-3" style={{ color: 'hsl(168 52% 42%)' }}>
                     Aiyana Services
                   </h2>
-                  <p className="text-lg font-medium" style={{ color: 'hsl(215 25% 27%)' }}>
+                  <p className="text-lg font-medium mb-4" style={{ color: 'hsl(215 25% 27%)' }}>
                     Care That Connects, Services That Support
                   </p>
+                  <div className="flex flex-col gap-2 mt-2">
+                    <div className="flex items-center justify-center text-xs" style={{ color: 'hsl(168 52% 42%)' }}>
+                      <Phone className="w-3 h-3 mr-2" />
+                      <span>(780) 695-2477{personalization.extension ? ` ext. ${personalization.extension}` : ''}</span>
+                    </div>
+                    <div className="flex items-center justify-center text-xs" style={{ color: 'hsl(168 52% 42%)' }}>
+                      <Mail className="w-3 h-3 mr-2" />
+                      <span>info@aiyanaservices.com</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -774,31 +776,11 @@ const BusinessCards = () => {
                   </h3>
                   
                   <div className="space-y-3 text-sm mb-6" style={{ color: 'hsl(215 15% 45%)' }}>
-                    {personalization.name && (
-                      <div className="text-center mb-3">
-                        <p className="font-bold text-base" style={{ color: 'hsl(168 52% 42%)' }}>
-                          {personalization.name}
-                        </p>
-                        {personalization.title && (
-                          <p className="text-xs" style={{ color: 'hsl(215 15% 45%)' }}>
-                            {personalization.title}
-                          </p>
-                        )}
-                      </div>
-                    )}
-                    <div className="flex items-center gap-3">
-                      <Phone className="h-5 w-5 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
-                      <span className="text-xs">{getPhoneDisplay()}</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Mail className="h-5 w-5 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
-                      <span className="truncate">info@aiyanaservices.com</span>
-                    </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 justify-center">
                       <Globe className="h-5 w-5 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
                       <span>aiyanaservices.com</span>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 justify-center">
                       <MapPin className="h-5 w-5 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
                       <span>Edmonton, Alberta</span>
                     </div>
