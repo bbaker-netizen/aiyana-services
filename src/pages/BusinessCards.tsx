@@ -728,36 +728,52 @@ const BusinessCards = () => {
               <div className={`business-card ${!selectedCards.includes(4) ? 'not-selected opacity-50' : ''}`} style={{
                 background: 'linear-gradient(135deg, hsl(168 52% 95%), hsl(15 58% 95%))'
               }}>
-                <div className="flex flex-col items-center justify-center h-full p-10 text-center">
-                  <img 
-                    src={logo} 
-                    alt="Aiyana Services" 
-                    className="h-28 w-auto mb-6 mix-blend-multiply"
-                  />
-                  {personalization.name && (
-                    <h3 className="text-2xl font-bold mb-2" style={{ color: 'hsl(168 52% 42%)' }}>
-                      {personalization.name}
-                    </h3>
-                  )}
-                  {personalization.title && (
-                    <p className="text-base font-medium mb-4" style={{ color: 'hsl(215 25% 27%)' }}>
-                      {personalization.title}
-                    </p>
-                  )}
-                  <h2 className="text-4xl font-bold mb-3" style={{ color: 'hsl(168 52% 42%)' }}>
-                    Aiyana Services
-                  </h2>
-                  <p className="text-lg font-medium mb-4" style={{ color: 'hsl(215 25% 27%)' }}>
-                    Care That Connects, Services That Support
-                  </p>
-                  <div className="flex flex-col gap-2 mt-2">
-                    <div className="flex items-center justify-center text-xs" style={{ color: 'hsl(168 52% 42%)' }}>
-                      <Phone className="w-3 h-3 mr-2" />
-                      <span>(780) 695-2477{personalization.extension ? ` ext. ${personalization.extension}` : ''}</span>
+                <div className="flex flex-col h-full p-10">
+                  {/* Logo and company branding at top */}
+                  <div className="flex items-center gap-3 mb-8">
+                    <img 
+                      src={logo} 
+                      alt="Aiyana Services" 
+                      className="h-16 w-auto mix-blend-multiply"
+                    />
+                    <div className="flex flex-col">
+                      <h3 className="text-lg font-bold leading-tight" style={{ color: 'hsl(168 52% 42%)' }}>
+                        Aiyana Services
+                      </h3>
+                      <p className="text-xs leading-tight" style={{ color: 'hsl(215 25% 27%)' }}>
+                        Care That Connects, Services That Support.
+                      </p>
                     </div>
-                    <div className="flex items-center justify-center text-xs" style={{ color: 'hsl(168 52% 42%)' }}>
-                      <Mail className="w-3 h-3 mr-2" />
-                      <span>info@aiyanaservices.com</span>
+                  </div>
+                  
+                  {/* Center content */}
+                  <div className="flex-1 flex flex-col justify-center text-center">
+                    {personalization.name && (
+                      <h3 className="text-xl font-bold mb-2" style={{ color: 'hsl(168 52% 42%)' }}>
+                        {personalization.name}
+                      </h3>
+                    )}
+                    {personalization.title && (
+                      <p className="text-sm font-medium mb-4" style={{ color: 'hsl(215 25% 27%)' }}>
+                        {personalization.title}
+                      </p>
+                    )}
+                    <h2 className="text-3xl font-bold mb-3" style={{ color: 'hsl(168 52% 42%)' }}>
+                      Aiyana Services
+                    </h2>
+                    <p className="text-base font-medium mb-6" style={{ color: 'hsl(215 25% 27%)' }}>
+                      Care That Connects, Services That Support
+                    </p>
+                    
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center justify-center text-sm" style={{ color: 'hsl(168 52% 42%)' }}>
+                        <Phone className="w-4 h-4 mr-2" />
+                        <span>(780) 695-2477{personalization.extension ? ` ext. ${personalization.extension}` : ''}</span>
+                      </div>
+                      <div className="flex items-center justify-center text-sm" style={{ color: 'hsl(168 52% 42%)' }}>
+                        <Mail className="w-4 h-4 mr-2" />
+                        <span>info@aiyanaservices.com</span>
+                      </div>
                     </div>
                   </div>
                 </div>
