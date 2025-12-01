@@ -342,12 +342,12 @@ const BusinessCards = () => {
                     <img 
                       src={logo} 
                       alt="Aiyana Services" 
-                      className="h-16 w-auto mix-blend-multiply"
+                      className="h-24 w-auto mix-blend-multiply"
                     />
                   </div>
                   
                   {/* Center content */}
-                  <div className="flex flex-col items-center text-center -mt-4">
+                  <div className="flex flex-col items-center text-center -mt-8">
                     <h2 className="text-3xl font-bold mb-2" style={{ color: 'hsl(168 52% 42%)' }}>
                       Aiyana Services
                     </h2>
