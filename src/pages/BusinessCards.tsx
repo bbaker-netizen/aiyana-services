@@ -347,7 +347,7 @@ const BusinessCards = () => {
                   </div>
                   
                   {/* Center content */}
-                  <div className="flex flex-col items-center text-center -mt-8">
+                  <div className="flex flex-col items-center text-center -mt-6">
                     <h2 className="text-3xl font-bold mb-2" style={{ color: 'hsl(168 52% 42%)' }}>
                       Aiyana Services
                     </h2>
