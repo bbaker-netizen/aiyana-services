@@ -337,25 +337,17 @@ const BusinessCards = () => {
                 background: 'linear-gradient(135deg, hsl(168 52% 95%), hsl(15 58% 95%))'
               }}>
                 <div className="flex flex-col justify-between h-full p-8">
-                  {/* Logo and company branding at top */}
-                  <div className="flex items-center gap-3">
+                  {/* Logo only at top */}
+                  <div className="flex justify-center">
                     <img 
                       src={logo} 
                       alt="Aiyana Services" 
-                      className="h-14 w-auto mix-blend-multiply"
+                      className="h-16 w-auto mix-blend-multiply"
                     />
-                    <div className="flex flex-col">
-                      <h3 className="text-base font-bold leading-tight" style={{ color: 'hsl(168 52% 42%)' }}>
-                        Aiyana Services
-                      </h3>
-                      <p className="text-xs leading-tight" style={{ color: 'hsl(215 25% 27%)' }}>
-                        Care That Connects, Services That Support.
-                      </p>
-                    </div>
                   </div>
                   
                   {/* Center content */}
-                  <div className="flex flex-col items-center text-center -mt-6">
+                  <div className="flex flex-col items-center text-center -mt-4">
                     <h2 className="text-3xl font-bold mb-2" style={{ color: 'hsl(168 52% 42%)' }}>
                       Aiyana Services
                     </h2>
