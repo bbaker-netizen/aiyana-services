@@ -32,7 +32,7 @@ const Services = () => {
               Our Services
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Discover the full range of integrated care solutions designed to support your child and family.
+              Discover the full range of integrated care solutions designed to support your loved one.
             </p>
           </div>
         </section>
