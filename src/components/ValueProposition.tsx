@@ -13,7 +13,7 @@ const values = [
   {
     icon: Users,
     title: "Holistic approach with integrated services",
-    description: "Comprehensive care that addresses all aspects of your child's wellbeing.",
+    description: "Comprehensive care that addresses all aspects of your child's and loved one's wellbeing.",
   },
   {
     icon: Heart,
