@@ -95,7 +95,7 @@ const Header = () => {
           
           <div className="flex items-center gap-3">
             <Button variant="cta" size="lg" className="hidden xl:inline-flex shadow-card hover:shadow-warm">
-              Reserve Respite Care
+              Request Service
             </Button>
             
             {/* Mobile Menu */}
@@ -164,7 +164,7 @@ const Header = () => {
                   
                   <Button variant="cta" size="lg" className="w-full mt-4" asChild>
                     <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                      Reserve Respite Care
+                      Request Service
                     </Link>
                   </Button>
                 </nav>

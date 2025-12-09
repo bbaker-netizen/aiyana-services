@@ -99,9 +99,9 @@ const Plan = () => {
             Don't wait for help to arrive. Take the first step towards comprehensive care for your family today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/services/respite-care">
+            <Link to="/contact">
               <Button variant="cta" size="xl">
-                Reserve Respite Care
+                Request Service
               </Button>
             </Link>
             <Link to="/contact">

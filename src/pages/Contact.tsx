@@ -201,9 +201,9 @@ const Contact = () => {
               Don't wait to get the support your family needs. Contact us today to reserve respite care or schedule an assessment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/services/respite-care">
+              <Link to="/contact">
                 <Button variant="cta" size="xl">
-                  Reserve Respite Care
+                  Request Service
                 </Button>
               </Link>
               <Link to="/services/adhd-assessment">
