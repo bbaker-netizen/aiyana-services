@@ -102,9 +102,9 @@ const ValueProposition = () => {
             With Aiyana Services, you're not just getting care – you're gaining a partner 
             who understands your journey and is committed to your family's success.
           </p>
-          <Link to="/services/respite-care">
+          <Link to="/contact">
             <Button variant="cta" size="xl">
-              Reserve Respite Care
+              Request Service
             </Button>
           </Link>
         </div>
