@@ -4,14 +4,6 @@ import { Phone, Mail, Menu, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import logo from "@/assets/ayana-logo.png";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 
 const serviceLinks = [
   { title: "Respite Care", href: "/services/respite-care" },
@@ -40,31 +32,29 @@ const Header = () => {
           </Link>
           
           <nav className="hidden lg:flex items-center md:space-x-4 lg:space-x-6 xl:space-x-8">
-            <NavigationMenu delayDuration={0}>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent text-foreground hover:text-primary font-medium ${isActive('/services') ? 'text-primary' : ''}`}>
-                    Services
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="w-48 p-2 bg-card border border-border shadow-lg rounded-md">
-                      {serviceLinks.map((service) => (
-                        <li key={service.href}>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              to={service.href}
-                              className={`block px-3 py-2 text-sm rounded-md transition-colors hover:bg-accent hover:text-accent-foreground ${location.pathname === service.href ? 'text-primary font-medium' : 'text-foreground'}`}
-                            >
-                              {service.title}
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+            <div className="relative group">
+              <Link 
+                to="/services"
+                className={`inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-primary ${isActive('/services') ? 'text-primary' : 'text-foreground'}`}
+              >
+                Services
+                <ChevronDown className="relative top-[1px] ml-1 h-3 w-3 transition-transform duration-200 group-hover:rotate-180" />
+              </Link>
+              <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <ul className="w-48 p-2 bg-card border border-border shadow-lg rounded-md">
+                  {serviceLinks.map((service) => (
+                    <li key={service.href}>
+                      <Link
+                        to={service.href}
+                        className={`block px-3 py-2 text-sm rounded-md transition-colors hover:bg-accent hover:text-accent-foreground ${location.pathname === service.href ? 'text-primary font-medium' : 'text-foreground'}`}
+                      >
+                        {service.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
             <Link 
               to="/about" 
               className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/about' ? 'text-primary' : ''}`}
