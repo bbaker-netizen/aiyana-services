@@ -6,7 +6,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Users, Target, Star, Briefcase, ArrowRight } from "lucide-react";
+import { Users, Target, Briefcase, ArrowRight } from "lucide-react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -47,7 +47,7 @@ const About = () => {
                 Discover more about our mission, team, and the families we serve
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
               <Card className="text-center group hover:border-primary/50 transition-colors">
                 <CardHeader>
                   <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -62,46 +62,6 @@ const About = () => {
                   <Link to="/about/mission">
                     <Button variant="outline" className="w-full group-hover:border-primary">
                       Learn More
-                      <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center group hover:border-primary/50 transition-colors">
-                <CardHeader>
-                  <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Users className="h-8 w-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">Our Team</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="mb-4">
-                    Meet our dedicated professionals and their specialized expertise.
-                  </CardDescription>
-                  <Link to="/about/team">
-                    <Button variant="outline" className="w-full group-hover:border-primary">
-                      Meet the Team
-                      <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center group hover:border-primary/50 transition-colors">
-                <CardHeader>
-                  <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Star className="h-8 w-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">Testimonials</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="mb-4">
-                    Read real stories from families we've helped across Edmonton.
-                  </CardDescription>
-                  <Link to="/about/testimonials">
-                    <Button variant="outline" className="w-full group-hover:border-primary">
-                      Read Stories
                       <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </Link>
