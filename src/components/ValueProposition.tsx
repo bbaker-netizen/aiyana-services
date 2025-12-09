@@ -1,29 +1,39 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Clock, Shield, Heart, Users, ArrowRight } from "lucide-react";
+import { CheckCircle, Clock, Shield, Heart, Users, ArrowRight, Brain, Puzzle, HeartHandshake, Layers } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
 
-const values = [
+const services = [
   {
     icon: Clock,
-    title: "Immediate access to safe respite care",
-    description: "No more waiting lists. Get the support you need when you need it most.",
+    title: "Respite Care",
+    description: "No more waiting lists. Get immediate access to safe respite care when you need it most.",
+    href: "/services/respite-care",
   },
   {
-    icon: Users,
-    title: "Holistic approach with integrated services",
-    description: "Comprehensive care that addresses all aspects of your child's and loved one's wellbeing.",
+    icon: Brain,
+    title: "ADHD Assessment",
+    description: "Comprehensive ADHD evaluations to help understand your child's unique needs and strengths.",
+    href: "/services/adhd-assessment",
   },
   {
-    icon: Heart,
-    title: "Compassionate, evidence-based therapeutic support",
-    description: "Professional care delivered with warmth, understanding, and proven methods.",
+    icon: Puzzle,
+    title: "Autism Evaluation",
+    description: "Thorough autism spectrum assessments delivered with care and expertise.",
+    href: "/services/autism-evaluation",
   },
   {
-    icon: ArrowRight,
-    title: "Seamless transition into adult services",
-    description: "Smooth pathways to ensure continuity of care as your child grows.",
+    icon: HeartHandshake,
+    title: "Addiction Support",
+    description: "Compassionate, evidence-based support for those facing addiction challenges.",
+    href: "/services/addiction-support",
+  },
+  {
+    icon: Layers,
+    title: "Dual Diagnosis Care",
+    description: "Integrated care addressing both mental health and addiction needs together.",
+    href: "/services/dual-diagnosis",
   },
 ];
 
@@ -36,7 +46,7 @@ const ValueProposition = () => {
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="flex items-center justify-center gap-2 mb-6">
             <CheckCircle className="h-8 w-8 text-success" />
-            <span className="text-success font-semibold text-lg">Find Relief and Support for Your Child</span>
+            <span className="text-success font-semibold text-lg">Find Relief and Support for Your Loved One</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -49,33 +59,36 @@ const ValueProposition = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {values.map((value, index) => {
-            const Icon = value.icon;
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {services.map((service, index) => {
+            const Icon = service.icon;
             return (
-              <Card 
-                key={index} 
-                className={`bg-card hover:shadow-elegant transition-all duration-500 ${
+              <Link 
+                to={service.href} 
+                key={index}
+                className={`group transition-all duration-500 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0 p-4 bg-primary/10 rounded-xl">
-                      <Icon className="h-8 w-8 text-primary" />
+                <Card className="h-full bg-card hover:shadow-elegant hover:border-primary/30 transition-all duration-300 cursor-pointer group-hover:-translate-y-1">
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-6">
+                      <div className="flex-shrink-0 p-4 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
+                        <Icon className="h-8 w-8 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-foreground mb-3 leading-tight group-hover:text-primary transition-colors">
+                          {service.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {service.description}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-foreground mb-3 leading-tight">
-                        {value.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {value.description}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Link>
             );
           })}
         </div>
