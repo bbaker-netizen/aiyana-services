@@ -93,9 +93,9 @@ const Stakes = () => {
           <p className="text-lg text-foreground mb-8 font-medium">
             Your family deserves better. Take action before it's too late.
           </p>
-          <Link to="/services/respite-care">
+          <Link to="/contact">
             <Button variant="cta" size="xl">
-              Reserve Respite Care Today
+              Request Service
             </Button>
           </Link>
         </div>

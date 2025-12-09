@@ -60,9 +60,9 @@ const ExplanatoryParagraph = () => {
               </Card>
             </div>
             
-            <Link to="/services/respite-care">
+            <Link to="/contact">
               <Button variant="cta" size="xl">
-                Reserve Respite Care
+                Request Service
               </Button>
             </Link>
           </div>

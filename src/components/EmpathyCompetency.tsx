@@ -98,9 +98,9 @@ const EmpathyCompetency = () => {
         </div>
         
         <div className="text-center mt-16">
-          <Link to="/services/respite-care">
+          <Link to="/contact">
             <Button variant="cta" size="xl">
-              Reserve Respite Care
+              Request Service
             </Button>
           </Link>
         </div>
