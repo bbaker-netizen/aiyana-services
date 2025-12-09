@@ -40,7 +40,7 @@ const Header = () => {
           </Link>
           
           <nav className="hidden lg:flex items-center md:space-x-4 lg:space-x-6 xl:space-x-8">
-            <NavigationMenu>
+            <NavigationMenu delayDuration={0}>
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className={`bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent text-foreground hover:text-primary font-medium ${isActive('/services') ? 'text-primary' : ''}`}>
@@ -94,9 +94,11 @@ const Header = () => {
           </nav>
           
           <div className="flex items-center gap-3">
-            <Button variant="cta" size="lg" className="hidden xl:inline-flex shadow-card hover:shadow-warm">
-              Request Service
-            </Button>
+            <Link to="/contact">
+              <Button variant="cta" size="lg" className="hidden xl:inline-flex shadow-card hover:shadow-warm">
+                Request Service
+              </Button>
+            </Link>
             
             {/* Mobile Menu */}
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
