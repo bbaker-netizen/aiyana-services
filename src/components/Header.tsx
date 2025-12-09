@@ -1,15 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
-import { Phone, Mail, Menu, X } from "lucide-react";
+import { Phone, Mail, Menu, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import logo from "@/assets/ayana-logo.png";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+
+const serviceLinks = [
+  { title: "Respite Care", href: "/services/respite-care" },
+  { title: "ADHD Assessment", href: "/services/adhd-assessment" },
+  { title: "Autism Evaluation", href: "/services/autism-evaluation" },
+  { title: "Addiction Support", href: "/services/addiction-support" },
+  { title: "Dual Diagnosis Care", href: "/services/dual-diagnosis" },
+];
 
 const Header = () => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => location.pathname === path || location.pathname.startsWith(path + '/');
   
   return (
     <header className="w-full bg-card sticky top-0 z-50 border-b border-border">
@@ -24,12 +40,31 @@ const Header = () => {
           </Link>
           
           <nav className="hidden lg:flex items-center md:space-x-4 lg:space-x-6 xl:space-x-8">
-            <Link 
-              to="/services" 
-              className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/services' ? 'text-primary' : ''}`}
-            >
-              Services
-            </Link>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={`bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent text-foreground hover:text-primary font-medium ${isActive('/services') ? 'text-primary' : ''}`}>
+                    Services
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="w-48 p-2 bg-card border border-border shadow-lg rounded-md">
+                      {serviceLinks.map((service) => (
+                        <li key={service.href}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={service.href}
+                              className={`block px-3 py-2 text-sm rounded-md transition-colors hover:bg-accent hover:text-accent-foreground ${location.pathname === service.href ? 'text-primary font-medium' : 'text-foreground'}`}
+                            >
+                              {service.title}
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
             <Link 
               to="/about" 
               className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/about' ? 'text-primary' : ''}`}
@@ -65,8 +100,8 @@ const Header = () => {
             
             {/* Mobile Menu */}
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-              <SheetTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="icon" className="md:hidden">
+              <SheetTrigger asChild className="lg:hidden">
+                <Button variant="ghost" size="icon" className="lg:hidden">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
@@ -75,14 +110,28 @@ const Header = () => {
                 <SheetHeader>
                   <SheetTitle className="text-left">Menu</SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col gap-6 mt-8">
-                  <Link 
-                    to="/services" 
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`text-lg font-medium transition-colors ${isActive('/services') ? 'text-primary' : 'text-foreground hover:text-primary'}`}
-                  >
-                    Services
-                  </Link>
+                <nav className="flex flex-col gap-4 mt-8">
+                  <div className="space-y-2">
+                    <Link 
+                      to="/services" 
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`text-lg font-medium transition-colors block ${isActive('/services') ? 'text-primary' : 'text-foreground hover:text-primary'}`}
+                    >
+                      Services
+                    </Link>
+                    <div className="pl-4 space-y-2 border-l-2 border-border">
+                      {serviceLinks.map((service) => (
+                        <Link
+                          key={service.href}
+                          to={service.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={`block text-sm transition-colors ${location.pathname === service.href ? 'text-primary font-medium' : 'text-muted-foreground hover:text-primary'}`}
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                   <Link 
                     to="/about" 
                     onClick={() => setMobileMenuOpen(false)}
