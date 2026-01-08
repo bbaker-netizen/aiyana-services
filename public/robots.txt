@@ -12,3 +12,8 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /brochure
+Disallow: /business-cards
+
+# Sitemap
+Sitemap: https://aiyanaservices.ca/sitemap.xml

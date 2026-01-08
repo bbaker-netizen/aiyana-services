@@ -10,6 +10,24 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { FAQPageSchema, BreadcrumbSchema } from "@/components/seo/JsonLd";
+
+// FAQ data for JSON-LD schema
+const faqData = [
+  { question: "What services does Aiyana Services offer?", answer: "We offer comprehensive support including respite care, ADHD assessments, autism evaluations, addiction support, and dual diagnosis care. Our integrated approach ensures your family receives coordinated care across all services." },
+  { question: "Who do you serve?", answer: "We serve children, youth, and families navigating ADHD, autism spectrum disorder, intellectual and developmental disabilities (IDD), addiction challenges, and dual diagnoses. Our services are available to families throughout Edmonton and surrounding areas." },
+  { question: "How do I get started?", answer: "Simply contact us by phone at (780) 229-4466 or email info@aiyanaservices.com. We'll schedule an initial consultation to understand your needs and develop a personalized care plan for your family." },
+  { question: "What is respite care?", answer: "Respite care provides temporary relief for primary caregivers, allowing you to rest while trained professionals care for your loved one. Our respite services include in-home care, community outings, and structured activities tailored to your child's needs and interests." },
+  { question: "How long can I book respite care for?", answer: "We offer flexible respite care options ranging from a few hours to overnight stays and extended weekend support. We work with your schedule and funding availability to create a plan that works for your family." },
+  { question: "What qualifications do your respite caregivers have?", answer: "All our respite workers have relevant certifications (DSW, SW, or equivalent), specialized training in autism, ADHD, and developmental disabilities, First Aid/CPR certification, and clear criminal record checks including vulnerable sector screening." },
+  { question: "What's involved in an ADHD assessment?", answer: "Our comprehensive ADHD assessments include clinical interviews, standardized rating scales, behavioural observations, cognitive testing, and school/home questionnaires. The process typically takes 4-6 hours over multiple sessions." },
+  { question: "How long does an autism evaluation take?", answer: "Our autism evaluations typically require 6-8 hours over 2-3 sessions. This includes developmental history, ADOS-2 assessment, cognitive testing, adaptive behaviour assessment, and parent/caregiver interviews." },
+  { question: "Do you accept insurance?", answer: "Yes, we accept most private insurance plans that cover psychological services and respite care. We provide detailed receipts for submission to your insurance provider." },
+  { question: "What about government funding (FSCD, PDD)?", answer: "We are an approved service provider for Family Support for Children with Disabilities (FSCD) and Persons with Developmental Disabilities (PDD) programs. We can help you navigate the application process and coordinate funding for eligible services." },
+  { question: "Are staff background checked?", answer: "Absolutely. All staff undergo comprehensive criminal record checks including vulnerable sector screening prior to working with families. Background checks are renewed every three years." },
+  { question: "Do you provide emergency support?", answer: "Yes, we offer 24/7 emergency respite support based on availability. For crisis situations, we can often arrange same-day or next-day services." },
+  { question: "Where are you located?", answer: "Our main office is located in Edmonton, Alberta. Assessments are conducted at our comfortable, child-friendly clinic space. We also provide in-home services throughout the greater Edmonton area and surrounding communities." },
+];
 
 const FAQ = () => {
   useEffect(() => {
@@ -20,6 +38,8 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen">
+      <FAQPageSchema faqs={faqData} />
+      <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "FAQ", url: "/faq" }]} />
       <ScrollProgress />
       <Header />
       <main>
