@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
@@ -7,10 +8,23 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, Users, Phone, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { LocalBusinessSchema, OrganizationSchema } from "@/components/seo/JsonLd";
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "Aiyana Services - Comprehensive Care for Youth with Complex Needs | Edmonton";
+    const meta = document.querySelector('meta[name="description"]') || (() => { 
+      const m = document.createElement('meta'); 
+      m.setAttribute('name', 'description'); 
+      document.head.appendChild(m); 
+      return m; 
+    })();
+    meta.setAttribute('content', 'Professional respite care and ADHD/Autism assessments in Edmonton. Aiyana Services provides compassionate, integrated support for families of youth with ADHD, Autism, IDD, addiction, and dual diagnoses. Trusted by Edmonton families.');
+  }, []);
   return (
     <div className="min-h-screen">
+      <LocalBusinessSchema />
+      <OrganizationSchema />
       <ScrollProgress />
       <Header />
       <main>

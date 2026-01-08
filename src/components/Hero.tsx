@@ -87,10 +87,11 @@ const Hero = () => {
             <div key={index} className="flex-[0_0_100%] min-w-0 relative">
               {/* Background Image with Overlay */}
               <div className="absolute inset-0">
-                <img
+              <img
                   src={slide.image}
                   alt={slide.alt}
                   className="w-full h-full object-cover"
+                  loading={index === 0 ? "eager" : "lazy"}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
               </div>
