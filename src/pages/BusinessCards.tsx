@@ -22,6 +22,16 @@ const BusinessCards = () => {
 
   useEffect(() => {
     document.title = "Business Cards | Aiyana Services";
+    
+    // Prevent search engine indexing
+    const metaRobots = document.createElement('meta');
+    metaRobots.name = 'robots';
+    metaRobots.content = 'noindex, nofollow';
+    document.head.appendChild(metaRobots);
+    
+    return () => {
+      document.head.removeChild(metaRobots);
+    };
   }, []);
 
   const handlePersonalizationChange = (field: keyof PersonalizationData, value: string) => {
