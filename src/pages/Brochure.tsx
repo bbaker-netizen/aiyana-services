@@ -5,6 +5,16 @@ import { Heart, Clock, Users, Brain, Activity, Shield, Phone, Mail, MapPin } fro
 const Brochure = () => {
   useEffect(() => {
     document.title = "Aiyana Services - Professional Brochure";
+    
+    // Prevent search engine indexing
+    const metaRobots = document.createElement('meta');
+    metaRobots.name = 'robots';
+    metaRobots.content = 'noindex, nofollow';
+    document.head.appendChild(metaRobots);
+    
+    return () => {
+      document.head.removeChild(metaRobots);
+    };
   }, []);
 
   return (
