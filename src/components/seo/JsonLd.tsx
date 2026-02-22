@@ -1,5 +1,3 @@
-import { useLocation } from "react-router-dom";
-
 // LocalBusiness Schema for the homepage
 export const LocalBusinessSchema = () => {
   const schema = {

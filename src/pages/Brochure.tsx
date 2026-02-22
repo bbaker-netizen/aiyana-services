@@ -339,14 +339,14 @@ const Brochure = () => {
           
           <div className="mt-6 text-center p-4 rounded-lg" style={{ background: 'hsl(168 52% 95%)' }}>
             <p className="text-sm font-semibold" style={{ color: 'hsl(215 25% 27%)' }}>
-              Office Hours: Monday - Friday, 8:00 AM - 6:00 PM | Saturday, 9:00 AM - 3:00 PM
+              Office Hours: Monday - Friday, 8:00 AM - 6:00 PM | Saturday, 9:00 AM - 4:00 PM
             </p>
           </div>
         </section>
 
         {/* Footer */}
         <footer className="brochure-section mt-8 text-center text-xs" style={{ color: 'hsl(215 15% 45%)' }}>
-          <p>© 2025 Aiyana Services. All rights reserved. | Serving families across Edmonton and surrounding areas.</p>
+          <p>© {new Date().getFullYear()} Aiyana Services. All rights reserved. | Serving families across Edmonton and surrounding areas.</p>
         </footer>
       </div>
     </>

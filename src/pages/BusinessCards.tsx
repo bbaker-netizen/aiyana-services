@@ -368,7 +368,7 @@ const BusinessCards = () => {
                     <div className="flex flex-col gap-1.5">
                       <div className="flex items-center justify-center text-xs" style={{ color: 'hsl(168 52% 42%)' }}>
                         <Phone className="w-3.5 h-3.5 mr-2" />
-                        <span>(780) 695-2477</span>
+                        <span>(780) 229-4466</span>
                       </div>
                       <div className="flex items-center justify-center text-xs" style={{ color: 'hsl(168 52% 42%)' }}>
                         <Mail className="w-3.5 h-3.5 mr-2" />
