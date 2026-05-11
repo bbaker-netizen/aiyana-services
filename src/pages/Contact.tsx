@@ -28,7 +28,7 @@ const Contact = () => {
 
                                       const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                                           e.preventDefault();
-                                              setStatus('loading');h
+                                              setStatus('loading');
                                                   setErrorMessage('');
                                                       try {
                                                             const response = await fetch('/.netlify/functions/contact', {
