@@ -223,7 +223,7 @@ const PrivacyPolicy = () => {
                   <p><strong>Aiyana Services Inc.</strong></p>
                   <p>Privacy Officer</p>
                   <p>Edmonton, Alberta</p>
-                  <p>Phone: (780) 851-9334</p>
+                  <p>Phone: (587) 336-1226</p>
                   <p>Email: privacy@aiyanaservices.com</p>
                 </div>
                 <p className="text-muted-foreground leading-relaxed mt-6">

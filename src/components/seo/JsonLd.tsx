@@ -9,7 +9,7 @@ export const LocalBusinessSchema = () => {
     "name": "Aiyana Services",
     "image": "https://aiyanaservices.ca/og-image.jpg",
     "url": "https://aiyanaservices.ca",
-    "telephone": "(780) 851-9334",
+    "telephone": "+1-587-336-1226",
     "email": "info@aiyanaservices.com",
     "address": {
       "@type": "PostalAddress",
@@ -106,7 +106,7 @@ export const OrganizationSchema = () => {
     "logo": "https://aiyanaservices.ca/og-image.jpg",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "(780) 851-9334",
+      "telephone": "+1-587-336-1226",
       "contactType": "customer service",
       "email": "info@aiyanaservices.com",
       "areaServed": "CA",
