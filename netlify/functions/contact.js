@@ -41,7 +41,7 @@ export const handler = async (event) => {
                         // Send email via Resend
                         const { data, error } = await resend.emails.send({
                                                         from: 'Aiyana Services <noreply@aiyanaservices.com>',
-                                                        to: 'contact@aiyanaservices.com',
+                                                        to: 'info@aiyanaservices.com',
                                                         replyTo: email,
                                                         subject: `New contact form submission from ${sanitize(name)}`,
                                                         html: `
