@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-10 w-10 overflow-hidden flex-shrink-0">
-                <img src={logo} alt="Aiyana Services Logo" className="h-10 w-auto object-cover object-left brightness-0 invert" />
+                <img src={logo} alt="hAiyana Services Logo" className="h-10 w-auto object-cover object-left brightness-0 invert" />
               </div>
               <h3 className="text-2xl font-bold">Aiyana Services</h3>
             </div>
@@ -24,8 +24,8 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary-light" />
-                <a href="tel:+15873361226" className="hover:text-primary-light transition-colors">
-                  (587) 336-1226
+                <a href="tel:+17808519334" className="hover:text-primary-light transition-colors">
+                  (780) 851-9334
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -36,7 +36,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="h-5 w-5 text-primary-light" />
-                <span>Edmonton, Alberta</span>
+                <span>12315 Stony Plain Rd #101, Edmonton, AB T5N 3Y8
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="h-5 w-5 text-primary-light" />
@@ -152,7 +152,7 @@ const Footer = () => {
           
           <div className="text-right">
             <p className="text-background/60 text-sm">
-              © {new Date().getFullYear()} Aiyana Services Inc. All rights reserved.
+              © {new Date().getFullYear()} Aiyana Services Ltd. All rights reserved.
             </p>
           </div>
         </div>
