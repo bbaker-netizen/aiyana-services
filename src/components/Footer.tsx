@@ -36,7 +36,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="h-5 w-5 text-primary-light" />
-                <span>12315 Stony Plain Rd #101, Edmonton, AB T5N 3Y8
+                <span>12315 Stony Plain Rd #101, Edmonton, AB T5N 3Y8</span>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="h-5 w-5 text-primary-light" />
