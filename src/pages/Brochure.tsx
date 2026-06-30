@@ -323,7 +323,7 @@ const Brochure = () => {
             <div>
               <Phone className="h-8 w-8 mx-auto mb-2" style={{ color: 'hsl(168 52% 42%)' }} />
               <h3 className="font-bold text-sm mb-1" style={{ color: 'hsl(215 25% 27%)' }}>Phone</h3>
-              <p className="text-sm" style={{ color: 'hsl(215 15% 45%)' }}>(587) 336-1226</p>
+              <p className="text-sm" style={{ color: 'hsl(215 15% 45%)' }}>(780) 851-9334</p>
             </div>
             <div>
               <Mail className="h-8 w-8 mx-auto mb-2" style={{ color: 'hsl(168 52% 42%)' }} />
@@ -333,7 +333,7 @@ const Brochure = () => {
             <div>
               <MapPin className="h-8 w-8 mx-auto mb-2" style={{ color: 'hsl(168 52% 42%)' }} />
               <h3 className="font-bold text-sm mb-1" style={{ color: 'hsl(215 25% 27%)' }}>Location</h3>
-              <p className="text-sm" style={{ color: 'hsl(215 15% 45%)' }}>Edmonton, Alberta</p>
+              <p className="text-sm" style={{ color: 'hsl(215 15% 45%)' }}>12315 Stony Plain Rd #101, Edmonton, AB T5N 3Y8</p>
             </div>
           </div>
           
