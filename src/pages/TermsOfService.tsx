@@ -46,7 +46,7 @@ const TermsOfService = () => {
                 <h2 className="text-3xl font-bold mb-4">Agreement to Terms</h2>
                 <p className="text-muted-foreground leading-relaxed">
                   These Terms of Service ("Terms") constitute a legally binding agreement between you (the "Client," "you," 
-                  or "your") and Aiyana Services Inc. ("Aiyana Services," "we," "us," or "our") regarding your use of our 
+                  or "your") and Aiyana Services Ltd. ("Aiyana Services," "we," "us," or "our") regarding your use of our 
                   healthcare services. By engaging our services, you acknowledge that you have read, understood, and agree 
                   to be bound by these Terms.
                 </p>
@@ -321,9 +321,9 @@ const TermsOfService = () => {
                   service agreement, please contact us:
                 </p>
                 <div className="space-y-2 text-muted-foreground">
-                  <p><strong>Aiyana Services Inc.</strong></p>
-                  <p>Edmonton, Alberta</p>
-                  <p>Phone: (587) 336-1226</p>
+                  <p><strong>Aiyana Services Ltd.</strong></p>
+                  <p>12315 Stony Plain Rd #101, Edmonton, AB T5N 3Y8</p>
+                  <p>Phone: (780) 851-9334</p>
                   <p>Email: info@aiyanaservices.com</p>
                 </div>
               </div>
