@@ -45,7 +45,7 @@ const PrivacyPolicy = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-4">Introduction</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Aiyana Services Inc. ("we," "our," or "us") is committed to protecting the privacy and confidentiality 
+                  Aiyana Services Ltd. ("we," "our," or "us") is committed to protecting the privacy and confidentiality 
                   of personal information entrusted to us. This Privacy Policy explains how we collect, use, disclose, 
                   and safeguard your information in accordance with the Personal Information Protection and Electronic 
                   Documents Act (PIPEDA), Alberta's Health Information Act (HIA), and other applicable privacy legislation.
@@ -220,10 +220,10 @@ const PrivacyPolicy = () => {
                   file a privacy complaint, please contact our Privacy Officer:
                 </p>
                 <div className="space-y-2 text-muted-foreground">
-                  <p><strong>Aiyana Services Inc.</strong></p>
+                  <p><strong>Aiyana Services Ltd.</strong></p>
                   <p>Privacy Officer</p>
-                  <p>Edmonton, Alberta</p>
-                  <p>Phone: (587) 336-1226</p>
+                  <p>12315 Stony Plain Rd #101, Edmonton, AB T5N 3Y8</p>
+                  <p>Phone: (780) 851-9334</p>
                   <p>Email: privacy@aiyanaservices.com</p>
                 </div>
                 <p className="text-muted-foreground leading-relaxed mt-6">
