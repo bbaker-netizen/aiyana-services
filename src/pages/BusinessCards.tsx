@@ -368,7 +368,7 @@ const BusinessCards = () => {
                     <div className="flex flex-col gap-1.5">
                       <div className="flex items-center justify-center text-xs" style={{ color: 'hsl(168 52% 42%)' }}>
                         <Phone className="w-3.5 h-3.5 mr-2" />
-                        <span>(780) 695-2477</span>
+                        <span>(780) 851-9334</span>
                       </div>
                       <div className="flex items-center justify-center text-xs" style={{ color: 'hsl(168 52% 42%)' }}>
                         <Mail className="w-3.5 h-3.5 mr-2" />
@@ -401,7 +401,7 @@ const BusinessCards = () => {
                     </div>
                     <div className="flex items-center gap-3 justify-center">
                       <MapPin className="h-5 w-5 flex-shrink-0" style={{ color: 'hsl(168 52% 42%)' }} />
-                      <span>Edmonton, Alberta</span>
+                      <span>12315 Stony Plain Rd #101, Edmonton, AB T5N 3Y8</span>
                     </div>
                   </div>
                   
