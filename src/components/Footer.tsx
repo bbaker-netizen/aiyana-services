@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import footerLogo from "@/assets/aiyana-footer-logo-white.png.asset.json";
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <img src="/logo-icon.png" alt="Aiyana Services Logo" className="h-12 w-auto flex-shrink-0" />
+              <img src={footerLogo.url} alt="Aiyana Services" className="h-11 w-auto flex-shrink-0" />
             </div>
             <p className="text-background/80 mb-6 leading-relaxed">
               Providing compassionate, integrated care for youth, adults, and families navigating ADHD, Autism, IDD, 
