@@ -82,6 +82,7 @@ const Hero = () => {
       
       {/* Carousel */}
       <div className="relative min-h-[700px] md:min-h-[800px]" ref={emblaRef}>
+        <h1 className="sr-only">Aiyana Services — Respite Care and Youth Assessments in Edmonton</h1>
         <div className="flex transition-transform duration-700 ease-in-out will-change-transform">
           {slides.map((slide, index) => (
             <div key={index} className="flex-[0_0_100%] min-w-0 relative">
@@ -99,13 +100,13 @@ const Hero = () => {
               {/* Content */}
               <div className="relative z-10 container mx-auto px-4 h-full min-h-[700px] md:min-h-[800px] flex items-center">
                 <div className="max-w-4xl animate-fade-in">
-                  <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-[1.05] tracking-tight">
+                  <p className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-[1.05] tracking-tight">
                     {slide.headline}
                     <br />
                     <span className="text-primary italic">
                       {slide.headlineAccent}
                     </span>
-                  </h1>
+                  </p>
                   
                   <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
                     {slide.subtitle}
