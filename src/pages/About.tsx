@@ -10,6 +10,7 @@ import { Users, Target, Briefcase, ArrowRight } from "lucide-react";
 
 import { Link } from "react-router-dom";
 import { useSeo } from "@/hooks/useSeo";
+import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 const About = () => {
   useSeo({
@@ -20,6 +21,7 @@ const About = () => {
   });
   return (
     <div className="min-h-screen">
+      <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "About", url: "/about" }]} />
       <ScrollProgress />
       <Header />
       <main>
