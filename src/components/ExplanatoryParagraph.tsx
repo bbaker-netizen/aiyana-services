@@ -72,6 +72,10 @@ const ExplanatoryParagraph = () => {
               src={youthCare}
               alt="Youth and adults receiving personalized therapeutic care in a supportive environment"
               className="w-full h-96 object-cover rounded-2xl shadow-warm"
+              width={800}
+              height={600}
+              loading="lazy"
+              decoding="async"
             />
             
             <div className="absolute -bottom-6 -right-6 bg-card rounded-xl p-6 shadow-card border max-w-sm">
