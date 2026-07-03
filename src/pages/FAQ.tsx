@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import { HelpCircle } from "lucide-react";
-import { useEffect } from "react";
+
 import {
   Accordion,
   AccordionContent,
