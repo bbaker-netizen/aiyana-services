@@ -2,7 +2,7 @@
 
 > Aiyana Services provides respite care, ADHD and Autism assessments, addiction support, and dual diagnosis care for children, youth, and adults in Edmonton, Alberta.
 
-Aiyana Services is an RCAC-licensed provider offering compassionate, integrated support for families navigating complex care needs. We work with FSCD and PDD funding programs and offer 24/7 emergency respite support.
+Aiyana Services is an RCAC-licensed provider offering compassionate, integrated support for families navigating complex care needs. We work with FSCD and PDD funding programs and offer 24/7 emergency respite support. Located at 12315 Stony Plain Rd #101, Edmonton, AB T5N 3Y8. Phone: (780) 851-9334.
 
 ## Pages
 
@@ -10,6 +10,8 @@ Aiyana Services is an RCAC-licensed provider offering compassionate, integrated 
 - [Services](/services): Full range of respite, assessment, and support services.
 - [About](/about): Our mission and organizational values.
 - [Our Mission](/about/mission): Purpose, values, and vision for integrated family care.
+- [Our Team](/about/team): Meet the psychologists, therapists, and care providers on staff.
+- [Testimonials](/about/testimonials): Stories from families we've supported in Edmonton.
 - [Careers](/about/careers): Job openings and how to join our team.
 - [Contact](/contact): Phone, email, and contact form for Edmonton families.
 - [FAQ](/faq): Answers about services, assessments, funding, insurance, and staff qualifications.
