@@ -8,6 +8,7 @@ import BackToTop from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
 import { useSeo } from "@/hooks/useSeo";
+import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 const Services = () => {
   useSeo({
@@ -18,6 +19,7 @@ const Services = () => {
   });
   return (
     <div className="min-h-screen">
+      <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "Services", url: "/services" }]} />
       <ScrollProgress />
       <Header />
       <main>
