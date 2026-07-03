@@ -15,7 +15,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { ServiceSchema } from "@/components/seo/JsonLd";
+import { ServiceSchema, BreadcrumbSchema } from "@/components/seo/JsonLd";
 import { useSeo } from "@/hooks/useSeo";
 
 const AddictionSupport = () => {
@@ -46,6 +46,7 @@ const AddictionSupport = () => {
   return (
     <div className="min-h-screen">
       <ServiceSchema name="Addiction Support" description="Family-centered addiction support with individual therapy, family counseling, and dual diagnosis care." url="/services/addiction-support" />
+      <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "Services", url: "/services" }, { name: "Addiction Support", url: "/services/addiction-support" }]} />
       <ScrollProgress />
       <Header />
       <main>
