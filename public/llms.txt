@@ -1,0 +1,28 @@
+# Aiyana Services
+
+> Aiyana Services provides respite care, ADHD and Autism assessments, addiction support, and dual diagnosis care for children, youth, and adults in Edmonton, Alberta.
+
+Aiyana Services is an RCAC-licensed provider offering compassionate, integrated support for families navigating complex care needs. We work with FSCD and PDD funding programs and offer 24/7 emergency respite support.
+
+## Pages
+
+- [Home](/): Overview of Aiyana Services and our approach to integrated family care.
+- [Services](/services): Full range of respite, assessment, and support services.
+- [About](/about): Our mission and organizational values.
+- [Our Mission](/about/mission): Purpose, values, and vision for integrated family care.
+- [Careers](/about/careers): Job openings and how to join our team.
+- [Contact](/contact): Phone, email, and contact form for Edmonton families.
+- [FAQ](/faq): Answers about services, assessments, funding, insurance, and staff qualifications.
+
+## Services
+
+- [Respite Care](/services/respite-care): Flexible respite care with trained caregivers and 24/7 availability.
+- [ADHD Assessment](/services/adhd-assessment): Comprehensive ADHD evaluations with detailed diagnostic reports.
+- [Autism Evaluation](/services/autism-evaluation): Gold-standard autism assessments (ADOS-2) across age groups.
+- [Addiction Support](/services/addiction-support): Family-centered addiction treatment for youth.
+- [Dual Diagnosis Care](/services/dual-diagnosis): Integrated care for co-occurring conditions.
+
+## Optional
+
+- [Privacy Policy](/privacy-policy): How we handle personal information.
+- [Terms of Service](/terms-of-service): Terms governing use of this website.

@@ -5,10 +5,10 @@ export const LocalBusinessSchema = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://aiyanaservices.ca/#organization",
+    "@id": "https://aiyanaservices.com/#organization",
     "name": "Aiyana Services",
-    "image": "https://aiyanaservices.ca/og-image.jpg",
-    "url": "https://aiyanaservices.ca",
+    "image": "https://aiyanaservices.com/og-image.jpg",
+    "url": "https://aiyanaservices.com",
     "telephone": "+1-587-336-1226",
     "email": "info@aiyanaservices.com",
     "address": {
@@ -102,8 +102,8 @@ export const OrganizationSchema = () => {
     "@type": "Organization",
     "name": "Aiyana Services",
     "legalName": "Aiyana Services Inc.",
-    "url": "https://aiyanaservices.ca",
-    "logo": "https://aiyanaservices.ca/og-image.jpg",
+    "url": "https://aiyanaservices.com",
+    "logo": "https://aiyanaservices.com/og-image.jpg",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+1-587-336-1226",
@@ -142,7 +142,7 @@ export const BreadcrumbSchema = ({ items }: { items: BreadcrumbItem[] }) => {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": `https://aiyanaservices.ca${item.url}`
+      "item": `https://aiyanaservices.com${item.url}`
     }))
   };
 
@@ -197,14 +197,14 @@ export const ServiceSchema = ({ name, description, url }: ServiceSchemaProps) =>
     "provider": {
       "@type": "LocalBusiness",
       "name": "Aiyana Services",
-      "url": "https://aiyanaservices.ca"
+      "url": "https://aiyanaservices.com"
     },
     "areaServed": {
       "@type": "City",
       "name": "Edmonton"
     },
     "description": description,
-    "url": `https://aiyanaservices.ca${url}`
+    "url": `https://aiyanaservices.com${url}`
   };
 
   return (

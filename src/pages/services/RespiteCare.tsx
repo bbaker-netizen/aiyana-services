@@ -5,7 +5,6 @@ import BackToTop from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Clock, Users, Shield, CheckCircle, Home, ChevronRight } from "lucide-react";
-import { useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
 import {
@@ -16,16 +15,19 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { ServiceSchema } from "@/components/seo/JsonLd";
+import { useSeo } from "@/hooks/useSeo";
 
 const RespiteCare = () => {
   const { elementRef: benefitsRef, isVisible: benefitsVisible } = useScrollAnimation();
   const { elementRef: processRef, isVisible: processVisible } = useScrollAnimation();
 
-  useEffect(() => {
-    document.title = "Respite Care Services | Aiyana Services";
-    const meta = document.querySelector('meta[name="description"]') || (() => { const m = document.createElement('meta'); m.setAttribute('name','description'); document.head.appendChild(m); return m; })();
-    meta.setAttribute('content','Professional respite care services in Edmonton. Flexible scheduling, trained caregivers, and 24/7 support for families with complex care needs.');
-  }, []);
+  useSeo({
+    title: "Respite Care Edmonton | Aiyana Services",
+    description:
+      "Flexible respite care in Edmonton with trained caregivers and 24/7 support for families of children, youth, and adults with complex needs.",
+    path: "/services/respite-care",
+  });
 
   const benefits = [
     { icon: Clock, title: "Flexible Scheduling", description: "Book care when you need it - hourly, daily, or overnight support available." },
@@ -42,6 +44,7 @@ const RespiteCare = () => {
 
   return (
     <div className="min-h-screen">
+      <ServiceSchema name="Respite Care" description="Flexible respite care with trained caregivers and 24/7 emergency support in Edmonton." url="/services/respite-care" />
       <ScrollProgress />
       <Header />
       <main>

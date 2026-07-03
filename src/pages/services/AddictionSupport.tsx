@@ -5,7 +5,6 @@ import BackToTop from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Heart, Users, Phone, Activity, Home, ChevronRight } from "lucide-react";
-import { useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
 import {
@@ -16,16 +15,19 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { ServiceSchema } from "@/components/seo/JsonLd";
+import { useSeo } from "@/hooks/useSeo";
 
 const AddictionSupport = () => {
   const { elementRef: approachRef, isVisible: approachVisible } = useScrollAnimation();
   const { elementRef: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
 
-  useEffect(() => {
-    document.title = "Addiction Support Services | Aiyana Services";
-    const meta = document.querySelector('meta[name="description"]') || (() => { const m = document.createElement('meta'); m.setAttribute('name','description'); document.head.appendChild(m); return m; })();
-    meta.setAttribute('content','Family-centered addiction support services in Edmonton. Individual therapy, family counseling, and dual diagnosis treatment for youth and families.');
-  }, []);
+  useSeo({
+    title: "Addiction Support Edmonton | Aiyana Services",
+    description:
+      "Family-centered addiction support in Edmonton with individual therapy, family counseling, and dual diagnosis treatment for youth.",
+    path: "/services/addiction-support",
+  });
 
   const approach = [
     { icon: Heart, title: "Family-Centered Care", description: "We treat addiction as a family issue, involving parents and siblings in recovery." },
@@ -43,6 +45,7 @@ const AddictionSupport = () => {
 
   return (
     <div className="min-h-screen">
+      <ServiceSchema name="Addiction Support" description="Family-centered addiction support with individual therapy, family counseling, and dual diagnosis care." url="/services/addiction-support" />
       <ScrollProgress />
       <Header />
       <main>
