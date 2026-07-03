@@ -44,6 +44,7 @@ const RespiteCare = () => {
 
   return (
     <div className="min-h-screen">
+      <ServiceSchema name="Respite Care" description="Flexible respite care with trained caregivers and 24/7 emergency support in Edmonton." url="/services/respite-care" />
       <ScrollProgress />
       <Header />
       <main>

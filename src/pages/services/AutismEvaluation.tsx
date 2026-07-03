@@ -44,6 +44,7 @@ const AutismEvaluation = () => {
 
   return (
     <div className="min-h-screen">
+      <ServiceSchema name="Autism Evaluation" description="Gold-standard autism evaluations using ADOS-2 across toddlers, children, and adolescents." url="/services/autism-evaluation" />
       <ScrollProgress />
       <Header />
       <main>

@@ -44,6 +44,7 @@ const ADHDAssessment = () => {
 
   return (
     <div className="min-h-screen">
+      <ServiceSchema name="ADHD Assessment" description="Comprehensive ADHD assessments with standardized testing and detailed diagnostic reports." url="/services/adhd-assessment" />
       <ScrollProgress />
       <Header />
       <main>

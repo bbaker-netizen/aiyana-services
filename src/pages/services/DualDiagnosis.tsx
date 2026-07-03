@@ -44,6 +44,7 @@ const DualDiagnosis = () => {
 
   return (
     <div className="min-h-screen">
+      <ServiceSchema name="Dual Diagnosis Care" description="Integrated care for co-occurring mental health and developmental conditions in children and youth." url="/services/dual-diagnosis" />
       <ScrollProgress />
       <Header />
       <main>

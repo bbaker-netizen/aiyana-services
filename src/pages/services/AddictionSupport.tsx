@@ -45,6 +45,7 @@ const AddictionSupport = () => {
 
   return (
     <div className="min-h-screen">
+      <ServiceSchema name="Addiction Support" description="Family-centered addiction support with individual therapy, family counseling, and dual diagnosis care." url="/services/addiction-support" />
       <ScrollProgress />
       <Header />
       <main>
