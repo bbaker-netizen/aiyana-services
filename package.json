@@ -11,6 +11,9 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "overrides": {
+    "puppeteer": "^23.0.0"
+  },
   "reactSnap": {
   "source": "dist",
   "minifyHtml": {
