@@ -8,7 +8,7 @@ import logo from "@/assets/ayana-logo.png";
 const serviceLinks = [
   { title: "Respite Care", href: "/services/respite-care" },
   { title: "ADHD Assessment", href: "/services/adhd-assessment" },
-  { title: "Autism Evaluation", href: "/services/autihsm-evaluation" },
+  { title: "Autism Evaluation", href: "/services/autism-evaluation" },
   { title: "Addiction Support", href: "/services/addiction-support" },
   { title: "Dual Diagnosis Care", href: "/services/dual-diagnosis" },
 ];
