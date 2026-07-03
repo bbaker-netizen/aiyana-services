@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import logo from "@/assets/ayana-logo.png";
 
 // LocalBusiness Schema for the homepage
 export const LocalBusinessSchema = () => {
@@ -105,7 +106,7 @@ export const OrganizationSchema = () => {
     "name": "Aiyana Services",
     "legalName": "Aiyana Services Inc.",
     "url": "https://aiyanaservices.com",
-    "logo": "https://aiyanaservices.com/og-image.jpg",
+          "logo": `https://aiyanaservices.com${logo}`,
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+1-780-851-9334",
