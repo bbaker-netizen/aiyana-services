@@ -56,6 +56,10 @@ const EmpathyCompetency = () => {
               src={professionalsSupport}
               alt="Healthcare professionals providing compassionate support to families in Edmonton"
               className="w-full h-96 object-cover rounded-2xl shadow-warm"
+              width={1200}
+              height={800}
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute -bottom-6 -left-6 bg-card rounded-xl p-6 shadow-card border max-w-xs">
               <div className="flex items-center gap-1 mb-2">
