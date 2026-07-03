@@ -9,12 +9,14 @@ export const LocalBusinessSchema = () => {
     "name": "Aiyana Services",
     "image": "https://aiyanaservices.com/og-image.jpg",
     "url": "https://aiyanaservices.com",
-    "telephone": "+1-587-336-1226",
+    "telephone": "+1-780-851-9334",
     "email": "info@aiyanaservices.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Edmonton",
       "addressRegion": "AB",
+      "streetAddress": "12315 Stony Plain Rd #101",
+      "postalCode": "T5N 3Y8",
       "addressCountry": "CA"
     },
     "geo": {
@@ -106,7 +108,7 @@ export const OrganizationSchema = () => {
     "logo": "https://aiyanaservices.com/og-image.jpg",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-587-336-1226",
+      "telephone": "+1-780-851-9334",
       "contactType": "customer service",
       "email": "info@aiyanaservices.com",
       "areaServed": "CA",
@@ -116,6 +118,8 @@ export const OrganizationSchema = () => {
       "@type": "PostalAddress",
       "addressLocality": "Edmonton",
       "addressRegion": "AB",
+      "streetAddress": "12315 Stony Plain Rd #101",
+      "postalCode": "T5N 3Y8",
       "addressCountry": "CA"
     }
   };
