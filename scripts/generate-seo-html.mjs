@@ -16,7 +16,6 @@ const template = fs.readFileSync(indexPath, "utf-8");
 
 // Routes with page-specific title/description, mirroring src/hooks/useSeo.ts
 // Intentionally excludes "/" (homepage already correct in the base template),
-// and excludes /brochure + /business-cards (those pages set noindex on purpose).
 const routes = [
   { path: "/services", title: "Services | Aiyana Services Edmonton", description: "Integrated respite care, ADHD and autism assessments, addiction support, and dual diagnosis care in Edmonton." },
   { path: "/services/respite-care", title: "Respite Care Edmonton | Aiyana Services", description: "Flexible respite care in Edmonton with trained caregivers and 24/7 support for families of children, youth, and adults with complex needs." },
