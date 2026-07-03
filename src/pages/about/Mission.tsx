@@ -8,6 +8,7 @@ import { Target, Heart, Users, Sparkles } from "lucide-react";
 import { useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
+import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 const Mission = () => {
   const { elementRef: valuesRef, isVisible: valuesVisible } = useScrollAnimation();
@@ -35,6 +36,7 @@ const Mission = () => {
 
   return (
     <div className="min-h-screen">
+      <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "About", url: "/about" }, { name: "Mission", url: "/about/mission" }]} />
       <ScrollProgress />
       <Header />
       <main>
