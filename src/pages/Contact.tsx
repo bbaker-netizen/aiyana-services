@@ -8,6 +8,7 @@ import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useSeo } from "@/hooks/useSeo";
 
 const Contact = () => {
   const { elementRef, isVisible } = useScrollAnimation();
@@ -15,11 +16,12 @@ const Contact = () => {
       const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
         const [errorMessage, setErrorMessage] = useState('');
 
-          useEffect(() => {
-              document.title = "Contact | Aiyana Services";
-                  const meta = document.querySelector('meta[name="description"]') || (() => { const m = document.createElement('meta'); m.setAttribute('name','description'); document.head.appendChild(m); return m; })();
-                      meta.setAttribute('content','Contact Aiyana Services in Edmonton for respite care, assessments, and integrated family support.');
-                        }, []);
+          useSeo({
+            title: "Contact Aiyana Services | Edmonton",
+            description:
+              "Contact Aiyana Services in Edmonton for respite care, ADHD and autism assessments, and integrated family support.",
+            path: "/contact",
+          });
 
                           const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
                               const { name, value } = e.target;
