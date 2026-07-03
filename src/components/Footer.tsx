@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/ayana-logo.png";
+import logoIcon from "@/assets/logo-icon.png.asset.json";
 
 const Footer = () => {
   return (
@@ -11,8 +11,8 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-10 w-10 overflow-hidden flex-shrink-0">
-                <img src={logo} alt="Aiyana Services Logo" className="h-10 w-auto object-cover object-left brightness-0 invert" />
+              <div className="h-10 w-10 flex-shrink-0">
+                <img src={logoIcon.url} alt="Aiyana Services Logo" className="h-10 w-auto" />
               </div>
               <h3 className="text-2xl font-bold">Aiyana Services</h3>
             </div>
