@@ -16,7 +16,7 @@ import { FAQPageSchema, BreadcrumbSchema } from "@/components/seo/JsonLd";
 const faqData = [
   { question: "What services does Aiyana Services offer?", answer: "We offer comprehensive support including respite care, ADHD assessments, autism evaluations, addiction support, and dual diagnosis care. Our integrated approach ensures your family receives coordinated care across all services." },
   { question: "Who do you serve?", answer: "We serve children, youth, and families navigating ADHD, autism spectrum disorder, intellectual and developmental disabilities (IDD), addiction challenges, and dual diagnoses. Our services are available to families throughout Edmonton and surrounding areas." },
-  { question: "How do I get started?", answer: "Simply contact us by phone at (587) 336-1226 or email info@aiyanaservices.com. We'll schedule an initial consultation to understand your needs and develop a personalized care plan for your family." },
+  { question: "How do I get started?", answer: "Simply contact us by phone at (780) 851-9334 or email info@aiyanaservices.com. We'll schedule an initial consultation to understand your needs and develop a personalized care plan for your family." },
   { question: "What is respite care?", answer: "Respite care provides temporary relief for primary caregivers, allowing you to rest while trained professionals care for your loved one. Our respite services include in-home care, community outings, and structured activities tailored to your child's needs and interests." },
   { question: "How long can I book respite care for?", answer: "We offer flexible respite care options ranging from a few hours to overnight stays and extended weekend support. We work with your schedule and funding availability to create a plan that works for your family." },
   { question: "What qualifications do your respite caregivers have?", answer: "All our respite workers have relevant certifications (DSW, SW, or equivalent), specialized training in autism, ADHD, and developmental disabilities, First Aid/CPR certification, and clear criminal record checks including vulnerable sector screening." },
@@ -97,7 +97,7 @@ const FAQ = () => {
                     How do I get started?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
-                    Simply contact us by phone at (587) 336-1226 or email info@aiyanaservices.com. We'll schedule an 
+                    Simply contact us by phone at (780) 851-9334 or email info@aiyanaservices.com. We'll schedule an 
                     initial consultation to understand your needs and develop a personalized care plan for your family.
                   </AccordionContent>
                 </AccordionItem>
