@@ -7,7 +7,7 @@ import BackToTop from "@/components/BackToTop";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, Target, Briefcase, ArrowRight } from "lucide-react";
-import { useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import { useSeo } from "@/hooks/useSeo";
 
