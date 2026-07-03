@@ -92,7 +92,7 @@ const Hero = () => {
                   src={slide.image}
                   alt={slide.alt}
                   className="w-full h-full object-cover"
-                  loading={index === 0 ? "eager" : "lazy"}
+                                    loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
               </div>
