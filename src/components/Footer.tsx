@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-10 w-10 flex-shrink-0">
-                <img src="/logo-icon.png" alt="Aiyana Services Logo" className="h-10 w-auto" />
+                <img src="/logo-icon.png" alt="Aiyana Services Logo" className="h-10 w-auto brightness-0 invert" />
               </div>
               <h3 className="text-2xl font-bold">Aiyana Services</h3>
             </div>
