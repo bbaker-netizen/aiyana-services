@@ -217,8 +217,9 @@ const BusinessCards = () => {
           
           
           .business-card {
-            width: 700px;
-            height: 400px;
+                        width: 100%;
+                        max-width: 700px;
+                        aspect-ratio: 3.5 / 2;
             margin: 2rem auto;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
             border-radius: 8px;
