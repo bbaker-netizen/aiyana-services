@@ -9,6 +9,7 @@ import { Briefcase, Heart, Users, TrendingUp, Award, DollarSign } from "lucide-r
 import { useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
+import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 const Careers = () => {
   const { elementRef: benefitsRef, isVisible: benefitsVisible } = useScrollAnimation();
@@ -58,6 +59,7 @@ const Careers = () => {
 
   return (
     <div className="min-h-screen">
+      <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "About", url: "/about" }, { name: "Careers", url: "/about/careers" }]} />
       <ScrollProgress />
       <Header />
       <main>
