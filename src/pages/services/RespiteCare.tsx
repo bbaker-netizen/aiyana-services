@@ -15,7 +15,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { ServiceSchema } from "@/components/seo/JsonLd";
+import { ServiceSchema, BreadcrumbSchema } from "@/components/seo/JsonLd";
 import { useSeo } from "@/hooks/useSeo";
 
 const RespiteCare = () => {
@@ -45,6 +45,7 @@ const RespiteCare = () => {
   return (
     <div className="min-h-screen">
       <ServiceSchema name="Respite Care" description="Flexible respite care with trained caregivers and 24/7 emergency support in Edmonton." url="/services/respite-care" />
+      <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "Services", url: "/services" }, { name: "Respite Care", url: "/services/respite-care" }]} />
       <ScrollProgress />
       <Header />
       <main>
