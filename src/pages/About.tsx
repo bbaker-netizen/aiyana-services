@@ -61,7 +61,7 @@ const About = () => {
                   </CardDescription>
                   <Link to="/about/mission">
                     <Button variant="outline" className="w-full group-hover:border-primary">
-                      Learn More
+                      Read our mission
                       <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </Link>
