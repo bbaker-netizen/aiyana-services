@@ -9,6 +9,7 @@ import { Users, Award, Heart, GraduationCap } from "lucide-react";
 import { useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
+import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 const Team = () => {
   const { elementRef: teamRef, isVisible: teamVisible } = useScrollAnimation();
@@ -74,6 +75,7 @@ const Team = () => {
 
   return (
     <div className="min-h-screen">
+      <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "About", url: "/about" }, { name: "Team", url: "/about/team" }]} />
       <ScrollProgress />
       <Header />
       <main>
