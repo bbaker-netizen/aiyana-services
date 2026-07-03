@@ -9,14 +9,15 @@ import { Button } from "@/components/ui/button";
 import { Users, Target, Briefcase, ArrowRight } from "lucide-react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useSeo } from "@/hooks/useSeo";
 
 const About = () => {
-  // SEO
-  useEffect(() => {
-    document.title = "About | Aiyana Services";
-    const meta = document.querySelector('meta[name="description"]') || (() => { const m = document.createElement('meta'); m.setAttribute('name','description'); document.head.appendChild(m); return m; })();
-    meta.setAttribute('content','Learn about Aiyana Services\' mission, values, and dedicated team supporting families across Edmonton.');
-  }, []);
+  useSeo({
+    title: "About Aiyana Services | Edmonton Family Care",
+    description:
+      "Learn about Aiyana Services' mission, values, and team supporting Edmonton families with respite, assessments, and integrated care.",
+    path: "/about",
+  });
   return (
     <div className="min-h-screen">
       <ScrollProgress />

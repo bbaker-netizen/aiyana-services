@@ -29,12 +29,15 @@ const faqData = [
   { question: "Where are you located?", answer: "Our main office is located in Edmonton, Alberta. Assessments are conducted at our comfortable, child-friendly clinic space. We also provide in-home services throughout the greater Edmonton area and surrounding communities." },
 ];
 
+import { useSeo } from "@/hooks/useSeo";
+
 const FAQ = () => {
-  useEffect(() => {
-    document.title = "Frequently Asked Questions | Aiyana Services";
-    const meta = document.querySelector('meta[name="description"]') || (() => { const m = document.createElement('meta'); m.setAttribute('name','description'); document.head.appendChild(m); return m; })();
-    meta.setAttribute('content','Find answers to common questions about our respite care, assessments, services, insurance coverage, and how we support families in Edmonton, Alberta.');
-  }, []);
+  useSeo({
+    title: "FAQ | Aiyana Services Edmonton",
+    description:
+      "Answers about respite care, ADHD and autism assessments, FSCD/PDD funding, insurance, and staff qualifications in Edmonton.",
+    path: "/faq",
+  });
 
   return (
     <div className="min-h-screen">
