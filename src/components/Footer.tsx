@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/ayana-logo-transparent.png";
+import logo from "@/assets/ayana-logo-footer.png";
 
 const Footer = () => {
   return (
