@@ -5,7 +5,6 @@ import BackToTop from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Brain, ClipboardList, Users, FileText, CheckCircle, Home, ChevronRight } from "lucide-react";
-import { useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
 import {
@@ -16,16 +15,19 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { ServiceSchema } from "@/components/seo/JsonLd";
+import { useSeo } from "@/hooks/useSeo";
 
 const ADHDAssessment = () => {
   const { elementRef: includesRef, isVisible: includesVisible } = useScrollAnimation();
   const { elementRef: processRef, isVisible: processVisible } = useScrollAnimation();
 
-  useEffect(() => {
-    document.title = "ADHD Assessment Services | Aiyana Services";
-    const meta = document.querySelector('meta[name="description"]') || (() => { const m = document.createElement('meta'); m.setAttribute('name','description'); document.head.appendChild(m); return m; })();
-    meta.setAttribute('content','Comprehensive ADHD assessments in Edmonton. Professional evaluation, behavioral observation, and personalized recommendations for children and youth.');
-  }, []);
+  useSeo({
+    title: "ADHD Assessment Edmonton | Aiyana Services",
+    description:
+      "Comprehensive ADHD assessments in Edmonton with standardized testing, behavioural observation, and detailed reports for children and youth.",
+    path: "/services/adhd-assessment",
+  });
 
   const includes = [
     { icon: ClipboardList, title: "Comprehensive Evaluation", description: "Detailed assessment using standardized tools and clinical interviews." },

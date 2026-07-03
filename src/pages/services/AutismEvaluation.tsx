@@ -5,7 +5,6 @@ import BackToTop from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Users, Sparkles, FileCheck, Shield, Home, ChevronRight } from "lucide-react";
-import { useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
 import {
@@ -16,16 +15,19 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { ServiceSchema } from "@/components/seo/JsonLd";
+import { useSeo } from "@/hooks/useSeo";
 
 const AutismEvaluation = () => {
   const { elementRef: approachRef, isVisible: approachVisible } = useScrollAnimation();
   const { elementRef: supportRef, isVisible: supportVisible } = useScrollAnimation();
 
-  useEffect(() => {
-    document.title = "Autism Evaluation Services | Aiyana Services";
-    const meta = document.querySelector('meta[name="description"]') || (() => { const m = document.createElement('meta'); m.setAttribute('name','description'); document.head.appendChild(m); return m; })();
-    meta.setAttribute('content','Professional autism evaluations in Edmonton. Comprehensive assessment using ADOS-2, developmental history, and multi-disciplinary expertise for accurate diagnosis.');
-  }, []);
+  useSeo({
+    title: "Autism Evaluation Edmonton | Aiyana Services",
+    description:
+      "Gold-standard autism evaluations in Edmonton using ADOS-2 and multi-disciplinary expertise across toddlers, children, and adolescents.",
+    path: "/services/autism-evaluation",
+  });
 
   const approach = [
     { icon: Users, title: "Multi-Disciplinary Team", description: "Psychologists, speech therapists, and occupational therapists working together." },

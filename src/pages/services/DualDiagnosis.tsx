@@ -5,7 +5,6 @@ import BackToTop from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Activity, Users, Brain, Heart, Shield, Home, ChevronRight } from "lucide-react";
-import { useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
 import {
@@ -16,16 +15,19 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { ServiceSchema } from "@/components/seo/JsonLd";
+import { useSeo } from "@/hooks/useSeo";
 
 const DualDiagnosis = () => {
   const { elementRef: benefitsRef, isVisible: benefitsVisible } = useScrollAnimation();
   const { elementRef: approachRef, isVisible: approachVisible } = useScrollAnimation();
 
-  useEffect(() => {
-    document.title = "Dual Diagnosis Care | Aiyana Services";
-    const meta = document.querySelector('meta[name="description"]') || (() => { const m = document.createElement('meta'); m.setAttribute('name','description'); document.head.appendChild(m); return m; })();
-    meta.setAttribute('content','Specialized dual diagnosis treatment in Edmonton. Integrated care for co-occurring mental health and developmental conditions in children and youth.');
-  }, []);
+  useSeo({
+    title: "Dual Diagnosis Care Edmonton | Aiyana Services",
+    description:
+      "Integrated dual diagnosis care in Edmonton for co-occurring mental health and developmental conditions in children and youth.",
+    path: "/services/dual-diagnosis",
+  });
 
   const benefits = [
     { icon: Users, title: "Integrated Team", description: "Psychiatrists, psychologists, and therapists working in coordination." },
