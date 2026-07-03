@@ -12,7 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
-Disallow: /business-cards
 
 # Sitemap
 Sitemap: https://aiyanaservices.com/sitemap.xml
