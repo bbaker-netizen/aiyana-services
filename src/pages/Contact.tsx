@@ -9,6 +9,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSeo } from "@/hooks/useSeo";
+import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 const Contact = () => {
   const { elementRef, isVisible } = useScrollAnimation();
@@ -52,6 +53,7 @@ const Contact = () => {
 
                                                                                                                                   return (
                                                                                                                                       <div className="min-h-screen">
+                                                                                                                                        <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "Contact", url: "/contact" }]} />
                                                                                                                                             <ScrollProgress />
                                                                                                                                                   <Header />
                                                                                                                                                         <main>
