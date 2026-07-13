@@ -104,7 +104,7 @@ export const OrganizationSchema = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Aiyana Services",
-    "legalName": "Aiyana Services Inc.",
+    "legalName": "Aiyana Services Ltd.",
     "url": "https://aiyanaservices.com",
           "logo": `https://aiyanaservices.com${logo}`,
     "contactPoint": {
