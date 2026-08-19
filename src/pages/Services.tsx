@@ -33,9 +33,7 @@ const Services = () => {
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
               Our Services
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Discover the full range of integrated care solutions designed to support your loved one.
-            </p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">Integrated care built around your loved one.</p>
           </div>
         </section>
 
