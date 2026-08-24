@@ -25,15 +25,23 @@ export const LocalBusinessSchema = () => {
       "latitude": 53.5461,
       "longitude": -113.4938
     },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday"],
+        "opens": "09:00",
+        "closes": "16:00"
+      }
+    ],
     "sameAs": [],
     "priceRange": "$$",
-    "description": "Professional respite care and ADHD/Autism assessments in Edmonton. Aiyana Services provides compassionate, integrated support for families of youth with ADHD, Autism, IDD, addiction, and dual diagnoses.",
+    "description": "In-home respite and FSCD and PDD funded community supports in Edmonton for children, youth, and adults with developmental disabilities and other complex needs. Support available in Somali, Kiswahili, and English.",
     "areaServed": {
       "@type": "City",
       "name": "Edmonton",
@@ -44,46 +52,22 @@ export const LocalBusinessSchema = () => {
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Youth Care Services",
+      "name": "Family Support Services",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
             "name": "Respite Care",
-            "description": "Professional respite care services for families caring for youth with complex needs"
+            "description": "Planned and short-notice respite in the home and in the community for families caring for someone with complex needs"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "ADHD Assessment",
-            "description": "Comprehensive ADHD assessments conducted by registered psychologists"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Autism Evaluation",
-            "description": "Thorough autism spectrum evaluations for children and youth"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Addiction Support",
-            "description": "Evidence-based addiction support services for youth"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Dual Diagnosis Care",
-            "description": "Integrated care for co-occurring mental health and developmental conditions"
+            "name": "Community Supports",
+            "description": "FSCD and PDD funded community access, behaviour support, life skills, caregiver relief, and transition planning"
           }
         }
       ]

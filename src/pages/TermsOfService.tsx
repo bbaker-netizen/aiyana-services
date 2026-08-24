@@ -60,18 +60,18 @@ const TermsOfService = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-4">Our Services</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Aiyana Services provides integrated healthcare and support services including:
+                  Aiyana Services provides non-clinical family support services including:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                  <li>Respite care services for children and youth with special needs</li>
-                  <li>Psychological assessments and evaluations (ADHD, autism, developmental disabilities)</li>
-                  <li>Addiction support and dual diagnosis care coordination</li>
-                  <li>Family support and consultation services</li>
-                  <li>Professional development and training</li>
+                  <li>In-home respite for children, youth, and adults with complex needs</li>
+                  <li>Community access, life skills, and caregiver relief supports</li>
+                  <li>Personal care and homemaking within an approved funding plan</li>
+                  <li>Help understanding and using FSCD and PDD funding</li>
                 </ul>
                 <p className="text-muted-foreground leading-relaxed mt-4">
-                  All services are provided in accordance with professional standards, regulatory requirements, and 
-                  best practices for healthcare delivery in Alberta.
+                  Aiyana Services does not provide clinical or diagnostic services. We do not conduct psychological or 
+                  medical assessments, we do not provide therapy or counselling, and our workers do not administer 
+                  medication or perform nursing tasks.
                 </p>
               </div>
 
@@ -80,8 +80,7 @@ const TermsOfService = () => {
                 <h2 className="text-3xl font-bold mb-4">Nature of Professional Relationship</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   <strong>Professional Services:</strong> Our relationship with you is strictly professional. Services 
-                  are provided by qualified, registered professionals in accordance with their professional standards 
-                  and codes of ethics.
+                  are delivered by trained support workers who are screened, oriented, and supervised by Aiyana Services.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   <strong>Not Emergency Services:</strong> Aiyana Services does not provide emergency medical or crisis 
@@ -89,9 +88,8 @@ const TermsOfService = () => {
                   For mental health crises, contact the Mental Health Help Line at 1-877-303-2642.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  <strong>Scope of Practice:</strong> Our professionals practice within their defined scope of practice 
-                  and competence. We will refer you to other appropriate professionals when services fall outside our 
-                  expertise or scope.
+                  <strong>Scope of Practice:</strong> Our workers operate within a defined, non-clinical scope. Where a 
+                  need falls outside that scope, we will say so plainly and refer you to an appropriate provider.
                 </p>
               </div>
 
@@ -258,7 +256,7 @@ const TermsOfService = () => {
                   <li>Threatening, abusive, or inappropriate behaviour toward staff</li>
                   <li>Services fall outside our scope of practice or expertise</li>
                   <li>Conflict of interest or ethical concerns</li>
-                  <li>Breakdown in the therapeutic relationship</li>
+                  <li>Breakdown in the working relationship between the family and Aiyana Services</li>
                 </ul>
                 <p className="text-muted-foreground leading-relaxed mt-4">
                   We will provide appropriate notice and referrals to alternative service providers when terminating 
@@ -276,8 +274,9 @@ const TermsOfService = () => {
                   <li><strong>Internal Process:</strong> Please first discuss concerns with your service provider or contact 
                   our Client Services Manager</li>
                   <li><strong>Formal Complaint:</strong> Written complaints can be submitted to management for investigation</li>
-                  <li><strong>Professional Colleges:</strong> You may file complaints with relevant professional regulatory 
-                  bodies (College of Alberta Psychologists, Alberta College of Social Workers, etc.)</li>
+                  <li><strong>Funder or Regulator:</strong> You may raise a complaint with the program funding your service, 
+                  such as FSCD or PDD, or with the Office of the Information and Privacy Commissioner of Alberta on a 
+                  privacy matter</li>
                   <li><strong>Alternative Dispute Resolution:</strong> We encourage mediation or arbitration for disputes 
                   that cannot be resolved internally</li>
                 </ul>

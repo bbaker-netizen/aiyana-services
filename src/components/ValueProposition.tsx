@@ -8,32 +8,39 @@ const services = [
   {
     icon: Clock,
     title: "Respite Care",
-    description: "No more waiting lists. Get immediate access to safe respite care when you need it most.",
+    description: "Planned and short-notice respite, with a worker matched to your household.",
     href: "/services/respite-care",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Community Supports",
+    description:
+      "FSCD and PDD funded community access, behaviour support, life skills, caregiver relief, and transition planning.",
+    href: "/contact",
+  },
+  {
+    icon: Layers,
+    title: "Funding Navigation",
+    description: "Help understanding what your FSCD or PDD approval covers, and getting the paperwork done.",
+    href: "/contact",
   },
   {
     icon: Brain,
     title: "ADHD Assessment",
-    description: "Comprehensive ADHD evaluations to help understand your child's unique needs and strengths.",
-    href: "/services/adhd-assessment",
+    description: "In development. We are building this with qualified Alberta clinicians and it is not yet available.",
+    comingSoon: true,
   },
   {
     icon: Puzzle,
     title: "Autism Evaluation",
-    description: "Thorough autism spectrum assessments delivered with care and expertise.",
-    href: "/services/autism-evaluation",
+    description: "In development. We are building this with qualified Alberta clinicians and it is not yet available.",
+    comingSoon: true,
   },
   {
-    icon: HeartHandshake,
-    title: "Addiction Support",
-    description: "Compassionate, evidence-based support for those facing addiction challenges.",
-    href: "/services/addiction-support",
-  },
-  {
-    icon: Layers,
-    title: "Dual Diagnosis Care",
-    description: "Integrated care addressing both mental health and addiction needs together.",
-    href: "/services/dual-diagnosis",
+    icon: Users,
+    title: "Counselling and Addiction Support",
+    description: "In development. We are building this with qualified Alberta clinicians and it is not yet available.",
+    comingSoon: true,
   },
 ];
 
@@ -62,32 +69,62 @@ const ValueProposition = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => {
             const Icon = service.icon;
-            return (
-              <Link 
-                to={service.href} 
-                key={index}
-                className={`group transition-all duration-500 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            const wrapperClassName = `group transition-all duration-500 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`;
+            const wrapperStyle = { transitionDelay: `${index * 100}ms` };
+            const card = (
+              <Card
+                className={`h-full bg-card transition-all duration-300 ${
+                  service.comingSoon
+                    ? 'border-dashed'
+                    : 'hover:shadow-elegant hover:border-primary/30 cursor-pointer group-hover:-translate-y-1'
                 }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <Card className="h-full bg-card hover:shadow-elegant hover:border-primary/30 transition-all duration-300 cursor-pointer group-hover:-translate-y-1">
-                  <CardContent className="p-8">
-                    <div className="flex items-start gap-6">
-                      <div className="flex-shrink-0 p-4 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
-                        <Icon className="h-8 w-8 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold text-foreground mb-3 leading-tight group-hover:text-primary transition-colors">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-6">
+                    <div
+                      className={`flex-shrink-0 p-4 rounded-xl transition-colors ${
+                        service.comingSoon ? 'bg-muted' : 'bg-primary/10 group-hover:bg-primary/20'
+                      }`}
+                    >
+                      <Icon className={`h-8 w-8 ${service.comingSoon ? 'text-muted-foreground' : 'text-primary'}`} />
+                    </div>
+                    <div>
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
+                        <h3
+                          className={`text-xl font-semibold leading-tight transition-colors ${
+                            service.comingSoon ? 'text-muted-foreground' : 'text-foreground group-hover:text-primary'
+                          }`}
+                        >
                           {service.title}
                         </h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {service.description}
-                        </p>
+                        {service.comingSoon && (
+                          <span className="rounded-full border border-border bg-muted px-3 py-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                            Coming soon
+                          </span>
+                        )}
                       </div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {service.description}
+                      </p>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+
+            if (service.comingSoon) {
+              return (
+                <div key={index} className={wrapperClassName} style={wrapperStyle}>
+                  {card}
+                </div>
+              );
+            }
+
+            return (
+              <Link to={service.href} key={index} className={wrapperClassName} style={wrapperStyle}>
+                {card}
               </Link>
             );
           })}

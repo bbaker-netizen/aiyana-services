@@ -18,7 +18,7 @@ const Careers = () => {
   useEffect(() => {
     document.title = "Careers | Aiyana Services";
     const meta = document.querySelector('meta[name="description"]') || (() => { const m = document.createElement('meta'); m.setAttribute('name','description'); document.head.appendChild(m); return m; })();
-    meta.setAttribute('content','Join the Aiyana Services team. Career opportunities for psychologists, therapists, care providers, and support staff in Edmonton.');
+    meta.setAttribute('content','Join the Aiyana Services team. Openings for home care workers and family support staff in Edmonton.');
   }, []);
 
   const benefits = [
@@ -27,35 +27,24 @@ const Careers = () => {
     { icon: TrendingUp, title: "Professional Growth", description: "Ongoing training, mentorship, and career development opportunities." },
     { icon: Users, title: "Collaborative Culture", description: "Work with a supportive, multi-disciplinary team." },
     { icon: Award, title: "Flexible Scheduling", description: "Work-life balance with flexible hours and remote options." },
-    { icon: Briefcase, title: "Clinical Autonomy", description: "Freedom to practice with evidence-based approaches you trust." },
+    { icon: Briefcase, title: "Real Support", description: "A supervisor who answers the phone, and training before you are sent into a home." },
   ];
 
   const openings = [
     {
-      title: "Registered Psychologist",
-      type: "Full-Time",
-      description: "Seeking experienced psychologist for ADHD/Autism assessments and therapy. Ph.D. or Psy.D. required, registration with CAP essential.",
-      responsibilities: ["Conduct comprehensive assessments", "Provide evidence-based therapy", "Collaborate with multi-disciplinary team"]
-    },
-    {
-      title: "Respite Care Worker",
+      title: "Home Care Worker",
       type: "Part-Time / Casual",
-      description: "Compassionate caregivers needed for respite support. Experience with developmental disabilities preferred. Flexible scheduling.",
-      responsibilities: ["Provide quality respite care", "Implement behavior support plans", "Document progress and communicate with families"]
+      description: "In-home personal care and respite for clients across Edmonton. Standard first aid with CPR level C and a clear police check with vulnerable sector search are required before a first shift. Somali or Kiswahili is an asset.",
+      responsibilities: ["Personal care and respite in the client's home", "Complete the visit record for every visit", "Report changes in a client's condition the same day"]
     },
     {
-      title: "Family Support Specialist",
-      type: "Full-Time",
-      description: "Coordinate care and connect families with resources. Social work or related degree required. Bilingual candidates encouraged to apply.",
-      responsibilities: ["Care coordination and navigation", "Family advocacy and support", "Resource connection and follow-up"]
-    },
-    {
-      title: "Addiction Counselor",
-      type: "Full-Time",
-      description: "Licensed counselor with expertise in youth addiction and dual diagnosis treatment. MSW or equivalent required.",
-      responsibilities: ["Individual and family therapy", "Relapse prevention planning", "Crisis intervention and support"]
+      title: "Family Support Coordinator",
+      type: "Casual",
+      description: "Help families understand and use their FSCD or PDD funding, complete intake paperwork, and stay connected with their case worker. Bilingual candidates encouraged to apply.",
+      responsibilities: ["Intake and funding navigation", "Scheduling and family communication", "Records and follow-up"]
     },
   ];
+
 
   return (
     <div className="min-h-screen">
@@ -115,7 +104,7 @@ const Careers = () => {
                   We offer more than just a job—we offer a <strong className="text-foreground">career with purpose</strong>, surrounded by colleagues who share your commitment to excellence and your belief that every family deserves comprehensive support.
                 </p>
                 <p className="text-lg text-muted-foreground text-center">
-                  Whether you're an experienced clinician or just starting your career in family services, we provide the <strong className="text-foreground">mentorship, resources, and autonomy</strong> you need to do your best work.
+                  Whether you have years behind you in home care or are just starting out in family services, we provide the <strong className="text-foreground">mentorship, resources, and autonomy</strong> you need to do your best work.
                 </p>
               </CardContent>
             </Card>

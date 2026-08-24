@@ -24,16 +24,15 @@ const ExplanatoryParagraph = () => {
             
             <div className="prose prose-lg text-muted-foreground leading-relaxed mb-8">
               <p>
-                Navigating the complexities of care for youth and adults can be overwhelming. At Aiyana Services, 
-                we recognize the challenges faced by individuals and families, from long waitlists for assessments to a lack 
-                of suitable respite options.
+                Caring for someone with complex needs can be overwhelming. At Aiyana Services we know the pattern well:
+                long waits for funded supports, few respite options that actually fit a household, and a system that
+                expects families to hold it all together on their own.
               </p>
               
               <p>
-                We offer immediate access to compassionate, coordinated care that includes everything from 
-                assessments to counseling. By bridging the gaps in the system, we ensure youth and adults receive 
-                the crucial support they need, allowing caregivers to focus on what truly matters—your 
-                family's well-being.
+                We deliver FSCD and PDD funded respite and community supports in the home and in the community, and we
+                help families understand and use the funding they have been approved for. Many of the families we serve
+                are newcomers, and we work with them in Somali, Kiswahili, and English.
               </p>
               
               <p className="font-medium text-foreground">
@@ -46,8 +45,8 @@ const ExplanatoryParagraph = () => {
               <Card className="bg-primary/5 border-primary/20">
                 <CardContent className="p-6">
                   <Shield className="h-8 w-8 text-primary mb-3" />
-                  <h4 className="font-semibold text-foreground mb-2">Immediate Support</h4>
-                  <p className="text-sm text-muted-foreground">No more waiting lists or barriers to care</p>
+                  <h4 className="font-semibold text-foreground mb-2">Responsive Support</h4>
+                  <p className="text-sm text-muted-foreground">We answer quickly and start as soon as funding allows</p>
                 </CardContent>
               </Card>
               

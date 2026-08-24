@@ -2,16 +2,13 @@ import { Button } from "@/components/ui/button";
 import heroFamily from "@/assets/hero-family.jpg";
 import professionalsSupport from "@/assets/professionals-support.jpg";
 import youthCare from "@/assets/youth-care.jpg";
-import { ArrowRight, Shield, Clock, ChevronLeft, ChevronRight } from "lucide-react";
-import { useCountUp } from "@/hooks/useCountUp";
+import { ArrowRight, Shield, Globe, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
 
 const Hero = () => {
-  const experienceCount = useCountUp(15, 2000, '+');
-
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true },
     [Autoplay({ delay: 8000, stopOnInteraction: true })]
@@ -42,7 +39,7 @@ const Hero = () => {
       image: heroFamily,
       width: 1600,
       height: 900,
-      alt: "A loving family receiving support and care from professional healthcare providers",
+      alt: "A family receiving respite support at home in Edmonton",
       headline: "A New Experience in",
       headlineAccent: "Youth Care",
       subtitle: "Compassionate, integrated support for families navigating complex needs"
@@ -51,19 +48,19 @@ const Hero = () => {
       image: professionalsSupport,
       width: 1200,
       height: 800,
-      alt: "Professional healthcare providers supporting families with compassion",
-      headline: "Guiding Families Toward",
-      headlineAccent: "Recovery & Hope",
-      subtitle: "Evidence-based care tailored to your child's unique journey"
+      alt: "A support worker helping a family at home",
+      headline: "Care Built Around",
+      headlineAccent: "Your Household",
+      subtitle: "Respite and community support shaped to your family's routine, not a fixed timetable"
     },
     {
       image: youthCare,
       width: 800,
       height: 600,
-      alt: "Youth receiving specialized care and support",
-      headline: "Heal With",
-      headlineAccent: "Evidence-Based Therapies",
-      subtitle: "Expert support for ADHD, Autism, addiction, and dual diagnoses"
+      alt: "A young person receiving respite support",
+      headline: "Support in",
+      headlineAccent: "Your Own Language",
+      subtitle: "Culturally connected respite and community support for Edmonton families"
     }
     ];
 
@@ -75,12 +72,12 @@ const Hero = () => {
   <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm">
   <div className="flex items-center gap-2">
   <Shield className="h-4 w-4 text-primary" />
-  <span className="font-semibold text-foreground">RCAC Licensed Provider</span>
+  <span className="font-semibold text-foreground">FSCD and PDD Funded Supports</span>
   </div>
   <div className="hidden sm:block h-4 w-px bg-border" />
   <div className="flex items-center gap-2">
-  <Clock className="h-4 w-4 text-primary" />
-  <span className="font-medium text-muted-foreground">24/7 Emergency Support</span>
+  <Globe className="h-4 w-4 text-primary" />
+  <span className="font-medium text-muted-foreground">Somali, Kiswahili and English</span>
   </div>
   </div>
   </div>
@@ -88,7 +85,7 @@ const Hero = () => {
 
   {/* Carousel */}
   <div className="relative min-h-[700px] md:min-h-[800px]" ref={emblaRef}>
-  <h1 className="sr-only">Aiyana Services — Respite Care and Youth Assessments in Edmonton</h1>
+  <h1 className="sr-only">Aiyana Services - In-Home Respite and Community Supports in Edmonton</h1>
   <div className="flex transition-transform duration-700 ease-in-out will-change-transform">
   {slides.map((slide, index) => (
     <div key={index} className="flex-[0_0_100%] min-w-0 relative">
@@ -174,36 +171,6 @@ aria-label={`Go to slide ${index + 1}`}
 </div>
 </div>
 
-{/* Statistics Section */}
-<div className="bg-background py-12 border-t border-border">
-<div className="container mx-auto px-4">
-<div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-<div className="bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-colors">
-<div className="flex items-start gap-4">
-<div className="p-3 rounded-lg bg-primary/10 text-primary">
-<Clock className="h-6 w-6" />
-</div>
-<div>
-<div className="text-3xl font-display font-bold text-primary mb-1">24/7</div>
-<div className="text-sm text-muted-foreground font-medium">Emergency Support Available</div>
-</div>
-</div>
-</div>
-
-<div ref={experienceCount.ref} className="bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-colors">
-<div className="flex items-start gap-4">
-<div className="p-3 rounded-lg bg-primary/10 text-primary">
-<Shield className="h-6 w-6" />
-</div>
-<div>
-<div className="text-3xl font-display font-bold text-primary mb-1">{experienceCount.count}</div>
-<div className="text-sm text-muted-foreground font-medium">Years Combined Experience</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 </section>
 );
 };

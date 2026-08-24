@@ -17,22 +17,17 @@ const template = fs.readFileSync(indexPath, "utf-8");
 // Routes with page-specific title/description, mirroring src/hooks/useSeo.ts
 // Intentionally excludes "/" (homepage already correct in the base template),
 const routes = [
-  { path: "/services", title: "Services | Aiyana Services Edmonton", description: "Integrated respite care, ADHD and autism assessments, addiction support, and dual diagnosis care in Edmonton." },
-  { path: "/services/respite-care", title: "Respite Care Edmonton | Aiyana Services", description: "Flexible respite care in Edmonton with trained caregivers and 24/7 support for families of children, youth, and adults with complex needs." },
-  { path: "/services/adhd-assessment", title: "ADHD Assessment Edmonton | Aiyana Services", description: "Comprehensive ADHD assessments in Edmonton with standardized testing, behavioural observation, and detailed reports for children and youth." },
-  { path: "/services/autism-evaluation", title: "Autism Evaluation Edmonton | Aiyana Services", description: "Gold-standard autism evaluations in Edmonton using ADOS-2 and multi-disciplinary expertise across toddlers, children, and adolescents." },
-  { path: "/services/addiction-support", title: "Addiction Support Edmonton | Aiyana Services", description: "Family-centered addiction support in Edmonton with individual therapy, family counseling, and dual diagnosis treatment for youth." },
-  { path: "/services/dual-diagnosis", title: "Dual Diagnosis Care Edmonton | Aiyana Services", description: "Integrated dual diagnosis care in Edmonton for co-occurring mental health and developmental conditions in children and youth." },
-  { path: "/about", title: "About Aiyana Services | Edmonton Family Care", description: "Learn about Aiyana Services' mission, values, and team supporting Edmonton families with respite, assessments, and integrated care." },
-  { path: "/contact", title: "Contact Aiyana Services | Edmonton", description: "Contact Aiyana Services in Edmonton for respite care, ADHD and autism assessments, and integrated family support." },
-  { path: "/faq", title: "FAQ | Aiyana Services Edmonton", description: "Answers about respite care, ADHD and autism assessments, FSCD/PDD funding, insurance, and staff qualifications in Edmonton." },
+  { path: "/services", title: "Services | Aiyana Services Edmonton", description: "In-home respite and FSCD and PDD funded community supports for Edmonton families." },
+  { path: "/services/respite-care", title: "Respite Care Edmonton | Aiyana Services", description: "Flexible in-home respite in Edmonton with screened, trained support workers for families of children, youth, and adults with complex needs." },
+  { path: "/about", title: "About Aiyana Services | Edmonton Family Care", description: "Learn about Aiyana Services' mission and values, supporting Edmonton families with in-home respite and funded community supports." },
+  { path: "/contact", title: "Contact Aiyana Services | Edmonton", description: "Contact Aiyana Services in Edmonton for in-home respite, funded community supports, and help with FSCD and PDD funding." },
+  { path: "/faq", title: "FAQ | Aiyana Services Edmonton", description: "Answers about in-home respite, community supports, FSCD and PDD funding, staff screening, and booking in Edmonton." },
   { path: "/about/mission", title: "Our Mission | Aiyana Services" },
-  { path: "/about/team", title: "Our Team | Aiyana Services" },
-  { path: "/about/testimonials", title: "Client Testimonials | Aiyana Services" },
   { path: "/about/careers", title: "Careers | Aiyana Services" },
   { path: "/privacy-policy", title: "Privacy Policy | Aiyana Services" },
   { path: "/terms-of-service", title: "Terms of Service | Aiyana Services" },
   ];
+
 
 function escapeHtml(str) {
     return str

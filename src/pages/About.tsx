@@ -16,7 +16,7 @@ const About = () => {
   useSeo({
     title: "About Aiyana Services | Edmonton Family Care",
     description:
-      "Learn about Aiyana Services' mission, values, and team supporting Edmonton families with respite, assessments, and integrated care.",
+      "Learn about Aiyana Services' mission and values, supporting Edmonton families with in-home respite and funded community supports.",
     path: "/about",
   });
   return (
@@ -47,7 +47,7 @@ const About = () => {
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-foreground mb-4">Learn More About Us</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Discover more about our mission, team, and the families we serve
+                Discover more about our mission, our values, and the families we serve
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">

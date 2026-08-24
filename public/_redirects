@@ -1,1 +1,7 @@
-/* /index.html 200
+/services/adhd-assessment   /services   301
+/services/autism-evaluation /services   301
+/services/addiction-support /services   301
+/services/dual-diagnosis    /services   301
+/about/team                 /about      301
+/about/testimonials         /about      301
+/*                          /index.html 200

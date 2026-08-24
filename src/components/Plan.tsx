@@ -15,9 +15,9 @@ const steps = [
   {
     number: "02", 
     icon: Calendar,
-    title: "Book an Assessment",
-    description: "Schedule a visit for an ADHD/Autism evaluation.",
-    details: "Our experienced professionals will conduct comprehensive assessments in a comfortable, supportive environment.",
+    title: "Complete Your Intake",
+    description: "We confirm your FSCD or PDD funding and complete the intake together.",
+    details: "Our intake coordinator walks you through what your funding covers, completes the paperwork with you, and connects with your case worker so services can start.",
   },
   {
     number: "03",
@@ -106,7 +106,7 @@ const Plan = () => {
             </Link>
             <Link to="/contact">
               <Button variant="cta-outline" size="xl">
-                Schedule Assessment
+                Check Your Funding
               </Button>
             </Link>
           </div>

@@ -12,7 +12,6 @@ import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 const Mission = () => {
   const { elementRef: valuesRef, isVisible: valuesVisible } = useScrollAnimation();
-  const { elementRef: impactRef, isVisible: impactVisible } = useScrollAnimation();
 
   useEffect(() => {
     document.title = "Our Mission | Aiyana Services";
@@ -22,17 +21,11 @@ const Mission = () => {
 
   const values = [
     { icon: Heart, title: "Empathy First", description: "We lead with compassion, understanding the unique challenges each family faces." },
-    { icon: Sparkles, title: "Excellence in Care", description: "Evidence-based practices combined with clinical expertise for the best outcomes." },
+    { icon: Sparkles, title: "Excellence in Care", description: "Screened, trained workers, clear care plans, and honest reporting on how a visit went." },
     { icon: Users, title: "Accessibility", description: "Making quality care available to all families, regardless of background or resources." },
     { icon: Target, title: "Collaboration", description: "Working together with families, schools, and providers as a unified team." },
   ];
 
-  const stats = [
-    { number: "500+", label: "Families Served" },
-    { number: "95%", label: "Satisfaction Rate" },
-    { number: "10+", label: "Years Experience" },
-    { number: "24/7", label: "Crisis Support" },
-  ];
 
   return (
     <div className="min-h-screen">
@@ -86,13 +79,13 @@ const Mission = () => {
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-lg text-muted-foreground text-center">
-                  At Aiyana Services, our mission is to provide <strong className="text-foreground">integrated, family-centered care</strong> that addresses the complex intersection of developmental differences, mental health challenges, and addiction.
+                  At Aiyana Services, our mission is to provide <strong className="text-foreground">integrated, family-centered care</strong> that addresses the day to day realities of caring for someone with a developmental disability or other complex needs.
                 </p>
                 <p className="text-lg text-muted-foreground text-center">
                   We believe every child deserves access to <strong className="text-foreground">comprehensive, coordinated support</strong> that treats them as a whole person—not a collection of diagnoses.
                 </p>
                 <p className="text-lg text-muted-foreground text-center">
-                  Through evidence-based assessment, therapeutic intervention, and ongoing family support, we empower families to navigate challenges with <strong className="text-foreground">confidence, clarity, and hope</strong>.
+                  Through practical in-home support, funding navigation, and steady coordination with the people already involved, we help families navigate challenges with <strong className="text-foreground">confidence, clarity, and hope</strong>.
                 </p>
               </CardContent>
             </Card>
@@ -171,25 +164,6 @@ const Mission = () => {
           </div>
         </section>
 
-        {/* Community Impact Section */}
-        <section ref={impactRef} className="py-20 bg-primary text-primary-foreground">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4">Our Community Impact</h2>
-              <p className="text-xl opacity-90 max-w-2xl mx-auto">
-                Making a difference in Edmonton, one family at a time
-              </p>
-            </div>
-            <div className={`grid md:grid-cols-4 gap-8 transition-all duration-700 ${impactVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-5xl font-bold mb-2">{stat.number}</div>
-                  <div className="text-lg opacity-90">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
       <BackToTop />

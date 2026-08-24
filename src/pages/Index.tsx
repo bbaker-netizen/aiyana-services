@@ -12,9 +12,9 @@ import { useSeo } from "@/hooks/useSeo";
 
 const Index = () => {
   useSeo({
-    title: "Aiyana Services — Respite & Assessments in Edmonton",
+    title: "Aiyana Services - In-Home Respite and Community Supports in Edmonton",
     description:
-      "Edmonton respite care plus ADHD and autism assessments. Compassionate, integrated support for families with complex needs.",
+      "Edmonton in-home respite and FSCD and PDD funded community supports. Support in Somali, Kiswahili, and English.",
     path: "/",
   });
   return (
@@ -60,7 +60,7 @@ const Index = () => {
                   <Users className="h-12 w-12 text-secondary mb-6 mx-auto group-hover:scale-110 transition-transform" aria-hidden="true" />
                   <h3 className="text-2xl font-bold text-foreground mb-4">About Us</h3>
                   <p className="text-muted-foreground mb-6">
-                    Meet our dedicated team and learn about our mission to provide compassionate, evidence-based care.
+                    Learn about our mission and how we work with Edmonton families.
                   </p>
                   <Link to="/about" className="mt-auto">
                     <Button variant="outline" className="group/btn">
@@ -89,7 +89,7 @@ const Index = () => {
             </div>
           </div>
         </section>
-        <section className="py-20 bg-muted/30"><div className="container mx-auto px-4"><div className="max-w-4xl mx-auto"><h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">Why Edmonton Families Choose Aiyana Services</h2><div className="space-y-6 text-lg text-muted-foreground leading-relaxed"><p>Raising a child with ADHD, autism, or other complex needs often means juggling multiple specialists, long waitlists, and disconnected care plans. Aiyana Services was built to change that. Our Edmonton-based team brings respite care, ADHD assessment, autism evaluation, addiction support, and dual diagnosis care together under one roof, so families spend less time coordinating and more time getting the support they actually need.</p><p>Every assessment and care plan is led by experienced clinicians using evidence-based, gold-standard diagnostic tools, then tailored to the specific circumstances of each child, youth, or adult we work with. We take the time to understand a family's history, strengths, and goals before recommending next steps, and we stay involved well past the initial evaluation with follow-up consultations, school advocacy support, and referrals to trusted community resources.</p><p>We know that support needs don't always wait for business hours, which is why our team offers 24/7 emergency support alongside flexible scheduling for planned respite and assessment appointments. Located at 12315 Stony Plain Rd in Edmonton, our team has supported local families for over a decade and continues to welcome families from across the greater Edmonton area.</p></div></div></div></section>
+        <section className="py-20 bg-muted/30"><div className="container mx-auto px-4"><div className="max-w-4xl mx-auto"><h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">Why Edmonton Families Choose Aiyana Services</h2><div className="space-y-6 text-lg text-muted-foreground leading-relaxed"><p>Raising a child, or supporting an adult, with complex needs often means juggling multiple providers, long waitlists, and disconnected care plans. Aiyana Services was built to change that. Our Edmonton-based team delivers FSCD and PDD funded respite and community supports, so families deal with one provider instead of five.</p><p>Every care plan is tailored to the specific circumstances of the child, youth, or adult we work with. We take the time to understand a family's history, strengths, and goals before recommending next steps, and we stay involved well past the first conversation with ongoing coordination, school advocacy support, and referrals to trusted community resources. Many of the families we serve are newcomers, and we support them in their own language.</p><p>Scheduling is built around the household rather than a fixed timetable, including evenings and weekends where a worker is available. Aiyana Services is located at 12315 Stony Plain Rd in Edmonton and welcomes families from across the greater Edmonton area, with support available in Somali, Kiswahili, and English.</p></div></div></div></section>
       </main>
       <Footer />
       <BackToTop />

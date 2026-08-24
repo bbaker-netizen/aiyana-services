@@ -48,11 +48,11 @@ const PrivacyPolicy = () => {
                   Aiyana Services Ltd. ("we," "our," or "us") is committed to protecting the privacy and confidentiality 
                   of personal information entrusted to us. This Privacy Policy explains how we collect, use, disclose, 
                   and safeguard your information in accordance with the Personal Information Protection and Electronic 
-                  Documents Act (PIPEDA), Alberta's Health Information Act (HIA), and other applicable privacy legislation.
+                  Documents Act (PIPEDA), Alberta's Personal Information Protection Act (PIPA), and other applicable privacy legislation.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mt-4">
-                  As a healthcare service provider in Alberta, we handle sensitive personal and health information with 
-                  the utmost care and in accordance with professional standards and legal requirements.
+                  As a family support provider in Alberta, we handle sensitive personal and health information with
+                  the utmost care and in accordance with our obligations under PIPA and our funding agreements.
                 </p>
               </div>
 
@@ -74,7 +74,6 @@ const PrivacyPolicy = () => {
                 <h3 className="text-2xl font-semibold mb-3 mt-6">Health Information</h3>
                 <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                   <li>Medical history, diagnoses, and treatment information</li>
-                  <li>Assessment and evaluation results</li>
                   <li>Medication lists and allergies</li>
                   <li>Behavioural observations and progress notes</li>
                   <li>Reports from other healthcare providers (with consent)</li>
@@ -94,13 +93,13 @@ const PrivacyPolicy = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-4">How We Use Your Information</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  We use your information solely for purposes related to providing healthcare services:
+                  We use your information solely for purposes related to providing support services:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                  <li><strong>Service Delivery:</strong> To provide respite care, conduct assessments, develop treatment plans, 
-                  and deliver coordinated support services</li>
-                  <li><strong>Care Coordination:</strong> To communicate with other healthcare providers involved in your care 
-                  (with your consent)</li>
+                  <li><strong>Service Delivery:</strong> To provide respite and community supports, build the care plan with you,
+                  and coordinate the workers who attend your home</li>
+                  <li><strong>Care Coordination:</strong> To communicate with your case worker and any other provider involved in your care,
+                  with your consent</li>
                   <li><strong>Quality Improvement:</strong> To monitor and improve the quality of our services</li>
                   <li><strong>Billing and Administration:</strong> To process payments, manage funding applications, and maintain 
                   business records</li>

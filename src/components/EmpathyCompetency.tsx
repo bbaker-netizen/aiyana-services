@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Star, Quote, Award, Users, Heart, Shield } from "lucide-react";
+import { Award, Users, Heart, Shield } from "lucide-react";
 import professionalsSupport from "@/assets/professionals-support.jpg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
@@ -34,8 +34,8 @@ const EmpathyCompetency = () => {
                   <Users className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">Trusted by Families Across Edmonton</h3>
-                  <p className="text-muted-foreground">Over 500 families have found relief through our comprehensive care approach.</p>
+                  <h3 className="font-semibold text-foreground mb-2">Care in Somali, Kiswahili and English</h3>
+                  <p className="text-muted-foreground">Many of the families we serve are newcomers, and we work with them in their own language.</p>
                 </div>
               </div>
               
@@ -44,8 +44,8 @@ const EmpathyCompetency = () => {
                   <Award className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">Experienced Team of Healthcare Professionals</h3>
-                  <p className="text-muted-foreground">Our staff combines deep expertise with a compassionate approach, focused on creating integrated, practical care solutions.</p>
+                  <h3 className="font-semibold text-foreground mb-2">Screened and Trained Support Workers</h3>
+                  <p className="text-muted-foreground">Every worker carries a current police check with vulnerable sector search and standard first aid with CPR, and is trained before a first visit.</p>
                 </div>
               </div>
             </div>
@@ -54,24 +54,13 @@ const EmpathyCompetency = () => {
           <div className={`relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <img
               src={professionalsSupport}
-              alt="Healthcare professionals providing compassionate support to families in Edmonton"
+              alt="A support worker helping a family at home in Edmonton"
               className="w-full h-96 object-cover rounded-2xl shadow-warm"
               width={1200}
               height={800}
               loading="lazy"
               decoding="async"
             />
-            <div className="absolute -bottom-6 -left-6 bg-card rounded-xl p-6 shadow-card border max-w-xs">
-              <div className="flex items-center gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-warning fill-warning" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground italic mb-2">
-                "Aiyana Services changed our lives—finally, we have the support we need."
-              </p>
-              <p className="text-sm font-medium text-foreground">Sara T., Parent</p>
-            </div>
           </div>
         </div>
         
@@ -95,8 +84,8 @@ const EmpathyCompetency = () => {
           <Card className={`bg-success/10 border-success/30 hover:shadow-warm transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '400ms' }}>
             <CardContent className="p-8 text-center">
               <Award className="h-12 w-12 text-success mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-foreground mb-3">Evidence-Based Methods</h3>
-              <p className="text-muted-foreground">Our interventions are grounded in research and proven therapeutic practices.</p>
+              <h3 className="text-xl font-semibold text-foreground mb-3">Plain, Practical Support</h3>
+              <p className="text-muted-foreground">Practical help with the day to day, delivered by workers who know the household.</p>
             </CardContent>
           </Card>
         </div>

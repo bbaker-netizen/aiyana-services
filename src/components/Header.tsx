@@ -7,10 +7,14 @@ import logo from "@/assets/ayana-logo.png";
 
 const serviceLinks = [
   { title: "Respite Care", href: "/services/respite-care" },
-  { title: "ADHD Assessment", href: "/services/adhd-assessment" },
-  { title: "Autism Evaluation", href: "/services/autism-evaluation" },
-  { title: "Addiction Support", href: "/services/addiction-support" },
-  { title: "Dual Diagnosis Care", href: "/services/dual-diagnosis" },
+  { title: "Community Supports", href: "/services" },
+  { title: "Funding Navigation", href: "/services" },
+];
+
+const comingSoonServices = [
+  "ADHD Assessment",
+  "Autism Evaluation",
+  "Counselling and Addiction Support",
 ];
 
 const Header = () => {
@@ -40,8 +44,8 @@ const Header = () => {
                 Services
                 <ChevronDown className="relative top-[1px] ml-1 h-3 w-3 transition-transform duration-200 group-hover:rotate-180" />
               </Link>
-              <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <ul className="w-48 p-2 bg-card border border-border shadow-lg rounded-md">
+              <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[60]">
+                <ul className="w-56 p-2 bg-popover border border-border shadow-lg rounded-md">
                   {serviceLinks.map((service) => (
                     <li key={service.href}>
                       <Link
@@ -52,6 +56,16 @@ const Header = () => {
                       </Link>
                     </li>
                   ))}
+                  <li className="mt-2 border-t border-border pt-2">
+                    <span className="block px-3 pb-1 text-[11px] font-medium uppercase tracking-wide text-muted-foreground/70">
+                      Coming soon
+                    </span>
+                    {comingSoonServices.map((title) => (
+                      <span key={title} className="block px-3 py-1 text-sm text-muted-foreground/70">
+                        {title}
+                      </span>
+                    ))}
+                  </li>
                 </ul>
               </div>
             </div>

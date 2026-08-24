@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 const stakes = [
   {
     icon: Clock,
-    title: "Long waitlists for essential assessments",
-    impact: "Delayed intervention during crucial development years",
+    title: "Long waitlists for funded supports",
+    impact: "Families waiting months while needs at home keep growing",
   },
   {
     icon: HeadphonesIcon,
@@ -22,8 +22,8 @@ const stakes = [
   },
   {
     icon: Brain,
-    title: "Worsening addiction struggles",
-    impact: "Progressive health decline without timely intervention",
+    title: "Care that stops at the office door",
+    impact: "Support that never reaches the home where daily life happens",
   },
   {
     icon: Users,

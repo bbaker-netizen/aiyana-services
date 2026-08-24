@@ -14,8 +14,8 @@ const Footer = () => {
               <img src={logo} alt="Aiyana Services" className="h-11 w-auto flex-shrink-0" />
             </div>
             <p className="text-background/80 mb-6 leading-relaxed">
-              Providing compassionate, integrated care for youth, adults, and families navigating ADHD, Autism, IDD, 
-              addiction, and dual diagnoses. Trusted by Edmonton families for over a decade.
+              In-home respite and FSCD and PDD funded community supports for children, youth, and adults with complex
+              needs, across Edmonton and the surrounding area. Support in Somali, Kiswahili, and English.
             </p>
             
             <div className="space-y-3">
@@ -37,7 +37,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="h-5 w-5 text-primary-light" />
-                <span>24/7 Emergency Support Available</span>
+                <span>Mon to Fri 8:00 to 6:00, Sat 9:00 to 4:00</span>
               </div>
             </div>
           </div>
@@ -52,18 +52,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/about/team" className="text-background/80 hover:text-primary-light transition-colors">
-                  Our Team
-                </Link>
-              </li>
-              <li>
-                <Link to="/about/testimonials" className="text-background/80 hover:text-primary-light transition-colors">
-                  Testimonials
-                </Link>
-              </li>
-              <li>
                 <Link to="/about/careers" className="text-background/80 hover:text-primary-light transition-colors">
                   Careers
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" className="text-background/80 hover:text-primary-light transition-colors">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-background/80 hover:text-primary-light transition-colors">
+                  Contact Us
                 </Link>
               </li>
             </ul>
@@ -79,34 +79,27 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/services/adhd-assessment" className="text-background/80 hover:text-primary-light transition-colors">
-                  ADHD Assessment
+                <Link to="/services" className="text-background/80 hover:text-primary-light transition-colors">
+                  Community Supports
                 </Link>
               </li>
               <li>
-                <Link to="/services/autism-evaluation" className="text-background/80 hover:text-primary-light transition-colors">
-                  Autism Evaluation
+                <Link to="/services" className="text-background/80 hover:text-primary-light transition-colors">
+                  Funding Navigation
                 </Link>
               </li>
-              <li>
-                <Link to="/services/addiction-support" className="text-background/80 hover:text-primary-light transition-colors">
-                  Addiction Support
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/dual-diagnosis" className="text-background/80 hover:text-primary-light transition-colors">
-                  Dual Diagnosis Care
-                </Link>
-              </li>
+              <li className="text-background/50">ADHD Assessment (coming soon)</li>
+              <li className="text-background/50">Autism Evaluation (coming soon)</li>
+              <li className="text-background/50">Counselling and Addiction Support (coming soon)</li>
             </ul>
           </div>
         </div>
         
         {/* CTA Section */}
         <div className="bg-card border border-border rounded-2xl p-8 mb-12 text-center text-foreground">
-          <h4 className="text-2xl font-bold mb-4">Need Immediate Support?</h4>
+          <h4 className="text-2xl font-bold mb-4">Ready to Get Started?</h4>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Don't wait for help. Contact us today and take the first step toward comprehensive care for your family.
+            Tell us what your family needs and we will talk you through what your funding covers and what we can do.
           </p>
           <Link to="/contact">
             <Button variant="cta" size="xl">

@@ -14,7 +14,7 @@ const Services = () => {
   useSeo({
     title: "Services | Aiyana Services Edmonton",
     description:
-      "Integrated respite care, ADHD and autism assessments, addiction support, and dual diagnosis care in Edmonton.",
+      "In-home respite and FSCD and PDD funded community supports for Edmonton families.",
     path: "/services",
   });
   return (

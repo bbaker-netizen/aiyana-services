@@ -25,14 +25,14 @@ const RespiteCare = () => {
   useSeo({
     title: "Respite Care Edmonton | Aiyana Services",
     description:
-      "Flexible respite care in Edmonton with trained caregivers and 24/7 support for families of children, youth, and adults with complex needs.",
+      "Flexible in-home respite in Edmonton with screened, trained support workers for families of children, youth, and adults with complex needs.",
     path: "/services/respite-care",
   });
 
   const benefits = [
-    { icon: Clock, title: "Flexible Scheduling", description: "Book care when you need it - hourly, daily, or overnight support available." },
-    { icon: Users, title: "Trained Caregivers", description: "All caregivers are professionally trained in developmental needs and behavioral support." },
-    { icon: Shield, title: "24/7 Availability", description: "Emergency respite available around the clock for urgent family needs." },
+    { icon: Clock, title: "Flexible Scheduling", description: "Visits built around your routine, subject to a three hour minimum and what your funding approval allows." },
+    { icon: Users, title: "Matched Support Workers", description: "We match a worker to your household, including language, and introduce them before the first visit." },
+    { icon: Shield, title: "Screened and Trained", description: "Every worker holds a clear vulnerable sector check and current first aid before a first visit." },
     { icon: Heart, title: "Family-Centered", description: "Care plans tailored to your child's unique needs and family routines." },
   ];
 
