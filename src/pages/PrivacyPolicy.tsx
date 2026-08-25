@@ -222,7 +222,7 @@ const PrivacyPolicy = () => {
                   <p><strong>Aiyana Services Ltd.</strong></p>
                   <p>Privacy Officer</p>
                   <p>12315 Stony Plain Rd #101, Edmonton, AB T5N 3Y8</p>
-                  <p>Phone: (780) 851-9334</p>
+                  <p>Phone: (780) 851-6157</p>
                   <p>Email: privacy@aiyanaservices.com</p>
                 </div>
                 <p className="text-muted-foreground leading-relaxed mt-6">
