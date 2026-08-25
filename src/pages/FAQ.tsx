@@ -33,7 +33,7 @@ const faqCategories = [
         value: "get-started",
         question: "How do I get started?",
         answer:
-          "Call (780) 851-9334 or email info@aiyanaservices.com. We talk through what you need, confirm what your funding covers, and complete the intake with you before the first visit is scheduled.",
+          "Call (780) 851-6157 or email info@aiyanaservices.com. We talk through what you need, confirm what your funding covers, and complete the intake with you before the first visit is scheduled.",
       },
     ],
   },
