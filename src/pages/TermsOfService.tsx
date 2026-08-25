@@ -322,7 +322,7 @@ const TermsOfService = () => {
                 <div className="space-y-2 text-muted-foreground">
                   <p><strong>Aiyana Services Ltd.</strong></p>
                   <p>12315 Stony Plain Rd #101, Edmonton, AB T5N 3Y8</p>
-                  <p>Phone: (780) 851-9334</p>
+                  <p>Phone: (780) 851-6157</p>
                   <p>Email: info@aiyanaservices.com</p>
                 </div>
               </div>
